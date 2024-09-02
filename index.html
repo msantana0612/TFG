@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo la CLI de Linux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/logo-uah.png" alt="Logo UAH" class="logo">
+        <h1>Aprendiendo la CLI de Linux</h1>
+        <a href="https://github.com/marcossantana0612/TFG" class="github-icon" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    <div class="container">
+        <div class="menu">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="#" onclick="loadNotebook('notebook1.html')">Introducción</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook2.html')">Sistema de archivos de Unix y órdenes</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook3.html')">Permisos y enlaces</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook4.html')">Variables de entorno y variables shell</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook5.html')">Gestión de procesos en Linux</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook6.html')">Redirecciones</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook7.html')">Tuberías</a></li>
+                <li><a href="#" onclick="loadNotebook('notebook8.html')">Uso de filtros en Linux</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <!-- El src se carga por JavaScript -->
+            <iframe id="notebookViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
