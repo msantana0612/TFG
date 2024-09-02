@@ -8,4 +8,5 @@ function loadNotebook(notebookFile) {
     const url = 'html_outputs/notebooks/' + notebookFile;
     console.log('Cargando URL:', url);
     iframe.src = url;
+    console.log('Comprobar url:', iframe.src);
 }
