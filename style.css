@@ -67,6 +67,7 @@ h1 {
 .menu h2 a:hover {
     background-color: #004080; /* Fondo azul al pasar el ratón */
     color: white; /* Texto blanco al pasar el ratón */
+}
 
 .menu ul {
     list-style-type: none;
