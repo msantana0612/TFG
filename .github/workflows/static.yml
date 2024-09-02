@@ -1,43 +1,50 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Convert IPYNB to HTML and Deploy
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main  # Cambia esto por la rama en la que quieres que se ejecute la acción
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install nbconvert
+
+    - name: Convert notebook to HTML
+      run: |
+        # Crear un directorio para los archivos HTML
+        mkdir -p html_outputs
+        
+        # Recorrer todos los archivos .ipynb y convertirlos a HTML
+        find notebooks -name '*.ipynb' | while read notebook; do
+          # Obtener el directorio del notebook
+          dir=$(dirname "$notebook")
+          # Crear el mismo directorio en html_outputs si no existe
+          mkdir -p "html_outputs/$dir"
+          # Convertir el notebook a HTML y guardarlo en html_outputs
+          jupyter nbconvert --to html "$notebook" --output-dir="html_outputs/$dir"
+        done
+
+        # Verificar los archivos generados
+        ls -lR html_outputs  # Lista todos los archivos en html_outputs
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        publish_dir: ./html_outputs  # Solo publicar el contenido de html_outputs
+        publish_branch: gh-pages
+        keep_files: true  # Mantener los archivos existentes en la rama gh-pages
