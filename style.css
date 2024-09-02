@@ -59,6 +59,7 @@ h1 {
 }
 
 .menu h2a {
+    font-size: inherit;
     color: inherit; /* Hereda el color del elemento h2 */
     text-decoration: none; /* Elimina el subrayado predeterminado */
 }
