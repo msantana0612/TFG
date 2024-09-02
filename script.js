@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Cargar el notebook por defecto al iniciar la página
-    loadNotebook('notebook1.html');
+    loadNotebook('inicio.html');
 });
 
 function loadNotebook(notebookFile) {
