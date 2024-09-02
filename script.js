@@ -5,5 +5,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 function loadNotebook(notebookFile) {
     const iframe = document.getElementById('notebookViewer');
-    iframe.src = 'TFG/html_outputs/notebooks' + notebookFile;
+    iframe.src = 'html_outputs/notebooks/' + notebookFile;
 }
