@@ -58,11 +58,15 @@ h1 {
     color: #004080; /* Color del título en la barra lateral */
 }
 
-.menu h2a {
-    font-size: inherit;
-    color: inherit; /* Hereda el color del elemento h2 */
+.menu h2 a {
+    font-size: inherit; /* Mantiene el tamaño del font de h2 */
+    color: inherit; /* Hereda el color de h2 */
     text-decoration: none; /* Elimina el subrayado predeterminado */
 }
+
+.menu h2 a:hover {
+    background-color: #004080; /* Fondo azul al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
 
 .menu ul {
     list-style-type: none;
