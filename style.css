@@ -60,7 +60,7 @@ h1 {
 
 .menu h2 a {
     font-size: inherit; /* Mantiene el tamaño del font de h2 */
-    color: #004080;
+    color: inherit;
     text-decoration: none; /* Elimina el subrayado predeterminado */
 }
 
