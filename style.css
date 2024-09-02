@@ -58,7 +58,7 @@ h1 {
     color: #004080; /* Color del título en la barra lateral */
 }
 
-.menu h2 a {
+.menu h2a {
     color: inherit; /* Hereda el color del elemento h2 */
     text-decoration: none; /* Elimina el subrayado predeterminado */
 }
