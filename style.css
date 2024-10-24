@@ -55,14 +55,22 @@ h1 {
 
 .menu h2 {
     margin-top: 0;
-    color: #004080; /* Color del título en la barra lateral */
+    margin-bottom: 20px; /* Espaciado uniforme entre títulos */
+    padding: 10px; /* Asegura que no haya relleno adicional */
+    padding-left: 10px;
+    color: #004080; /* Mantiene el color del título */
 }
 
 .menu h2 a {
     font-size: inherit; /* Mantiene el tamaño del font de h2 */
     color: inherit;
     text-decoration: none; /* Elimina el subrayado predeterminado */
+    display: block; /* Asegura que el enlace se comporte como bloque inline */
+    padding: 10px; /* Asegura que no haya relleno adicional */
+    padding-left: 0;
 }
+
+
 
 .menu h2 a:hover {
     background-color: #004080; /* Fondo azul al pasar el ratón */
@@ -76,6 +84,7 @@ h1 {
 
 .menu li {
     margin-bottom: 15px; /* Más espacio entre los elementos */
+    padding-left: 15px;
 }
 
 .menu a {
