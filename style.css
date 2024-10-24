@@ -66,7 +66,7 @@ h1 {
     color: inherit;
     text-decoration: none; /* Elimina el subrayado predeterminado */
     display: block; /* Asegura que el enlace se comporte como bloque inline */
-    padding: 10px; /* Asegura que no haya relleno adicional */
+    padding: 0; /* Asegura que no haya relleno adicional */
     padding-left: 0;
 }
 
