@@ -7539,11 +7539,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Los filtros son todos los comandos que reciben datos a través de la entrada estándar y luego transforman esos datos antes de enviarlos a la salida estándar. Tienen funcionalidades muy específicas y modulares, pero gracias a las herramientas vistas anteriormente se pueden combinar para obtener resultados más potentes. Los filtros más utilizados son:</p>
-<ul>
-<li><strong>cat</strong>: Muestra por la salida estándar el contenido de un archivo. Si no se indica ningún archivo, se comporta como un comando interactivo, esperando una cadena de caracteres por la entrada estándar como entrada.</li>
-</ul>
-</div>
+<div style="font-size: 18px">
+Los filtros son todos los comandos que reciben datos a través de la entrada estándar y luego transforman esos datos antes de enviarlos a la salida estándar. Tienen funcionalidades muy específicas y modulares, pero gracias a las herramientas vistas anteriormente se pueden combinar para obtener resultados más potentes. Los filtros más utilizados son:
+  - **<code>cat
+</code></div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bkK884ennIGb">
@@ -7589,9 +7588,11 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>tee</strong>: Transcribe su entrada estándar a su salida estándar además copiar su contenido en uno o varios archivos. Con la opción "-a", añade la información al archivo en vez de sobreescribirlo</li>
-</ul>
+<li><strong><code>tee</code></strong>: Transcribe su entrada estándar a su salida estándar además copiar su contenido en uno o varios archivos. Con la opción <code>-a</code>, añade la información al archivo en vez de sobreescribirlo</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7641,10 +7642,12 @@ root
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>wc</strong>: Cuenta el número de caracteres, palabras y líneas de un archivo
-pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modificadores "-c" (caracteres), "-l" (líneas) o "-w" (palabras) para que cuente sólo uno de ellos.</li>
-</ul>
+<li><strong><code>wc</code></strong>: Cuenta el número de caracteres, palabras y líneas de un archivo
+pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modificadores <code>-c</code> (caracteres), <code>-l</code> (líneas) o <code>-w</code> (palabras) para que cuente sólo uno de ellos.</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7689,9 +7692,11 @@ pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>sort</strong>: Ordena (por defecto alfabéticamente) las líneas de un archivo. Se pueden introducir los modificadores "-n" (ordenación numérica), "-r" (invierte la ordenación) o "-o" (escribe el resultado en un archivo) para cambiar su comportamiento.</li>
-</ul>
+<li><strong><code>sort</code></strong>: Ordena (por defecto alfabéticamente) las líneas de un archivo. Se pueden introducir los modificadores <code>-n</code> (ordenación numérica), <code>-r</code> (invierte la ordenación) o <code>-o</code> (escribe el resultado en un archivo) para cambiar su comportamiento.</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7758,13 +7763,15 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>cut</strong>: Extrae una cantidad variable de caracteres de cada línea de un archivo. Se puede indicar de dos formas:<ul>
-<li><strong>cut -f lista [-d carácter] [-s] [archivo1 ...]</strong>: La separación se hará mediante delimitadores (-d y/o -s).</li>
-<li><strong>cut -c lista [archivo1 ...]</strong>: Extrae los caracteres de las posiciones indicadas en lista de cada línea.</li>
-</ul>
-</li>
-</ul>
+<li><strong><code>cut</code></strong>: Extrae una cantidad variable de caracteres de cada línea de un archivo. Se puede indicar de dos formas:<ul>
+<li><strong><code>cut -f lista [-d carácter] [-s] [archivo1 ...]</code></strong>: La separación se hará mediante delimitadores (-d y/o -s).</li>
+<li><strong><code>cut -c lista [archivo1 ...]</code></strong>: Extrae los caracteres de las posiciones indicadas en lista de cada línea.</li></ul></li></ul></div>
+
+
+
+
 </div>
 </div>
 </div>
@@ -7813,12 +7820,15 @@ con ds li
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>tr</strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar:</li>
+<li><strong><code>tr</code></strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar: <br/><ul>
+<li><code>tr [opciones] CONJUNTO1 CONJUNTO2</code></li>
 </ul>
-<div class="highlight"><pre><span></span>tr<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>CONJUNTO1<span class="w"> </span>CONJUNTO2
-</pre></div>
-<p>Usando la opción -d, borra los caracteres del primer conjunto, sin indicar un segundo conjunto:</p>
+</li>
+</ul>
+<p>Usando la opción <code>-d</code>, borra los caracteres del primer conjunto, sin indicar un segundo conjunto:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7865,17 +7875,19 @@ con ds li
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>grep</strong>: Busca en un texto un patrón especificado y muestra las líneas que contengan ese patrón. Entre otros, se le pueden introducir los siguientes modificadores:<ul>
-<li>"-i": Ignora la diferencia entre mayúsculas y minúsculas</li>
-<li>"-n": Muestra el número de línea junto con la línea con el patrón</li>
-<li>"-v": Muestra las líneas que <strong>NO</strong> coinciden con el patrón</li>
-<li>"-c": Cuenta el número de líneas que coinciden con el patrón y muestra el número</li>
-<li>"-e": Permite especificar varios patrones a la vez</li>
-<li>"-f": Indica en qué archivo se encuentran los patrones a buscar</li>
-</ul>
-</li>
-</ul>
+<li><strong><code>grep</code></strong>: Busca en un texto un patrón especificado y muestra las líneas que contengan ese patrón. Entre otros, se le pueden introducir los siguientes modificadores:<ul>
+<li><code>-i</code>: Ignora la diferencia entre mayúsculas y minúsculas</li>
+<li><code>-n</code>: Muestra el número de línea junto con la línea con el patrón</li>
+<li><code>-v</code>: Muestra las líneas que <strong>NO</strong> coinciden con el patrón</li>
+<li><code>-c</code>: Cuenta el número de líneas que coinciden con el patrón y muestra el número</li>
+<li><code>-e</code>: Permite especificar varios patrones a la vez</li>
+<li><code>-f</code>: Indica en qué archivo se encuentran los patrones a buscar</li></ul></li></ul></div>
+
+
+
+
 </div>
 </div>
 </div>
@@ -7886,7 +7898,9 @@ con ds li
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <p><strong>Ejemplo</strong>: Se crea un archivo con el patrón a buscar y con la opción -f se indica que el patrón se encuentra en ese archivo:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7944,7 +7958,9 @@ con ds li
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Dado el archivo ejercicio.txt, muestra por pantalla el número de líneas en las que sus dos primeros caracteres sean "la" o "La" usando varios filtros:</p>
+<div style="font-size: 18px">
+Dado el archivo ejercicio.txt, muestra por pantalla el número de líneas en las que sus dos primeros caracteres sean "la" o "La" usando varios filtros:
+</div>
 </div>
 </div>
 </div>
@@ -7965,6 +7981,6 @@ con ds li
 </div>
 </div>
 </div>
-</main>
+</div></main>
 </body>
 </html>

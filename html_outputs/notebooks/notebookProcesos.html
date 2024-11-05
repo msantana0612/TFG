@@ -7550,8 +7550,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Un proceso en un sistema UNIX es una instancia en ejecución de un programa. Cada vez que se ejecuta un programa, el sistema operativo crea un proceso para gestionar su ejecución. <br/>
-En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema operativo se encarga de decidir cuánto tiempo dedica a cada proceso y debe gestionar los recursos que asigna a cada uno. Además, para poder identificar a cada proceso, se le asigna un ID para identificarlo, que se conoce como su PID (Process ID).</p>
+<div style="font-size: 18px">
+Un proceso en un sistema UNIX es una instancia en ejecución de un programa. Cada vez que se ejecuta un programa, el sistema operativo crea un proceso para gestionar su ejecución. <br/>
+En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema operativo se encarga de decidir cuánto tiempo dedica a cada proceso y debe gestionar los recursos que asigna a cada uno. Además, para poder identificar a cada proceso, se le asigna un ID para identificarlo, que se conoce como su PID (Process ID).
+
 <p>Para gestionar eficientemente los recursos del sistema y la ejecución de los procesos, el sistema operativo asigna a cada proceso un estado diferente. Estos estados reflejan la situación actual del proceso respecto a su ejecución y sus interacciones con el sistema. Los principales estados que un proceso puede tener son:</p>
 <ul>
 <li><p><strong>Activo</strong> (Running): El proceso está actualmente utilizando la CPU para realizar su tarea.</p>
@@ -7563,8 +7565,9 @@ En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema opera
 </ul>
 </li>
 <li><p><strong>Zombi</strong> (Zombie): El proceso ha terminado su ejecución, pero su entrada en la tabla de procesos aún no ha sido eliminada porque su proceso padre no ha leído su código de salida. Los procesos zombis mantienen su PID hasta que el proceso padre recoja el estado de salida.</p>
-</li>
-</ul>
+</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7597,17 +7600,20 @@ En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema opera
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La monitorización de procesos es una tarea fundamental para mantener el sistema en buen estado y asegurarse de que todo funcione correctamente. Al monitorear los procesos, podemos ver información de los procesos como su PID, su estado, los recursos utilizados y, en general, tener un mayor control sobre lo que sucede en el sistema. Existen diferentes órdenes que cumplen esta función:</p>
+<div style="font-size: 18px">
+La monitorización de procesos es una tarea fundamental para mantener el sistema en buen estado y asegurarse de que todo funcione correctamente. Al monitorear los procesos, podemos ver información de los procesos como su PID, su estado, los recursos utilizados y, en general, tener un mayor control sobre lo que sucede en el sistema. Existen diferentes órdenes que cumplen esta función:
+
 <ul>
-<li><p><strong>ps</strong>: Muestra información de los procesos en ejecución en un momento determinado de diferentes formas, ya que cuenta con muchas opciones diferentes, entre ellas destacan:</p>
+<li><p><strong><code>ps</code></strong>: Muestra información de los procesos en ejecución en un momento determinado de diferentes formas, ya que cuenta con muchas opciones diferentes, entre ellas destacan:</p>
 <ul>
-<li><p><strong>aux</strong>: Es una combinación de las opciones "a" (muestra todos los procesos de todos los usuarios), "u" (muestra información como el nombre de usuario, uso de CPU y memoria, etc) y "x" (incluye procesos que no están asociados a una terminal)</p>
+<li><p><strong><code>aux</code></strong>: Es una combinación de las opciones <code>-a</code> (muestra todos los procesos de todos los usuarios), <code>-u</code> (muestra información como el nombre de usuario, uso de CPU y memoria, etc) y <code>-x</code> (incluye procesos que no están asociados a una terminal)</p>
 </li>
-<li><p><strong>-ef</strong>: Combina las opciones "-e" (todos los procesos del sistema, similar a "a") y "-f" (información en formato completo)</p>
-</li>
-</ul>
-</li>
-</ul>
+<li><p><strong><code>-ef</code></strong>: Combina las opciones <code>-e</code> (todos los procesos del sistema, similar a <code>-a</code>) y <code>--f</code> (información en formato completo)</p>
+</li></ul></li></ul></div>
+
+
+
+
 </div>
 </div>
 </div>
@@ -7720,15 +7726,17 @@ root        3073     315  0 12:28 ?        00:00:00 ps -ef
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><p><strong>top</strong>: Es un comando interactivo que muestra la información de los procesos en tiempo real, actualizándose cada pocos segundos que permite, por ejemplo, matar procesos desde la propia interfaz pulsando la tecla "k". Para salir de esta interfaz, hay que pulsar la tecla "q". Existe una versión actualizada de este comando (<strong>htop</strong>) con una interfaz más atractiva y mayor interactividad. También cuenta con diferentes opciones:</p>
+<li><p><strong><code>top</code></strong>: Es un comando interactivo que muestra la información de los procesos en tiempo real, actualizándose cada pocos segundos que permite, por ejemplo, matar procesos desde la propia interfaz pulsando la tecla "k". Para salir de esta interfaz, hay que pulsar la tecla "q". Existe una versión actualizada de este comando (<code>htop</code>) con una interfaz más atractiva y mayor interactividad. También cuenta con diferentes opciones:</p>
 <ul>
-<li><strong>-n</strong>: Permite indicar un número de actualizaciones concreto hasta pararse. Si no se indica, se actualizará hasta que se indique la salida del proceso.</li>
-<li><strong>-p PID</strong>: Con esta opción y un PID, se muestra solo la información de un proceso concreto.</li>
-<li><strong>-b</strong>: Indica al proceso que se debe ejecutar en segundo plano (background).</li>
-</ul>
-</li>
-</ul>
+<li><strong><code>-n</code></strong>: Permite indicar un número de actualizaciones concreto hasta pararse. Si no se indica, se actualizará hasta que se indique la salida del proceso.</li>
+<li><strong><code>-p PID</code></strong>: Con esta opción y un PID, se muestra solo la información de un proceso concreto.</li>
+<li><strong><code>-b</code></strong>: Indica al proceso que se debe ejecutar en segundo plano (background).</li></ul></li></ul></div>
+
+
+
+
 </div>
 </div>
 </div>
@@ -7830,7 +7838,9 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Las señales son una forma de comunicación entre procesos que permite enviar órdenes simples como finalizar, pausar, o reiniciar un proceso. Estas señales están identificadas mediante un número, que indica al proceso que la recibe qué debe hacer. Las señales más comunes son:</p>
+<div style="font-size: 18px">
+Las señales son una forma de comunicación entre procesos que permite enviar órdenes simples como finalizar, pausar, o reiniciar un proceso. Estas señales están identificadas mediante un número, que indica al proceso que la recibe qué debe hacer. Las señales más comunes son:
+
 <table>
 <thead>
 <tr>
@@ -7879,9 +7889,10 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 </table>
 <p>Para mandar estas señales, existen los siguientes comandos:</p>
 <ul>
-<li><strong>kill PID</strong>: Manda una señal al proceso identificado con el PID correspondiente.Aunque su nombre sugiere que solo se usa para terminar procesos, en realidad puede enviar varias señales. Si no se indica explícitamente mediante un guión y el número de la señal ("-9" manda un <strong>SIGKILL</strong>), manda por defecto un <strong>SIGTERM</strong>.</li>
-<li><strong>killall name</strong>: Envía señales a todos los procesos que coincidan con un nombre específico, en lugar de tener que buscar un PID concreto.</li>
-</ul>
+<li><strong><code>kill PID</code></strong>: Manda una señal al proceso identificado con el PID correspondiente.Aunque su nombre sugiere que solo se usa para terminar procesos, en realidad puede enviar varias señales. Si no se indica explícitamente mediante un guión y el número de la señal (<code>-9</code> manda un <code>SIGKILL</code>), manda por defecto un <code>SIGTERM</code>.</li>
+<li><strong><code>killall nombre</code></strong>: Envía señales a todos los procesos que coincidan con un nombre específico, en lugar de tener que buscar un PID concreto.</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7920,7 +7931,9 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para capturar estas señales, el comando <strong>trap</strong> nos permite ejecutar un comando concreto solo con la llegada de una señal:</p>
+<div style="font-size: 18px">
+<p>Para capturar estas señales, el comando <code>trap</code> nos permite ejecutar un comando concreto solo con la llegada de una señal:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7968,7 +7981,9 @@ Script is exiting!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Pese a que la orden trap esté la primera, el comando <strong>echo</strong> no se ejecuta hasta que detecte la señal de EXIT, es decir, acabe el programa.</p>
+<div style="font-size: 18px">
+<p>Pese a que la orden <code>trap</code> esté la primera, el comando <code>echo</code> no se ejecuta hasta que detecte la señal de EXIT, es decir, acabe el programa.</p>
+</div>
 </div>
 </div>
 </div>
@@ -7990,15 +8005,17 @@ Script is exiting!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <p><strong>Ejemplo</strong>: Para mostrar un proceso en estado zombi:</p>
 <ul>
-<li>Ejecutamos un <strong>sleep</strong> (duerme el proceso durante unos segundos) junto con el carácter "&amp;" para que se ejecute en segundo plano</li>
-<li>Obtenemos su PID mediante la variable $! (almacena el PID del último programa que se ejecutó en segundo plano) y lo guardamos en una variable shell</li>
-<li>Mostramos el PID, el estado y la orden del proceso anterior mediante la orden <strong>ps</strong> (muestra información sore los procesos en eejcución) con el modificador "-p" junto con la variable SHELL, y el modificador "-o" para indicar qué campos mostrar</li>
+<li>Ejecutamos un <code>sleep</code> (duerme el proceso durante unos segundos) junto con el carácter <code>&amp;</code> para que se ejecute en segundo plano</li>
+<li>Obtenemos su PID mediante la variable <code>$!</code> (almacena el PID del último programa que se ejecutó en segundo plano) y lo guardamos en una variable shell</li>
+<li>Mostramos el PID, el estado y la orden del proceso anterior mediante la orden <code>ps</code> (muestra información sore los procesos en eejcución) con el modificador <code>-p</code> junto con la variable SHELL, y el modificador <code>-o</code> para indicar qué campos mostrar</li>
 <li>Esperamos unos segundos</li>
-<li>Con la orden <strong>kill</strong> (envía una señal a un proceso) finalizamos el proceso inicial</li>
-<li>Volvemos a mostrar los datos del proceso</li>
-</ul>
+<li>Con la orden <code>kill</code> (envía una señal a un proceso) finalizamos el proceso inicial</li>
+<li>Volvemos a mostrar los datos del proceso</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -8055,7 +8072,9 @@ Process 8316 killed
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>En el campo STAT, se muestra como mientras se está ejecutando está en el estado S (sleep), pero al matar el proceso queda en el estado Z (zombie).</p>
+<div style="font-size: 18px">
+<p>En el campo STAT, se muestra como mientras se está ejecutando está en el estado "S" (Sleep), pero al matar el proceso queda en el estado "Z" (Zombie).</p>
+</div>
 </div>
 </div>
 </div>

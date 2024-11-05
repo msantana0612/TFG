@@ -7533,24 +7533,15 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64b49852-cf45-445b-b334-26674f3ef795">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Permisos</h2>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c5676ae-0e7c-44d7-9fba-65728b63b5b8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Al usar el comando "ls -l", se muestra más detalles sobre los archivos y directorios. Entre ellos, al principio se muestra una cadena de letras:</p>
+<div style="font-size: 18px">
+Al usar el comando <code>ls -l</code>, se muestra más detalles sobre los archivos y directorios. Entre ellos, al principio se muestra una cadena de letras:
+</div>
 </div>
 </div>
 </div>
@@ -7622,6 +7613,7 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <p>Estas letras son los <strong>permisos</strong> de cada archivo o directorio. Estos permisos indican qué usuarios pueden leer (r), escribir (w) o ejecutar (x) cada archivo. Además, la primera letra sirve para indicar el tipo de archivo.</p>
 <p>Cada uno de estos tres permisos (rwx) se indican para tres tipos de usuarios:</p>
 <ul>
@@ -7630,6 +7622,7 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 <li>Permisos del resto de usuarios distintos del sistema</li>
 </ul>
 <p>Para indicar que un usuario no tiene un permiso concreto, se indica con "-" en vez de la letra correspondiente</p>
+</div>
 </div>
 </div>
 </div>
@@ -7651,25 +7644,23 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para poder manejar estos permisos, existen los siguientes comandos:</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=UcozGIW7dN_-">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
+Para poder manejar estos permisos, existen los siguientes comandos:
+
 <ul>
-<li><p><strong>chmod</strong>: Cambia los permisos de un archivo o directorio. Sólo puede ser utilizado por el propietario de es archivo o por el superusuario. Se puede indicar de dos formas:</p>
+<li><p><strong><code>chmod</code></strong>: Cambia los permisos de un archivo o directorio. Sólo puede ser utilizado por el propietario de es archivo o por el superusuario. Se puede indicar de dos formas:</p>
 <ul>
-<li><strong>Notación Simbólica</strong>: Se indica primero a qué usuarios vamos a cambiarle los permisos (user, group, others o all), seguido de qué acción se hará (añadir, quitar o establecer) y finalmente los permisos a modificar (rwx): "chmod [ugoa][+-=][rwx] archivo"</li>
-<li><strong>Notación Octal</strong>: Mediante tres números (uno para cada tipo de usuarios) se indica qué permisos tendrá el archivo. Estos números son de 3 bits (de 0 a 7). Esta representación binaria indica qué permisos se pondrán a verdadero (a un 1) y cuáles a falso (a un 0). Por ejemplo, el 7 (111) indica que los tres permisos estarán a verdadero, mientras que el 3 (011) indica que la lectura está deshabilitada pero la escritura y la ejecución estarán a verdadero.</li>
+<li><p><strong>Notación Simbólica</strong>: Se indica primero a qué usuarios vamos a cambiarle los permisos (user, group, others o all), seguido de qué acción se hará (añadir, quitar o establecer) y finalmente los permisos a modificar (rwx):</p>
+<ul>
+<li><code>chmod [ugoa][+-=][rwx] archivo</code></li>
 </ul>
 </li>
-</ul>
+<li><p><strong>Notación Octal</strong>: Mediante tres números (uno para cada tipo de usuarios) se indica qué permisos tendrá el archivo. Estos números son de 3 bits (de 0 a 7). Esta representación binaria indica qué permisos se pondrán a verdadero (a un 1) y cuáles a falso (a un 0). Por ejemplo, el 7 (111) indica que los tres permisos estarán a verdadero, mientras que el 3 (011) indica que la lectura está deshabilitada pero la escritura y la ejecución estarán a verdadero.</p>
+</li></ul></li></ul></div>
+
+
+
+
 </div>
 </div>
 </div>
@@ -7732,9 +7723,11 @@ drwxr-xr-x 1 alumno root 4096 Aug 23 13:20 sample_data
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>chown</strong>: Indicando un usuario y un archivo, cambia el dueño de ese archivo o directorio al usuario indicado. También puede cambiar su grupo si en vez de indicar sólo el usuario se indica el grupo (usuario:grupo)</li>
-</ul>
+<li><strong><code>chown</code></strong>: Indicando un usuario y un archivo, cambia el dueño de ese archivo o directorio al usuario indicado. También puede cambiar su grupo si en vez de indicar sólo el usuario se indica el grupo (usuario:grupo)</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7789,9 +7782,11 @@ drwxr-xr-x 1 alumno root 4096 Aug 23 13:20 sample_data
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>chgrp</strong>: Cambia el grupo de un archivo o directorio</li>
-</ul>
+<li><strong>chgrp</strong>: Cambia el grupo de un archivo o directorio  </li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7846,9 +7841,11 @@ drwxr-xr-x 1 alumno grupo 4096 Aug 23 13:20 sample_data
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 <ul>
-<li><strong>umask</strong>: Cambia la máscara por defecto al crear archivos y directorios. Si no se le introduce ningún argumento, muestra la máscara actual. Esta máscara indica con notación octal qué permisos no se darán por defecto cuando se cree un archivo. Por defecto, para los archivos los permisos máximos son 666 (sólo escritura y lectura, pero no ejecución) mientras que para los directorios es 777 (todos los permisos). Al aplicar la máscara, se determinan qué permisos tendrá al crearse: 666 - 026 = 640 (rw-r-----)</li>
-</ul>
+<li><strong>umask</strong>: Cambia la máscara por defecto al crear archivos y directorios. Si no se le introduce ningún argumento, muestra la máscara actual. Esta máscara indica con notación octal qué permisos no se darán por defecto cuando se cree un archivo. Por defecto, para los archivos los permisos máximos son 666 (sólo escritura y lectura, pero no ejecución) mientras que para los directorios es 777 (todos los permisos). Al aplicar la máscara, se determinan qué permisos tendrá al crearse: 666 - 026 = 640 (rw-r-----)</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7900,9 +7897,19 @@ drwxr-xr-x 1 alumno grupo 4096 Aug 23 13:20 sample_data
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3>Ejercicio</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=36e79cab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 18px">
 Modifica los permisos del siguiente archivo para que pueda ser leído por todos los usuarios, pero solo modificado y ejecutado por el creador. Además modifica su propietario y su grupo por tu nombre y apellido:
-
-
+</div>
 </div>
 </div>
 </div>
