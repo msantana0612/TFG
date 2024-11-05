@@ -7550,17 +7550,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Cada proceso tiene definido por defecto varios descriptores de archivos, que indicán a qué archivo o dispositivo accederán para leer o mostrar los datos. Los descriptores por defecto son los siguientes:</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=QykMHBFMrkWE">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+Cada proceso tiene definido por defecto varios descriptores de archivos, que indicán a qué archivo o dispositivo accederán para leer o mostrar los datos. Los descriptores por defecto son los siguientes:
+
 <table>
 <thead>
 <tr>
@@ -7573,39 +7565,30 @@ a.anchor-link {
 <tbody>
 <tr>
 <td>0</td>
-<td>stdin</td>
+<td><code>stdin</code></td>
 <td>Teclado del terminal por defecto</td>
 <td>Entrada de datos estándar que utiliza el proceso</td>
 </tr>
 <tr>
 <td>1</td>
-<td>stdout</td>
+<td><code>stdout</code></td>
 <td>Pantalla del terminal por defecto</td>
 <td>Salida de datos estándar que utiliza el proceso</td>
 </tr>
 <tr>
 <td>2</td>
-<td>stderr</td>
+<td><code>stderr</code></td>
 <td>Pantalla del terminal por defecto</td>
 <td>Salida de datos que utiliza el proceso en caso de encontrar algún error</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=QF3CX6AbtEdC">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Para cambiar estos descriptores, se usan las <strong>redirecciones</strong>. Las redirecciones ayudan a cambiar estos descriptores por defecto por otros que nos interesen, como tomar datos de un archivo concreto en vez de el teclado, o guardar el resultado de un comando en un archivo para poder visualizarlo o registrarlo. <br/>
 Existen tres tipos de redirecciones:</p>
 <ul>
-<li><strong>Entrada estándar (stdin)</strong>: Se usa con "&lt;", y sustituye al teclado como entrada estándar. Por ejemplo, al usar la orden <strong>sort</strong> junto con la "&lt;", toma como entrada el archivo y muestra su contenido ordenado alfabéticamente:</li>
-</ul>
+<li><strong>Entrada estándar (<code>stdin</code>)</strong>: Se usa con <code>&lt;</code>, y sustituye al teclado como entrada estándar. Por ejemplo, al usar la orden <code>sort</code> junto con la <code>&lt;</code>, toma como entrada el archivo y muestra su contenido ordenado alfabéticamente:</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7671,9 +7654,11 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
 <ul>
-<li><strong>Salida estándar (stdout)</strong>: Se usa con "&gt;" o "&gt;&gt;", y permite guardar el resultado que se mostraría en la terminal en un archivo. La diferencia entre usar "&gt;" y "&gt;&gt;" es que al usar solo un carácter sustituye el contenido del archivo por el nuevo, mientras que si se usan dos añade el nuevo contenido al archivo.</li>
-</ul>
+<li><strong>Salida estándar (<code>stdout</code>)</strong>: Se usa con <code>&gt;</code> o <code>&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en un archivo. La diferencia entre usar <code>&gt;</code> y <code>&gt;&gt;</code> es que al usar solo un carácter sustituye el contenido del archivo por el nuevo, mientras que si se usan dos añade el nuevo contenido al archivo.</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7721,9 +7706,11 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
 <ul>
-<li><strong>Salida de errores estándar (stderr)</strong>: Se usa con "2&gt;" o "2&gt;&gt;", y permite guardar el resultado que se mostraría en la terminal en caso de encontrar un error en un archivo. La diferencia entre "2&gt;" y "2&gt;&gt;" es la misma que en el caso de la salida estándar. Por ejemplo, si intentamos mover un archivo que no existe, saltará un error, que se guarda en un archivo. Como se usa "2&gt;", aunque se haga dos veces, el archivo sólo contiene el texto de la segunda ejecución porque sustituye el contenido anterior:</li>
-</ul>
+<li><strong>Salida de errores estándar (<code>stderr</code>)</strong>: Se usa con <code>2&gt;</code> o <code>2&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en caso de encontrar un error en un archivo. La diferencia entre <code>2&gt;</code> y <code>2&gt;&gt;</code> es la misma que en el caso de la salida estándar. Por ejemplo, si intentamos mover un archivo que no existe, saltará un error, que se guarda en un archivo. Como se usa <code>2&gt;</code>, aunque se haga dos veces, el archivo sólo contiene el texto de la segunda ejecución porque sustituye el contenido anterior:</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7781,7 +7768,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Guarda en un archivo usando redirecciones el contenido detallado de los archivos y directorios del directorio raíz y muestra el archivo</p>
+<div style="font-size: 17px">
+Guarda en un archivo usando redirecciones el contenido detallado de los archivos y directorios del directorio raíz y muestra el archivo:
+</div>
 </div>
 </div>
 </div>
@@ -7818,7 +7807,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para poder mostrar el número total de archivos de un directorio, se pueden usar las redirecciones vistas anteriormente para poder comunicar los procesos entre sí, usando un archivo temporal entre medias. Primero obtenemos todos los archivos del directorio raíz por la orden <strong>ls</strong> y redireccionamos su salida al archivo tmp, redireccionamos la entrada de la orden <strong>wc -w</strong> (cuenta todas las palabras) al archivo tmp y finalmente borramos el archivo temporal:</p>
+<div style="font-size: 17px">
+<p>Para poder mostrar el número total de archivos de un directorio, se pueden usar las redirecciones vistas anteriormente para poder comunicar los procesos entre sí, usando un archivo temporal entre medias. Primero obtenemos todos los archivos del directorio raíz por la orden <code>ls</code> y redireccionamos su salida al archivo tmp, redireccionamos la entrada de la orden <code>wc -w</code> (cuenta todas las palabras) al archivo tmp y finalmente borramos el archivo temporal:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7865,7 +7856,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Esta misma acción se puede completar en una sola línea usando tuberías y sin usar archivos temporales:</p>
+<div style="font-size: 17px">
+Esta misma acción se puede completar en una sola línea usando tuberías y sin usar archivos temporales:
+</div>
 </div>
 </div>
 </div>
@@ -7910,7 +7903,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Las tuberías ("|") conectan la salida estándar de un proceso con la entrada estándar de otro, permitiendo hacer cadenas de comandos que, en una sola línea, pueden realizar múltiples operaciones de manera eficiente. Esto nos permite combinar diferentes comandos con funciones específicas para sacar un resultado específico de forma concisa.</p>
+<div style="font-size: 17px">
+Las tuberías (<code>|</code>) conectan la salida estándar de un proceso con la entrada estándar de otro, permitiendo hacer cadenas de comandos que, en una sola línea, pueden realizar múltiples operaciones de manera eficiente. Esto nos permite combinar diferentes comandos con funciones específicas para sacar un resultado específico de forma concisa.
+</div>
 </div>
 </div>
 </div>
@@ -7932,7 +7927,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Usando tanto redirecciones como tuberías, guarda en un archivo "ejercicio.txt" todos los archivos del directorio raíz que contengan la letra "a" (usando la orden <strong>grep a</strong>, que se explicará en la siguiente unidad) y muestra el contenido del archivo:</p>
+<div style="font-size: 17px">
+Usando tanto redirecciones como tuberías, guarda en un archivo "ejercicio.txt" todos los archivos del directorio raíz que contengan la letra "a" (usando la orden <code>grep a</code>, que se explicará en la siguiente unidad) y muestra el contenido del archivo:
+</div>
 </div>
 </div>
 </div>
