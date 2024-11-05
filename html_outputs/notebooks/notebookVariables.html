@@ -7539,17 +7539,20 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de variables clave: variables de entorno y variables de shell. Aunque ambas son fundamentales para la gestión de la configuración y el funcionamiento del sistema, tienen características y usos diferentes.</p>
+<div style="font-size: 17px">
+En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de variables clave: variables de entorno y variables de shell. Aunque ambas son fundamentales para la gestión de la configuración y el funcionamiento del sistema, tienen características y usos diferentes.
+
 <ul>
 <li><p>Las variables de entorno son pares de clave-valor que contienen información accesible por todos los procesos en el sistema, como el usuario, los scripts y las aplicaciones. Estas variables son "globales" en el sentido de que cualquier proceso hijo que se ejecute desde la terminal puede acceder a ellas. Ejemplos de variables de entorno definidas por el sistema son:</p>
 <ul>
-<li><code>USER </code>:  Nombre del usuario actual.</li>
-<li><code>HOME </code>:  Directorio personal de <code>USER </code>.</li>
-<li><code>PATH </code>:  Lista de rutas donde se encuentran los ejecutables de los coamndos.</li>
+<li><code>USER</code>:  Nombre del usuario actual.</li>
+<li><code>HOME</code>:  Directorio personal de <code>USER</code>.</li>
+<li><code>PATH</code>:  Lista de rutas donde se encuentran los ejecutables de los coamndos.</li>
 </ul>
 </li>
 </ul>
-<p>Con el comando <strong>printenv</strong> o <strong>env</strong>, podemos ver todas las variables de entorno del sistema:</p>
+<p>Con el comando <code>printenv</code> o <code>env</code>, podemos ver todas las variables de entorno del sistema:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7691,10 +7694,12 @@ _=/usr/bin/env
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
 <ul>
 <li>Las variables shell son aquellas que solo existen en la sesión de shell actual. Pueden ser tanto variables locales como variables de entorno, pero las locales solo están disponibles dentro de la sesión de terminal donde se crean, y no se transmiten automáticamente a los procesos hijos. <br/>
-Para crear una variable shell, se indica el nombre de la variable seguida del símbolo "=" y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo "$" antes de la variable:</li>
-</ul>
+Para crear una variable shell, se indica el nombre de la variable seguida del símbolo <code>=</code> y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo <code>$</code> antes de la variable:</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7775,7 +7780,9 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Si queremos que una variable shell se importe a procesos hijos, podemos usar la orden <strong>export</strong> para realizar este cambio:</p>
+<div style="font-size: 17px">
+Si queremos que una variable shell se importe a procesos hijos, podemos usar la orden <code>export</code> para realizar este cambio:
+</div>
 </div>
 </div>
 </div>
