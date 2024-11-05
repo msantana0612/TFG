@@ -7539,7 +7539,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 18px">
+<div style="font-size: 17px">
 En los sistemas Unix y Linux, los enlaces son una característica poderosa del sistema de archivos, que permiten crear múltiples referencias a archivos y directorios sin necesidad de duplicar su contenido. Este concepto es análogo a los "accesos directos" en Windows, pero con diferencias significativas en cómo funcionan a nivel interno. Existen dos tipos de enlaces:
 
 <ul>
@@ -7581,7 +7581,7 @@ En los sistemas Unix y Linux, los enlaces son una característica poderosa del s
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 18px">
+<div style="font-size: 17px">
 Los archivos en Linux se gestionan mediante **inodos** (inodes), que contienen la información sobre los archivos, como su tamaño, permisos, y las ubicaciones de los bloques de datos en el disco. Cada archivo tiene un **inode** asociado, pero los enlaces fuertes permiten que varios nombres de archivo compartan el mismo **inode**, apuntando al mismo conjunto de bloques de datos en el disco.
 
 <p>Por otro lado, los enlaces simbólicos son archivos normales que contienen el nombre o la ruta del archivo al que apuntan. No comparten el <strong>inode</strong> con el archivo original; en lugar de ello, tienen su propio <strong>inode</strong> que contiene la referencia a otro archivo.</p>
@@ -7596,7 +7596,7 @@ Los archivos en Linux se gestionan mediante **inodos** (inodes), que contienen l
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 18px">
+<div style="font-size: 17px">
 Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del archivo original y del nombre que tendrá el archivo enlace (para los enlaces débiles hay que añadir el modificador <code>-s</code>).
 
 <ul>
