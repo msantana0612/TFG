@@ -7552,13 +7552,13 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 Un proceso en un sistema UNIX es una instancia en ejecución de un programa. Cada vez que se ejecuta un programa, el sistema operativo crea un proceso para gestionar su ejecución. <br/>
-En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema operativo se encarga de decidir cuánto tiempo dedica a cada proceso y debe gestionar los recursos que asigna a cada uno. Además, para poder identificar a cada proceso, se le asigna un ID para identificarlo, que se conoce como su PID (Process ID).
+En un sistema, varios procesos se ejecutan a la vez, por lo que el sistema operativo se encarga de decidir cuánto tiempo dedica a cada proceso y debe gestionar los recursos que asigna a cada uno. Además, para poder identificar a cada proceso, se le asigna un identificador, que se conoce como su PID (Process ID).
 
 <p>Para gestionar eficientemente los recursos del sistema y la ejecución de los procesos, el sistema operativo asigna a cada proceso un estado diferente. Estos estados reflejan la situación actual del proceso respecto a su ejecución y sus interacciones con el sistema. Los principales estados que un proceso puede tener son:</p>
 <ul>
 <li><p><strong>Activo</strong> (Running): El proceso está actualmente utilizando la CPU para realizar su tarea.</p>
 </li>
-<li><p><strong>Dormido</strong> (Sleeping): El proceso está esperando que ocurra un evento o que se libere un recurso. Para llegar a este estado, se puede usar el comando <strong>sleep</strong> seguido de los segundos que estará dormido. Este estado puede dividirse en:</p>
+<li><p><strong>Dormido</strong> (Sleeping): El proceso está esperando que ocurra un evento o que se libere un recurso. Para llegar a este estado, se puede usar el comando <code>sleep</code> seguido de los segundos que estará dormido. Este estado puede dividirse en:</p>
 <ul>
 <li><strong>Detenido</strong>: El proceso está esperando un evento que puede ser interrumpido por señales.</li>
 <li><strong>Espera</strong>: El proceso está esperando una operación de entrada/salida y no puede ser interrumpido.</li>

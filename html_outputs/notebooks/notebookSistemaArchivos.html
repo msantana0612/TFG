@@ -7576,7 +7576,7 @@ En un sistema Unix/Linux, la estructura de directorios sigue una jerarquía bien
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p><strong><code>/</code></strong>: Directorio raíz que contiene todos los archivos y directorios del sistema.</p>
-<p><strong><code>/bin</code></strong>: Almacena comandos binarios esenciales para el sistema y los usuarios.</p>
+<p><strong><code>/bin</code></strong>: Almacena archivos ejecutables de comandos esenciales para el sistema y los usuarios.</p>
 <p><strong><code>/boot</code></strong>: Contiene los archivos necesarios para arrancar el sistema, como el kernel y el bootloader.</p>
 <p><strong><code>/dev</code></strong>: Almacena archivos especiales que representan dispositivos de hardware del sistema.</p>
 <p><strong><code>/etc</code></strong>: Directorio de configuración que guarda archivos de configuración del sistema y servicios.</p>
@@ -7584,9 +7584,9 @@ En un sistema Unix/Linux, la estructura de directorios sigue una jerarquía bien
 <p><strong><code>/lib</code></strong>: Guarda las bibliotecas compartidas necesarias para que los programas en /bin y /sbin funcionen.</p>
 <p><strong><code>/mnt</code></strong>: Directorio en donde comúnmente se montan los sistemas de archivos. Por ejemplo,
 si se quiere acceder a una memoria USB, se debe montar este dispositivo sobre el
-directorio /mnt, de manera que todo lo que cuelgue de /mnt sería el contenido de la
+directorio <code>/mnt</code>, de manera que todo lo que cuelgue de <code>/mnt</code> sería el contenido de la
 memoria.</p>
-<p><strong><code>/root</code></strong>: Directorio home del administrador del sistema, conocido como usuario root o superusuario</p>
+<p><strong><code>/root</code></strong>: Directorio <code>home</code> del administrador del sistema, conocido como usuario root o superusuario</p>
 <p><strong><code>/tmp</code></strong>: Directorio temporal donde los programas almacenan archivos que suelen ser eliminados al reiniciar.</p>
 <p><strong><code>/usr</code></strong>: Incluye aplicaciones y archivos del sistema no esenciales para el arranque, como programas instalados.</p>
 <p><strong><code>/sbin</code></strong>: Contiene binarios para la administración del sistema, generalmente usados por el superusuario.</p>
@@ -7602,7 +7602,7 @@ memoria.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para cambiar el directorio en el que ejecutamos los comandos, existe el comando <code>cd</code>, que nos llevará al directorio que indiquemos. Si se introduce el comando sin ningún argumento, éste nos llevará al conocido como directorio de conexión, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
+<p>Para cambiar el directorio en el que ejecutamos los comandos existe el comando <code>cd</code>, que nos llevará al directorio que indiquemos. Si se introduce el comando sin ningún argumento, éste nos llevará al conocido como directorio de conexión, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
 <p>Otro comando útil es <code>pwd</code>, que nos muestra el directorio en el que nos encontramos actualmente.</p>
 </div>
 </div>
@@ -7651,7 +7651,7 @@ memoria.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Además del directorio de conexión, otros directorios indicados con caracteres especiales son <code>.</code> y <code>..</code>. Un único punto es equivalente a el directorio actual (el que mostrará <code>pwd</code>), mientras que dos puntos indican el directorio padre del directorio actual (si usamos los dos puntos junto con el comando <code>cd</code> nos "salimos" de la carpeta).
+Además del directorio de conexión, otros directorios indicados con caracteres especiales son <code>.</code> y <code>..</code>. Un único punto es equivalente al directorio actual (el que mostrará <code>pwd</code>), mientras que dos puntos indican el directorio padre del directorio actual (si usamos los dos puntos junto con el comando <code>cd</code> nos "salimos" de la carpeta).
 
 <p><strong>Ejemplo</strong>: Si vamos al directorio de conexión e introducimos el comando <code>cd ..</code>, cambiaremos el directorio actual (<code>.</code>) por el directorio padre del directorio de conexión (<code>/root</code>), que en nuestro caso es el directorio raíz:</p>
 </div>
@@ -7712,7 +7712,7 @@ Además del directorio de conexión, otros directorios indicados con caracteres 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Completa la siguiente cadena de comandos para que al final se muestre que el directorio actual es /home:
+Completa la siguiente cadena de comandos para que al final se muestre que el directorio actual es <code>/home</code>:
 </div>
 </div>
 </div>
@@ -7742,7 +7742,7 @@ Completa la siguiente cadena de comandos para que al final se muestre que el dir
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Finalmente, para hacer referencia a un directorio o un archivo, hay dos formas principales de hacerlo:
+Para hacer referencia a un directorio o un archivo, hay dos formas principales de hacerlo:
 
 <ul>
 <li><p>Ruta absoluta: Esto es, partiendo del directorio raíz (empezando por <code>/</code>) y pasando por todos los directorios hasta llegar al directorio deseado.</p>
@@ -7882,7 +7882,7 @@ Finalmente, para hacer referencia a un directorio o un archivo, hay dos formas p
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Es importante ser capaz también de visualizar los contenidos tanto de directorios como de archivos. En el caso de un directorio, el comando más usado es <code>ls</code>. Con este comando, podemos visualizar todos los directorios y los archivos de una ruta concreta, aunque en caso de no pasar ninguna ruta usará el directorio actual. Además, se le pueden introducir modificadores utilizando el símbolo <code>-</code> antes, que modifican el comportamiento de la orden, como por ejemplo <code>-l</code>, que muestra más detalles sobre los archivos y directorios:
+Es importante ser capaz de visualizar los contenidos tanto de directorios como de archivos. En el caso de un directorio, el comando más usado es <code>ls</code>. Con este comando, podemos visualizar todos los directorios y los archivos de una ruta concreta, aunque en caso de no pasar ninguna ruta usará el directorio actual. Además, se le pueden introducir modificadores utilizando el símbolo <code>-</code> antes, que modifican el comportamiento de la orden, como por ejemplo <code>-l</code>, que muestra más detalles sobre los archivos y directorios:
 </div>
 </div>
 </div>
@@ -7967,7 +7967,7 @@ drwxr-xr-x 1 root root 4096 Aug 22 13:24 sample_data
 Para poder visualizar un archivo, existen diversas opciones, aunque las más utilizadas son:
 
 <ul>
-<li><strong><code>cat</code></strong>: Para utilizar esta instrucción, basta con introducir la ruta del archivo que se quiere visualizar a continuación del comando</li>
+<li><strong><code>cat</code></strong>: Para utilizar esta instrucción, basta con introducir la ruta del archivo que se quiere visualizar a continuación del comando.</li>
 <li><strong><code>head</code></strong>: Sirve para mostrar solo las primeras líneas de un archivo, por defecto 10. Para modificar este número, hay que añadir el modificador <code>-n</code> seguido del número de líneas a mostrar.</li>
 <li><strong><code>tail</code></strong>: Funciona igual que la orden <code>head</code>, pero muestra las últimas líneas en vez de las primeras.</li></ul></div>
 
@@ -8119,9 +8119,32 @@ Para copiar y borrar archivos, existen las siguientes instrucciones:
 <li><strong><code>rm</code></strong>: Sirve para eliminar archivos, indicándole el nombre del archivo a borrar.</li>
 <li><strong><code>rmdir</code></strong>: Borra el directorio indicado, aunque debe de estar vacío.</li>
 <li><strong><code>cp</code></strong>: Copia un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino. En caso de ser un directorio lo que se desea copiar, se ha de indicar con la opción <code>-r</code>.</li>
-<li><strong><code>mv</code></strong>: Funciona igual que <code>cp</code>, pero en vez de copiar, mueve los archivos (desaparecen de su dirección inicial)</li>
-</ul>
-<p><strong>Ejemplo</strong>: Al igual que en el ejemplo anterior, mueve el archivo prueba.txt a la carpeta <code>/home/</code>, de tal forma que ya no esté en el directorio actual sin moverte de este directorio:</p>
+<li><strong><code>mv</code></strong>: Funciona igual que <code>cp</code>, pero en vez de copiar, mueve los archivos (desaparecen de su dirección inicial)</li></ul></div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c761fbd2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Ejercicio</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=906db4b9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+Al igual que en el ejemplo anterior, mueve el archivo prueba.txt a la carpeta <code>/home</code>, de tal forma que ya no esté en el directorio actual sin moverte de este directorio:
 </div>
 </div>
 </div>
