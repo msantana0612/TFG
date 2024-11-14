@@ -7540,18 +7540,59 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de variables clave: variables de entorno y variables de shell. Aunque ambas son fundamentales para la gestión de la configuración y el funcionamiento del sistema, tienen características y usos diferentes.
-
+<p>En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de variables clave: variables de entorno y variables de shell. Aunque ambas son fundamentales para la gestión de la configuración y el funcionamiento del sistema, tienen características y usos diferentes.</p>
 <ul>
 <li><p>Las variables de entorno son pares de clave-valor que contienen información accesible por todos los procesos en el sistema, como el usuario, los scripts y las aplicaciones. Estas variables son "globales" en el sentido de que cualquier proceso hijo que se ejecute desde la terminal puede acceder a ellas. Ejemplos de variables de entorno definidas por el sistema son:</p>
 <ul>
-<li><code>USER</code>:  Nombre del usuario actual.</li>
-<li><code>HOME</code>:  Directorio personal de <code>USER</code>.</li>
-<li><code>PATH</code>:  Lista de rutas donde se encuentran los ejecutables de los coamndos.</li>
+<li><strong><code>HOSTNAME</code></strong>:  Nombre de la máquina en la que se está trabajando.</li>
+<li><strong><code>USER</code></strong>:  Nombre del usuario actual.</li>
+<li><strong><code>UID</code></strong>:  Número identificador del usuario actual.</li>
+<li><strong><code>HOME</code></strong>:  Ruta absoluta del directorio personal de <code>USER</code>.</li>
+<li><strong><code>PWD</code></strong>:  Ruta absoluta del directorio de trabajo (muestra lo mismo que la orden <code>pwd</code>).</li>
+<li><strong><code>SHELL</code></strong>:  Ruta absoluta de la shell.</li>
+<li><strong><code>PATH</code></strong>:  Lista de rutas donde se encuentran los ejecutables de los comandos.</li>
+<li><strong><code>PS1</code></strong>: El valor de esta variable se utiliza como inductor de órdenes primario (<code>prompt</code>) del intérprete de órdenes.</li>
+<li><strong><code>PS2</code></strong>: El valor de esta variable se utiliza como inductor de órdenes secundario (por ejemplo, cuando se introducen bucles) del intérprete de órdenes.</li>
+<li><strong><code>?</code></strong>: Valor decimal retornado por la última orden ejecutada; si es 0 indica que la orden se ejecutó correctamente, mientras que si es 1 indica que hubo algún tipo de error. Si es mayor que 1 significa que el proceso terminó como consecuencia de haber recibido una <strong>señal</strong>.</li>
+<li><strong>Conjunto de variables <code>$</code></strong>: Existe un conjunto de variables de entorno muy usadas en scripts que recogen información sobre el entorno y la ejecución actual, caracterizadas por empezar por el carácter "$". Existen muchas variables de este tipo, entre las que destacan &lt;code&gt;$0 (muestra el nombre del script que se está ejecutando), <code>$#&lt;/code&gt; (muestra el número de argumentos que se ha pasado a un script) o &lt;code&gt;$!</code> (contiene el PID del último proceso ejecutado en segundo plano).</li>
 </ul>
 </li>
 </ul>
 <p>Con el comando <code>printenv</code> o <code>env</code>, podemos ver todas las variables de entorno del sistema:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=E7W1AsKIXmGP">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s2">"This script is called: $#"</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>This script is called: 0
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
 </div>
 </div>
 </div>
@@ -7561,7 +7602,7 @@ En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de va
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7680,7 +7721,7 @@ _=/usr/bin/env
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7708,7 +7749,7 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7731,7 +7772,7 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7743,7 +7784,7 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7766,7 +7807,7 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7791,7 +7832,7 @@ Si queremos que una variable shell se importe a procesos hijos, podemos usar la 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7807,7 +7848,7 @@ Si queremos que una variable shell se importe a procesos hijos, podemos usar la 
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
