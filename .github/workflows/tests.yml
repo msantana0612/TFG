@@ -24,18 +24,21 @@ jobs:
 
     # 2. Actualiza desde la rama sin borrar archivos locales
     - name: Configure pull
-      run:
+      run: |
         git config pull.rebase false
     - name: Set up committer identity for GitHub Actions
       run: |
         git config user.name "GitHub Actions"
         git config user.email "github-actions@github.com"
-    - name: Pull updated changes
-      run: |
-        git fetch origin gh-pages
-        git pull origin gh-pages --allow-unrelated-histories
+    - name: Checkout the tests branch
+      run: git checkout tests
+    - name: Fetch updates from gh-pages
+      run: git fetch origin gh-pages
+    - name: Merge gh-pages into tests
+      run: git merge origin/gh-pages --allow-unrelated-histories
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Uses the GitHub token from GitHub Actions
+
 
 
     # 2. Set up Node.js
