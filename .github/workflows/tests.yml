@@ -25,8 +25,8 @@ jobs:
       # 2. Actualiza desde la rama sin borrar archivos locales
     - name: Pull updated changes
       run: |
-        git fetch origin gh-pages  # Reemplaza "main" con el nombre de la rama de la que deseas traer cambios
-        git pull origin gh-pages  # Mezcla los cambios con los archivos existentes
+        git fetch origin gh-pages
+        git pull origin gh-pages  
 
 
     # 2. Set up Node.js
