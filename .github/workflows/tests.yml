@@ -4,9 +4,9 @@ on:
   # Se ejecuta después del despliegue de GitHub Pages
   workflow_run:
     workflows:
-      - "pages-build-deployment"
+      - 'pages-build-deployment'
     types:
-      - Success
+      - completed
 
   # También se ejecuta cuando haya un cambio en los tests
   push:
