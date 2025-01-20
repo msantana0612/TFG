@@ -11,6 +11,6 @@ function loadNotebook(notebookFile) {
     console.log('Comprobar url:', iframe.src);
 }
 
-if (typeof window === 'undefined') {
-  module.exports = { loadNotebook };
+if (typeof global !== 'undefined') {
+    module.exports = { loadNotebook };
 }
