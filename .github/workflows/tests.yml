@@ -24,8 +24,8 @@ jobs:
 
     # 2. Actualiza desde la rama sin borrar archivos locales
     - name: Configure pull
-        run:
-          git config pull.rebase false
+      run:
+        git config pull.rebase false
     - name: Set up committer identity for GitHub Actions
       run: |
         git config user.name "GitHub Actions"
