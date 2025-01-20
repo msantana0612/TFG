@@ -10,3 +10,7 @@ function loadNotebook(notebookFile) {
     iframe.src = url;
     console.log('Comprobar url:', iframe.src);
 }
+
+if (process.env.NODE_ENV === 'test') {
+  module.exports = myFunction;
+}
