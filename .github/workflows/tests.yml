@@ -59,7 +59,7 @@ jobs:
       with:
         name: jest-results
         path: ./test-results/jest
-
+        
     # 5. Run Cypress tests and save results
     - name: Run Cypress tests
       run: npx cypress run --spec "cypress/e2e/tests.cy.js"
