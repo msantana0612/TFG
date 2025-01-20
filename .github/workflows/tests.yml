@@ -62,7 +62,7 @@ jobs:
 
     # 5. Run Cypress tests and save results
     - name: Run Cypress tests
-      run: npm run cypress:run
+      run: npx cypress run --spec "cypress/e2e/tests.cy.js"
     - name: Save Cypress results
       uses: actions/upload-artifact@v3
       with:
