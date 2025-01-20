@@ -11,4 +11,4 @@ function loadNotebook(notebookFile) {
     console.log('Comprobar url:', iframe.src);
 }
 
-module.exports = { loadNotebook };
+export { loadNotebook };
