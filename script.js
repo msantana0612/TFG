@@ -11,6 +11,6 @@ function loadNotebook(notebookFile) {
     console.log('Comprobar url:', iframe.src);
 }
 
-if (process.env.NODE_ENV === 'test') {
-  module.exports = myFunction;
+if (typeof window === 'undefined') {
+  module.exports = { loadNotebook };
 }
