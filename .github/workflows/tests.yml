@@ -1,0 +1,51 @@
+name: Test execution
+
+on:
+  # Se ejecuta después del despliegue de GitHub Pages
+  workflow_run:
+    workflows:
+      - pages-build-deployment
+    types:
+      - completed
+
+  # También se ejecuta cuando haya un cambio en los tests
+  push:
+    branches:
+      - pruebas
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    # 3. Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # 4. Run Jest tests and save results
+    - name: Run Jest tests
+      run: npm run test
+    - name: Save Jest results
+      uses: actions/upload-artifact@v3
+      with:
+        name: jest-results
+        path: ./test-results/jest
+
+    # 5. Run Cypress tests and save results
+    - name: Run Cypress tests
+      run: npm run cypress:run
+    - name: Save Cypress results
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-results
+        path: ./test-results/cypress
