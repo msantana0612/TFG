@@ -30,6 +30,8 @@ jobs:
       run: |
         git fetch origin gh-pages
         git pull origin gh-pages --allow-unrelated-histories
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Uses the GitHub token from GitHub Actions
 
 
     # 2. Set up Node.js
