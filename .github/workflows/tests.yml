@@ -11,7 +11,7 @@ on:
   # También se ejecuta cuando haya un cambio en los tests
   push:
     branches:
-      - pruebas
+      - tests
 
 jobs:
   run-tests:
@@ -22,20 +22,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Fetch all branches
-      run: git fetch --all
+      # 2. Actualiza desde la rama sin borrar archivos locales
+    - name: Pull updated changes
+      run: |
+        git fetch origin gh-pages  # Reemplaza "main" con el nombre de la rama de la que deseas traer cambios
+        git pull origin gh-pages  # Mezcla los cambios con los archivos existentes
 
-    - name: Checkout target branch
-      run: git checkout pruebas # Replace `main` with your target branch
-
-    - name: Pull updated changes from source branch
-      run: 
-        git pull origin gh-pages # Replace `gh-pages` with your source branch
-
-    - name: Push changes to target branch
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: git push origin pruebas # Push the merged changes to the target branch
 
     # 2. Set up Node.js
     - name: Set up Node.js
