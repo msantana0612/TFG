@@ -10,3 +10,5 @@ function loadNotebook(notebookFile) {
     iframe.src = url;
     console.log('Comprobar url:', iframe.src);
 }
+
+module.exports = { loadNotebook };
