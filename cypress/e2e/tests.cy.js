@@ -1,47 +1,235 @@
-// Importa la función
-const { loadNotebook } = require('../script.js');
-
-describe('Pruebas para loadNotebook', () => {
-    let iframe;
-
+describe('Pruebas de la página Aprendiendo la CLI de Linux', () => {
     beforeEach(() => {
-        // Configurar un DOM simulado
-        document.body.innerHTML = '<iframe id="notebookViewer"></iframe>';
-        iframe = document.getElementById('notebookViewer');
+      // Cargar la página antes de cada prueba
+      cy.visit('https://msantana0612.github.io/TFG/');
     });
 
-    test('Debe cambiar el src del iframe correctamente', () => {
-        const notebookFile = 'notebookInicio.html';
-        loadNotebook(notebookFile);
-
-        const expectedUrl = 'html_outputs/notebooks/notebookInicio.html';
-        expect(iframe.src).toContain(expectedUrl); // Verifica que se asignó correctamente el src
+    it('Debe cargar el notebook inicial al abrir la página', () => {
+  
+      // Verificar que el iframe se ha cargado con el src correcto
+      cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+        .should('have.attr', 'src') // Comprobar que tiene el atributo 'src'
+        .and('include', 'html_outputs/notebooks/notebookInicio.html'); // Verificar que incluye la URL esperada
     });
-
-    test('Debe manejar archivos vacíos sin errores', () => {
-        const notebookFile = '';
-        loadNotebook(notebookFile);
-
-        const expectedUrl = 'html_outputs/notebooks/';
-        expect(iframe.src).toContain(expectedUrl); // Verifica el comportamiento con una entrada vacía
-    });
-    test('Debe manejar archivos incorrectos sin errores', () => {
-        const notebookFile = 'notebookInexistente.html';
-        loadNotebook(notebookFile);
-
-        const expectedUrl = 'html_outputs/notebooks/notebookInexistente.html';
-        expect(iframe.src).toContain(expectedUrl); // Verifica el comportamiento con una entrada vacía
-    });
-    test('Debe manejar valores null o undefined sin errores', () => {
-        const notebookFile = null;
-        loadNotebook(notebookFile);
     
-        const expectedUrl = 'html_outputs/notebooks/';
-        expect(iframe.src).toContain(expectedUrl); // Verifica que no falle y asigne una URL predeterminada
-    
-        const undefinedNotebookFile = undefined;
-        loadNotebook(undefinedNotebookFile);
-    
-        expect(iframe.src).toContain(expectedUrl); // Comportamiento similar para undefined
+    it('Verificar que el icono de GitHub redirige correctamente', () => {
+      // Seleccionar el enlace del icono de GitHub
+      cy.get('a.github-icon') // Buscar el elemento con la clase github-icon
+        .should('exist') // Verificar que existe
+        .and('have.attr', 'href', 'https://github.com/msantana0612/TFG') // Comprobar que tiene el atributo href esperado
+        .and('have.attr', 'target', '_blank') // Verificar que se abre en una nueva pestaña
+        .and('be.visible'); // Asegurarse de que es visible
+  
+      // Opcional: Simular un clic y verificar que la URL es accesible
+      cy.request('https://github.com/msantana0612/TFG').its('status').should('eq', 200);
     });
-});
+
+    it('Verificar que el botón "Inicio" carga correctamente el contenido en el iframe', () => {
+      // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+      cy.get('a') // Seleccionar todos los enlaces
+        .contains('Inicio') // Filtrar el enlace con el texto "Inicio"
+        .should('exist') // Verificar que existe
+        .click(); // Hacer clic en el botón
+  
+      // Verificar que el iframe tiene el contenido esperado
+      cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+        .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+        .and('include', 'html_outputs/notebooks/notebookInicio.html'); // Comprobar que la URL es la esperada
+    });
+  
+    it('Verificar que el botón "Introducción" carga correctamente el contenido en el iframe', () => {
+      // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+      cy.get('a') // Seleccionar todos los enlaces
+        .contains('Introducción') // Filtrar el enlace con el texto "Introducción"
+        .should('exist') // Verificar que existe
+        .click(); // Hacer clic en el botón
+  
+      // Verificar que el iframe tiene el contenido esperado
+      cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+        .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+        .and('include', 'html_outputs/notebooks/notebookIntroduccion.html'); // Comprobar que la URL es la esperada
+    });
+
+    it('Verificar que el botón "Comandos básicos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Comandos básicos') // Filtrar el enlace con el texto "Comandos básicos"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookComandosBasicos.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "El Sistema de archivos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('El sistema de archivos') // Filtrar el enlace con el texto "El Sistema de archivos"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookSistemaArchivos.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Permisos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Permisos') // Filtrar el enlace con el texto "Permisos"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookPermisos.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Enlaces" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Enlaces') // Filtrar el enlace con el texto "Enlaces"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookEnlaces.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Tipos de variables" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Tipos de variables') // Filtrar el enlace con el texto "Tipos de variables"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookVariables.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Procesos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Procesos') // Filtrar el enlace con el texto "Procesos"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookProcesos.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Redirecciones y tuberías" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Redirecciones y tuberías') // Filtrar el enlace con el texto "Redirecciones y tuberías"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookRedireccionesTuberias.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Uso de filtros" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Uso de filtros') // Filtrar el enlace con el texto "Uso de filtros"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookFiltros.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Expresiones Regulares" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Expresiones Regulares') // Filtrar el enlace con el texto "Expresiones Regulares"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookRegex.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Instalación de paquetes" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Instalación de paquetes') // Filtrar el enlace con el texto "Instalación de paquetes"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookPaquetes.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Empaquetado de archivos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Empaquetado de archivos') // Filtrar el enlace con el texto "Empaquetado de archivos"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookEmpaquetado.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Uso de disco" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Uso de disco') // Filtrar el enlace con el texto "Uso de disco"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookAlmacenamiento.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Ejercicios" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Ejercicios') // Filtrar el enlace con el texto "Ejercicios"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookEjercicios.html'); // Comprobar que la URL es la esperada
+      });
+
+      it('Verificar que el botón "Soluciones" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Soluciones') // Filtrar el enlace con el texto "Soluciones"
+          .should('exist') // Verificar que existe
+          .click(); // Hacer clic en el botón
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') // Seleccionar el iframe por su ID
+          .should('have.attr', 'src') // Verificar que tiene el atributo "src"
+          .and('include', 'html_outputs/notebooks/notebookSoluciones.html'); // Comprobar que la URL es la esperada
+      });
+  });
+  
