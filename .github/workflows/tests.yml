@@ -1,10 +1,9 @@
 name: Test execution
 
 on:
-  # Se ejecuta después del despliegue de GitHub Pages
   workflow_run:
     workflows:
-      - 'pages-build-deployment'
+      - "pages build and deployment"
     types:
       - completed
 
