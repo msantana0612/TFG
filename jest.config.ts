@@ -9,4 +9,11 @@ const config: Config = {
   coverageProvider: 'v8',
 };
 
+module.exports = {
+  reporters: [
+    'default', // Reporte estándar
+    ['jest-junit', { outputDirectory: './test-results/jest', outputName: 'results.xml' }] // Reporte en formato JUnit XML
+  ],
+};
+
 export default config;

@@ -47,11 +47,12 @@ jobs:
     # 4. Ejecutar los tests unitarios
     - name: Run Jest tests
       run: npm run test
-    - name: Save Jest results
+    - name: Save Jest results (XML)
       uses: actions/upload-artifact@v3
       with:
         name: jest-results
-        path: ./test-results/jest.xml
+        path: ./test-results/jest/results.xml  # Asegúrate de que esta ruta coincida con el archivo generado
+
         
     # 5. Ejecutar los tests funcionales
     - name: Run Cypress tests
