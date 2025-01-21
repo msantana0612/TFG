@@ -1,16 +1,10 @@
 name: Test execution
 
 on:
-  workflow_run:
-    workflows:
-      - "pages build and deployment"
-    types:
-      - completed
-
-  # También se ejecuta cuando haya un cambio en los tests
   push:
     branches:
       - tests
+      - gh-pages
 
 jobs:
   run-tests:
