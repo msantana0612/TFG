@@ -47,11 +47,15 @@ jobs:
     # 4. Ejecutar los tests unitarios
     - name: Run Jest tests
       run: npm run test
+
+    - name: List test-results directory
+      run: ls -al ./test-results/jest
+
     - name: Save Jest results (XML)
       uses: actions/upload-artifact@v3
       with:
         name: jest-results
-        path: ./test-results/jest/results.xml  # Asegúrate de que esta ruta coincida con el archivo generado
+        path: ./test-results/jest/results.xml
 
         
     # 5. Ejecutar los tests funcionales
