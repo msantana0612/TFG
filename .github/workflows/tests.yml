@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout the repository
+
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # 2. Actualiza desde la rama sin borrar archivos locales
+    # 1. Acceder a la versión actualizada de gh-pages 
     - name: Configure pull
       run: |
         git config pull.rebase false
@@ -30,21 +30,21 @@ jobs:
     - name: Merge gh-pages into tests
       run: git merge origin/gh-pages --allow-unrelated-histories
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Uses the GitHub token from GitHub Actions
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
-    # 2. Set up Node.js
+    # 2. Preparar Node.js
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16
 
-    # 3. Install dependencies
+    # 3. Instalar dependencias necesarias
     - name: Install dependencies
       run: npm install
 
-    # 4. Run Jest tests and save results
+    # 4. Ejecutar los tests unitarios
     - name: Run Jest tests
       run: npm run test
     - name: Save Jest results
@@ -53,7 +53,7 @@ jobs:
         name: jest-results
         path: ./test-results/jest
         
-    # 5. Run Cypress tests and save results
+    # 5. Ejecutar los tests funcionales
     - name: Run Cypress tests
       run: npx cypress run --spec "cypress/e2e/tests.cy.js"
     - name: Save Cypress results
