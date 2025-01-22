@@ -36,7 +36,7 @@ h1 {
 }
 
 .github-icon:hover {
-    color: #ccc;
+    color: #ccc; /* Más grisáceo al pasar el ratón */
 }
 
 .container {
@@ -45,28 +45,28 @@ h1 {
 }
 
 .menu {
-    width: 220px; /* Un poco más ancho */
-    background-color: #f7f9fb; /* Color de fondo más suave */
+    width: 220px;
+    background-color: #f7f9fb;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid #ccc; /* Línea de separación */
-    border-radius: 0 10px 10px 0; /* Bordes redondeados en la esquina derecha */
+    border-right: 1px solid #ccc;
+    border-radius: 0 10px 10px 0;
 }
 
 .menu h2 {
     margin-top: 0;
-    margin-bottom: 20px; /* Espaciado uniforme entre títulos */
-    padding: 10px; /* Asegura que no haya relleno adicional */
+    margin-bottom: 20px;
+    padding: 10px;
     padding-left: 10px;
-    color: #004080; /* Mantiene el color del título */
+    color: #004080;
 }
 
 .menu h2 a {
-    font-size: inherit; /* Mantiene el tamaño del font de h2 */
+    font-size: inherit;
     color: inherit;
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    display: block; /* Asegura que el enlace se comporte como bloque inline */
-    padding: 0; /* Asegura que no haya relleno adicional */
+    text-decoration: none;
+    display: block;
+    padding: 0;
     padding-left: 0;
 }
 
