@@ -43,6 +43,7 @@ describe('Pruebas para loadNotebook', () => {
         const undefinedNotebookFile = undefined;
         loadNotebook(undefinedNotebookFile);
     
+        const expectedUrl = 'html_outputs/notebooks/';
         expect(iframe.src).toContain(expectedUrl);
     });
 });
