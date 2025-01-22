@@ -1,4 +1,4 @@
-// Importa la función
+// Carga la función
 const { loadNotebook } = require('../script.js');
 
 describe('Pruebas para loadNotebook', () => {
@@ -23,25 +23,26 @@ describe('Pruebas para loadNotebook', () => {
         loadNotebook(notebookFile);
 
         const expectedUrl = 'html_outputs/notebooks/';
-        expect(iframe.src).toContain(expectedUrl); // Verifica el comportamiento con una entrada vacía
+        expect(iframe.src).toContain(expectedUrl);
     });
     test('Debe manejar archivos incorrectos sin errores', () => {
         const notebookFile = 'notebookInexistente.html';
         loadNotebook(notebookFile);
 
         const expectedUrl = 'html_outputs/notebooks/notebookInexistente.html';
-        expect(iframe.src).toContain(expectedUrl); // Verifica el comportamiento con una entrada vacía
+        expect(iframe.src).toContain(expectedUrl);
     });
-    test('Debe manejar valores null o undefined sin errores', () => {
+    test('Debe manejar valores nulos sin errores', () => {
         const notebookFile = null;
         loadNotebook(notebookFile);
     
         const expectedUrl = 'html_outputs/notebooks/';
-        expect(iframe.src).toContain(expectedUrl); // Verifica que no falle y asigne una URL predeterminada
-    
+        expect(iframe.src).toContain(expectedUrl);
+    });
+    test('Debe manejar el valor undefined sin errores', () => {
         const undefinedNotebookFile = undefined;
         loadNotebook(undefinedNotebookFile);
     
-        expect(iframe.src).toContain(expectedUrl); // Comportamiento similar para undefined
+        expect(iframe.src).toContain(expectedUrl);
     });
 });
