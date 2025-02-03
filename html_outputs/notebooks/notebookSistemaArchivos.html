@@ -7552,7 +7552,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-En un sistema Unix/Linux, la estructura de directorios sigue una jerarquía bien definida, donde cada directorio tiene un propósito específico. A continuación, se destacan los directorios más importantes y se explica brevemente su contenido:
+<p>En un sistema <em>Unix</em>/<em>Linux</em>, la estructura de directorios sigue una jerarquía bien definida, donde cada directorio tiene un propósito específico:</p>
 </div>
 </div>
 </div>
@@ -7578,15 +7578,15 @@ En un sistema Unix/Linux, la estructura de directorios sigue una jerarquía bien
 <div style="font-size: 17px">
 <p><strong><code>/</code></strong>: Directorio raíz que contiene todos los archivos y directorios del sistema.</p>
 <p><strong><code>/bin</code></strong>: Almacena archivos ejecutables de comandos esenciales para el sistema y los usuarios.</p>
-<p><strong><code>/boot</code></strong>: Contiene los archivos necesarios para arrancar el sistema, como el kernel y el bootloader.</p>
+<p><strong><code>/boot</code></strong>: Contiene los archivos necesarios para arrancar el sistema, como el <em>kernel</em> y el <em>bootloader</em> (programa que se ejecuta al encender un dispositivo y carga el sistema operativo en la memoria).</p>
 <p><strong><code>/dev</code></strong>: Almacena archivos especiales que representan dispositivos de hardware del sistema.</p>
 <p><strong><code>/etc</code></strong>: Directorio de configuración que guarda archivos de configuración del sistema y servicios.</p>
 <p><strong><code>/home</code></strong>: Contiene los directorios personales de los usuarios, con sus archivos y configuraciones.</p>
-<p><strong><code>/lib</code></strong>: Guarda las bibliotecas compartidas necesarias para que los programas en /bin y /sbin funcionen.</p>
+<p><strong><code>/lib</code></strong>: Guarda las bibliotecas compartidas necesarias para que los programas en <code>/bin</code> y <code>/sbin</code> funcionen.</p>
 <p><strong><code>/mnt</code></strong>: Directorio en donde comúnmente se montan los sistemas de archivos. Por ejemplo,
-si se quiere acceder a una memoria USB, se debe montar este dispositivo sobre el
+si se quiere acceder a una memoria <em>USB</em>, se debe montar este dispositivo sobre el
 directorio <code>/mnt</code>, de manera que todo lo que cuelgue de <code>/mnt</code> sería el contenido de la
-memoria.</p>
+memoria, aunque en muchas distribuciones modernas este tipo de dispositivos extraíbles se montan automáticamente en <code>/media</code>.</p>
 <p><strong><code>/root</code></strong>: Directorio <code>home</code> del administrador del sistema, conocido como usuario root o superusuario</p>
 <p><strong><code>/tmp</code></strong>: Directorio temporal donde los programas almacenan archivos que suelen ser eliminados al reiniciar.</p>
 <p><strong><code>/usr</code></strong>: Incluye aplicaciones y archivos del sistema no esenciales para el arranque, como programas instalados.</p>
@@ -7603,7 +7603,7 @@ memoria.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para cambiar el directorio en el que ejecutamos los comandos existe el comando <code>cd</code>, que nos llevará al directorio que indiquemos. Si se introduce el comando sin ningún argumento, éste nos llevará al conocido como directorio de conexión, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
+<p>Para cambiar el directorio en el que ejecutamos los comandos existe el comando <code>cd</code>, que nos llevará al directorio que indiquemos. Si se introduce el comando sin ningún argumento, éste nos llevará al conocido como <strong>directorio de conexión</strong>, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
 <p>Otro comando útil es <code>pwd</code>, que nos muestra el directorio en el que nos encontramos actualmente.</p>
 </div>
 </div>
@@ -7652,8 +7652,7 @@ memoria.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Además del directorio de conexión, otros directorios indicados con caracteres especiales son <code>.</code> y <code>..</code>. Un único punto es equivalente al directorio actual (el que mostrará <code>pwd</code>), mientras que dos puntos indican el directorio padre del directorio actual (si usamos los dos puntos junto con el comando <code>cd</code> nos "salimos" de la carpeta).
-
+<p>Además del directorio de conexión, otros directorios indicados con caracteres especiales son <code>.</code> y <code>..</code>. Un único punto es equivalente al <strong>directorio actual</strong> (el que mostrará <code>pwd</code>), mientras que dos puntos indican el <strong>directorio padre</strong> del directorio actual (si usamos los dos puntos junto con el comando <code>cd</code> nos "salimos" del directorio).</p>
 <p><strong>Ejemplo</strong>: Si vamos al directorio de conexión e introducimos el comando <code>cd ..</code>, cambiaremos el directorio actual (<code>.</code>) por el directorio padre del directorio de conexión (<code>/root</code>), que en nuestro caso es el directorio raíz:</p>
 </div>
 </div>
@@ -7746,12 +7745,12 @@ Completa la siguiente cadena de comandos para que al final se muestre que el dir
 Para hacer referencia a un directorio o un archivo, hay dos formas principales de hacerlo:
 
 <ul>
-<li><p>Ruta absoluta: Esto es, partiendo del directorio raíz (empezando por <code>/</code>) y pasando por todos los directorios hasta llegar al directorio deseado.</p>
+<li><p><strong>Ruta absoluta</strong>: Ruta que comienza desde el directorio raíz (<code>/</code>) y especifica la ubicación completa de un archivo o directorio, pasando por todos los directorios intermedios hasta el destino.</p>
 </li>
-<li><p>Ruta relativa: A partir del directorio actual (<code>.</code>) o del directorio de conexión (<code>~</code>) se puede especificar la ruta para llegar hasta el directorio deseado.</p>
+<li><p><strong>Ruta relativa</strong>: Ruta que se define en relación con el directorio actual (<code>.</code>), el directorio padre (<code>..</code>) o el directorio de conexión (<code>~</code>), recorriendo los directorios necesarios hasta el destino sin partir desde la raíz del sistema.</p>
 </li>
 </ul>
-<p><strong>Ejemplos</strong>: Para llegar a la carpeta <code>bin</code> ubicada debajo de <code>/usr</code>, hay tres formas de hacerlo:</p>
+<p><strong>Ejemplos</strong>: Se puede llegar al directorio <code>bin</code> ubicado debajo de <code>/usr</code> de muchas formas posibles usando rutas absolutas o relativas:</p>
 </div>
 </div>
 </div>
@@ -7801,7 +7800,7 @@ Para hacer referencia a un directorio o un archivo, hay dos formas principales d
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="c1">#Ruta relativa a partir del directorio actual</span>
+<span class="c1">#Ruta relativa a partir del directorio padre</span>
 <span class="n">cd</span> <span class="o">../</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span>
 <span class="n">pwd</span>
 </pre></div>
@@ -7883,7 +7882,7 @@ Para hacer referencia a un directorio o un archivo, hay dos formas principales d
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Es importante ser capaz de visualizar los contenidos tanto de directorios como de archivos. En el caso de un directorio, el comando más usado es <code>ls</code>. Con este comando, podemos visualizar todos los directorios y los archivos de una ruta concreta, aunque en caso de no pasar ninguna ruta usará el directorio actual. Además, se le pueden introducir modificadores utilizando el símbolo <code>-</code> antes, que modifican el comportamiento de la orden, como por ejemplo <code>-l</code>, que muestra más detalles sobre los archivos y directorios:
+Es importante ser capaz de visualizar los contenidos tanto de directorios como de archivos. En el caso de un directorio, el comando más usado es <code>ls</code>. Con este comando, podemos visualizar todos los directorios y los archivos de una ruta concreta, aunque en caso de no pasar ninguna ruta usará el directorio actual:
 </div>
 </div>
 </div>
@@ -7922,16 +7921,29 @@ Es importante ser capaz de visualizar los contenidos tanto de directorios como d
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3c615f7a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Se pueden introducir los modificadores <code>-l</code> (muestra más detalles), <code>-a</code> (muestra los archivos ocultos) o <code>-d</code> (muestra sólo directorios).</p>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=hiNWRmkiicGh">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">la</span>
 </pre></div>
 </div>
 </div>
@@ -7944,13 +7956,16 @@ Es importante ser capaz de visualizar los contenidos tanto de directorios como d
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>total 4
-drwxr-xr-x 1 root root 4096 Aug 22 13:24 sample_data
+<pre>total 16
+drwxr-xr-x 1 root root 4096 Jan 30 14:19 .
+drwxr-xr-x 1 root root 4096 Feb  3 06:49 ..
+drwxr-xr-x 4 root root 4096 Jan 30 14:18 .config
+drwxr-xr-x 1 root root 4096 Jan 30 14:19 sample_data
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7968,9 +7983,9 @@ drwxr-xr-x 1 root root 4096 Aug 22 13:24 sample_data
 Para poder visualizar un archivo, existen diversas opciones, aunque las más utilizadas son:
 
 <ul>
-<li><strong><code>cat</code></strong>: Para utilizar esta instrucción, basta con introducir la ruta del archivo que se quiere visualizar a continuación del comando.</li>
-<li><strong><code>head</code></strong>: Sirve para mostrar solo las primeras líneas de un archivo, por defecto 10. Para modificar este número, hay que añadir el modificador <code>-n</code> seguido del número de líneas a mostrar.</li>
-<li><strong><code>tail</code></strong>: Funciona igual que la orden <code>head</code>, pero muestra las últimas líneas en vez de las primeras.</li></ul></div>
+<li><strong><code>cat</code></strong>: Para utilizar este comando, basta con introducir la ruta del archivo que se quiere visualizar a continuación del comando.</li>
+<li><strong><code>head</code></strong>: Orden que muestra las primeras líneas de un archivo, por defecto 10. Para modificar este número, hay que añadir el modificador <code>-n</code> seguido del número de líneas a mostrar.</li>
+<li><strong><code>tail</code></strong>: Esta orden funciona de forma similar a <code>head</code>, pero muestra las últimas líneas en vez de las primeras.</li></ul></div>
 
 
 </div>
@@ -8059,10 +8074,10 @@ NVIDIA at nvidia-compute-license-questions@nvidia.com.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Para crear archivos y directorios, existen las siguientes instrucciones:
+Para crear archivos y directorios, existen las siguientes órdenes:
 
 <ul>
-<li><strong><code>touch</code></strong>: Crea un archivo vacío, indicándole el nombre del archivo a crear.</li>
+<li><strong><code>touch</code></strong>: Crea un archivo vacío, indicándole el nombre del archivo a crear. Si se indica un archivo que ya existe, actualiza su fecha.</li>
 <li><strong><code>mkdir</code></strong>: Crea un directorio vacío, indicándole el nombre del directorio a crear.</li></ul></div>
 
 
@@ -8114,13 +8129,13 @@ Para crear archivos y directorios, existen las siguientes instrucciones:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Para copiar y borrar archivos, existen las siguientes instrucciones:
+Para copiar y borrar archivos, existen las siguientes órdenes:
 
 <ul>
-<li><strong><code>rm</code></strong>: Sirve para eliminar archivos, indicándole el nombre del archivo a borrar.</li>
+<li><strong><code>rm</code></strong>: Sirve para eliminar archivos, indicando el nombre del archivo a borrar. Con la opción <code>-r</code> se borra de forma recursiva el contenido del directorio indicado.</li>
 <li><strong><code>rmdir</code></strong>: Borra el directorio indicado, aunque debe de estar vacío.</li>
-<li><strong><code>cp</code></strong>: Copia un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino. En caso de ser un directorio lo que se desea copiar, se ha de indicar con la opción <code>-r</code>.</li>
-<li><strong><code>mv</code></strong>: Funciona igual que <code>cp</code>, pero en vez de copiar, mueve los archivos (desaparecen de su dirección inicial)</li></ul></div>
+<li><strong><code>cp</code></strong>: Copia un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino (funciona como un "Copiar y pegar"). En caso de ser un directorio lo que se desea copiar, se ha de indicar con la opción <code>-r</code>.</li>
+<li><strong><code>mv</code></strong>: Mueve archivos o directorios de una ubicación a otra. También sirve para renombrar archivos (funciona como un "Cortar y pegar").</li></ul></div>
 
 
 </div>
