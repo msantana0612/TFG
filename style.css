@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #004080;
-    color: white;
+    color: #fff;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -28,7 +28,7 @@ h1 {
 }
 
 .github-icon {
-    color: white;
+    color: #fff;
     font-size: 2em;
     text-decoration: none;
     position: absolute;
@@ -36,7 +36,7 @@ h1 {
 }
 
 .github-icon:hover {
-    color: #ccc; /* Más grisáceo al pasar el ratón */
+    color: #ccc;
 }
 
 .container {
@@ -70,11 +70,9 @@ h1 {
     padding-left: 0;
 }
 
-
-
 .menu h2 a:hover {
-    background-color: #004080; /* Fondo azul al pasar el ratón */
-    color: white; /* Texto blanco al pasar el ratón */
+    background-color: #004080;
+    color: #fff;
 }
 
 .menu ul {
@@ -83,13 +81,15 @@ h1 {
 }
 
 .menu li {
-    margin-bottom: 15px; /* Más espacio entre los elementos */
+    margin-bottom: 15px;
     padding-left: 15px;
 }
 
+
+
 .menu a {
     text-decoration: none;
-    color: #333;
+    color: #222;
     display: block;
     padding: 10px;
     border-radius: 5px;
@@ -97,8 +97,26 @@ h1 {
 }
 
 .menu a:hover {
-    background-color: #004080; /* Fondo azul al pasar el ratón */
-    color: white; /* Texto blanco al pasar el ratón */
+    background-color: #004080;
+    color: #fff;
+}
+
+.menu li ul li a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    font-size: 0.95em;
+    color: #666; 
+    list-style-type: none;   
+}
+
+.menu span {
+    text-decoration: none;
+    color: #222;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .content {
