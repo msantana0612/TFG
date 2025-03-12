@@ -7523,13 +7523,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=83712f1a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1>Variables y archivos de configuración</h1>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ZurIahLNeLG9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1>Variables shell y variables de entorno</h1>
+<h2>Variables shell y variables de entorno</h2>
 </div>
 </div>
 </div>
@@ -7919,6 +7930,135 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 </div>
 </div>
 </div>
-</main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a59ca05c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Archivos de configuración</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9254eb5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><em>Linux</em> cuenta con gran variedad de funcionalidades y servicios, cada uno con distintos parámetros que determinan su comportamiento y modo de operación. Desde la gestión de usuarios y permisos hasta la configuración de servicios y aplicaciones, es esencial contar con un mecanismo que permita definirlos de manera precisa y estructurada para que el sistema funcione de manera adecuada y pueda adaptarse a diferentes necesidades. Para ello, el sistema utiliza un conjunto de archivos específicos donde se registran estas configuraciones, conocidos como <strong>archivos de configuración</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3fc8d295">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Los archivos de configuración suelen encontrarse en varias ubicaciones dependiendo de su propósito. Algunas de las rutas más comunes incluyen:</p>
+<ul>
+<li><strong><code>/etc/</code></strong>: Contiene la mayoría de los archivos de configuración del sistema y sus servicios.</li>
+<li><strong><code>/home/usuario/.config/</code></strong>: Configuración específica del usuario para ciertas aplicaciones.</li>
+<li><strong><code>/usr/local/etc/</code></strong>: Configuración de programas instalados manualmente.</li>
+<li><strong><code>/var/lib/</code></strong>: Algunos programas almacenan configuraciones dinámicas aquí.</li>
+</ul>
+<p>Estos son los archivos de configuración más importantes en <code>/etc</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/hosts</code></td>
+<td>Define asociaciones entre nombres de <em>host</em> y direcciones <em>IP</em>.</td>
+</tr>
+<tr>
+<td><code>/etc/fstab</code></td>
+<td>Especifica los sistemas de archivos que deben montarse al inicio.</td>
+</tr>
+<tr>
+<td><code>/etc/passwd</code></td>
+<td>Contiene información sobre las cuentas de usuario.</td>
+</tr>
+<tr>
+<td><code>/etc/group</code></td>
+<td>Define los grupos del sistema.</td>
+</tr>
+<tr>
+<td><code>/etc/resolv.conf</code></td>
+<td>Configura los servidores <em>DNS</em>.</td>
+</tr>
+<tr>
+<td><code>/etc/sysctl.conf</code></td>
+<td>Permite modificar parámetros del <em>kernel</em>.</td>
+</tr>
+<tr>
+<td><code>/etc/hostname</code></td>
+<td>Define el nombre del equipo.</td>
+</tr>
+<tr>
+<td><code>/etc/crontab</code></td>
+<td>Permite programar tareas automatizadas.</td>
+</tr>
+<tr>
+<td><code>/etc/sudoers</code></td>
+<td>Controla los permisos de sudo (administrador).</td>
+</tr>
+</tbody>
+</table>
+<div style="font-size: 17px">
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fda33c92">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Ejercicio</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ad4eea0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Compara el nombre del equipo mostrado utilizando variables de entorno y archivos de configuración. ¿Es el mismo?</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d37184d6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></main>
 </body>
 </html>
