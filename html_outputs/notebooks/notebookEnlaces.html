@@ -7534,112 +7534,99 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=tqJhfdwYmxn5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b48910ef">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>I-nodes</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f377cda8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-En los sistemas Unix y Linux, los enlaces son una característica poderosa del sistema de archivos, que permiten crear múltiples referencias a archivos y directorios sin necesidad de duplicar su contenido. Este concepto es análogo a los "accesos directos" en Windows, pero con diferencias significativas en cómo funcionan a nivel interno. Existen dos tipos de enlaces:
-
+<p>Un <em><strong>i-node</strong></em> (abreviatura de <em>"index node"</em>) es una estructura de datos utilizada para gestionar la información de los archivos y directorios. Cada archivo y directorio está asociado a un <em>i-node</em>, que contiene metadatos sobre el archivo, pero no su contenido ni su nombre. En lugar de almacenar estos datos en una tabla de asignación de archivos centralizada, los <em>i-nodes</em> están distribuidos en el disco y organizados de manera eficiente para facilitar el acceso a los archivos. Cuando un usuario accede a un archivo, el sistema operativo primero localiza su <em>i-node</em> para obtener estos datos antes de recuperar la información real.<br/>
+Contiene información clave como los permisos de acceso, el propietario, el grupo, las marcas de tiempo de creación y modificación, el tamaño del archivo y los punteros a los bloques de datos donde se almacena el contenido del archivo en el disco. Sin embargo, un <em>i-node</em> no almacena el <strong>nombre del archivo</strong>, ya que este se guarda en la estructura del directorio donde el archivo está ubicado. Esto permite que múltiples nombres de archivo (en diferentes ubicaciones) apunten al mismo <em>i-node</em> mediante <strong>enlaces duros</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19fe23e6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Enlaces duros</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85bec434">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Un <strong>enlace duro</strong> o enlace fuerte (<em>hard link</em>) es una referencia directa al <em>i-node</em> del archivo original, por lo que su contenido será el mismo. Esto significa que aunque se borre el archivo original, no se borrará el contenido del archivo siempre que haya al menos un enlace duro que lo apunte. Además, cualquier modificación realizada a través de un enlace duro afecta al mismo contenido del archivo, sin importar desde qué nombre se acceda. Sin embargo, tienen ciertas limitaciones: no se pueden crear enlaces duros a directorios ni entre diferentes sistemas de archivos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00b9252b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="text-align: center;">
+<img alt="Enlace duro" height="577" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/hardLink.png" width="858"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a65c7c4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Para crear un enlace duro, se usa el comando <code>ln</code>: <br/></p>
 <ul>
-<li><p><strong>Enlace fuerte</strong>: Un enlace fuerte es una referencia directa al contenido de un archivo. Todos los enlaces fuertes a un archivo comparten el mismo <strong>inode</strong>, que es el identificador del archivo en el sistema de archivos. Esto implica que:</p>
-<ul>
-<li>El archivo original y el enlace fuerte son indistinguibles; ambos apuntan al mismo contenido en el disco.</li>
-<li>Si se elimina el archivo original, el contenido del archivo seguirá existiendo mientras haya al menos un enlace fuerte que lo apunte.</li>
-<li>Puedes crear varios enlaces fuertes a un archivo, y el contenido sólo se eliminará cuando el último enlace sea borrado.</li>
-<li>No se pueden crear enlaces fuertes a directorios ni entre diferentes sistemas de archivos.</li>
+<li><code>ln archivo_origen enlace_fuerte</code></li>
 </ul>
-</li>
-<li><p><strong>Enlace débil</strong>: Es el equivalente a un acceso directo de Windows. Un enlace débil o simbólico es un archivo especial que contiene una ruta al archivo o directorio al que apunta. A diferencia de los enlaces fuertes, los enlaces simbólicos:</p>
-<ul>
-<li>Funcionan como punteros a otro archivo o directorio.</li>
-<li>Si el archivo original se elimina o se mueve, el enlace débil se rompe y queda "huérfano", ya que simplemente contiene la referencia a la ubicación del archivo.</li>
-<li>Puedes crear enlaces simbólicos a directorios o incluso a archivos en otros sistemas de archivos.</li></ul></li></ul></div>
-
-
-
-
+<p><strong>Ejemplo</strong>: Se crea un enlace fuerte sobre el archivo "original" y se muestran sus <em>i-nodes</em>:</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=tMwvqp0fn3-1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Mi imagen" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/enlaces.jpg"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=WlyXdM0k8PDP">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<p>Los archivos en Linux se gestionan mediante <strong>inodos</strong> (inodes), que contienen la información sobre los archivos, como su tamaño, permisos, y la ubicación de los bloques de datos en el disco. Cada archivo tiene un <strong>inode</strong> asociado, pero los enlaces fuertes permiten que varios nombres de archivo compartan el mismo <strong>inode</strong>, apuntando al mismo conjunto de bloques de datos en el disco.</p>
-<p>Por otro lado, los enlaces simbólicos son archivos normales que contienen el nombre o la ruta del archivo al que apuntan. No comparten el <strong>inode</strong> con el archivo original; en lugar de ello, tienen su propio <strong>inode</strong> que contiene la referencia a otro archivo.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ILQWA6FLoa-X">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del archivo original y del nombre que tendrá el archivo enlace (para los enlaces débiles hay que añadir el modificador <code>-s</code>).
-
-<ul>
-<li><p>Para crear un enlace fuerte:<br/>
-<code>ln archivo_origen enlace_fuerte</code></p>
-</li>
-<li><p>Para crear un enlace débil:<br/>
-<code>ln -s archivo_origen enlace_debil</code></p>
-</li></ul></div>
-
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45426c17">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<p><strong>Ejemplo</strong>: Se crea un archivo y dos enlaces: uno débil y otro fuerte. Con la orden <code>ls -li</code> mostramos los detalles de los archivos (<code>-l</code>) y sus <strong>inodes</strong> (<code>-i</code>):</p>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eab035fb">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=afd526b5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="s2">"Archivo de prueba"</span> <span class="o">&gt;</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">ln</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span> <span class="n">fuerte</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span> <span class="n">debil</span>
+<span class="n">touch</span> <span class="n">original</span>
+<span class="n">ln</span> <span class="n">original</span> <span class="n">enlace_duro</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">li</span>
-<span class="n">rm</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">rm</span> <span class="n">fuerte</span>
-<span class="n">rm</span> <span class="n">debil</span>
+
+<span class="n">unlink</span> <span class="n">enlace_duro</span>
+<span class="n">rm</span> <span class="n">original</span>
 </pre></div>
 </div>
 </div>
@@ -7652,16 +7639,183 @@ Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del a
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>total 12
-3937018 -rw-r--r-- 2 root root   18 Dec 10 06:40 archivoEnlace.txt
-3937019 lrwxrwxrwx 1 root root   17 Dec 10 06:40 debil -&gt; archivoEnlace.txt
-3937018 -rw-r--r-- 2 root root   18 Dec 10 06:40 fuerte
-1048583 drwxr-xr-x 1 root root 4096 Dec  6 14:22 sample_data
+<pre>total 4
+5116126 -rw-r--r-- 2 root root    0 Apr  4 05:33 enlace_duro
+5116126 -rw-r--r-- 2 root root    0 Apr  4 05:33 original
+3538969 drwxr-xr-x 1 root root 4096 Apr  2 13:35 sample_data
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=823feec8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Si se tiene un archivo <code>archivo</code> y se crea un enlace duro <code>enlace_duro</code> que lo referencie, cualquier modificación realizada en <code>enlace_duro</code> afectará directamente al archivo original (ambos apuntan al mismo espacio de almacenamiento en disco):</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d7fb1de8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">touch</span> <span class="n">archivo</span> <span class="c1">#Se crea un archivo</span>
+<span class="n">echo</span> <span class="s2">"Primera parte al archivo,"</span> <span class="o">&gt;</span> <span class="n">archivo</span>
+<span class="n">ln</span> <span class="n">archivo</span> <span class="n">enlace_duro</span> <span class="c1">#Se crea el enlace</span>
+<span class="n">echo</span> <span class="s2">"segunda parte al enlace."</span> <span class="o">&gt;&gt;</span> <span class="n">enlace_duro</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">li</span> <span class="n">archivo</span> <span class="n">enlace_duro</span> <span class="c1">#El i-node es el mismo</span>
+<span class="n">cat</span> <span class="n">archivo</span> <span class="c1">#Se muestran el archivo original</span>
+
+<span class="n">unlink</span> <span class="n">enlace_duro</span>
+<span class="n">rm</span> <span class="n">archivo</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>5116833 -rw-r--r-- 2 root root 51 Apr  4 05:33 archivo
+5116833 -rw-r--r-- 2 root root 51 Apr  4 05:33 enlace_duro
+Primera parte al archivo,
+segunda parte al enlace.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbc81acd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Enlaces débiles</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f995d42">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Un <strong>enlace débil</strong> o simbólico (<em>soft link</em> o <em>symbolic link</em>) es un archivo especial que actúa como un puntero hacia otro archivo o directorio. A diferencia de los enlaces duros, un enlace débil no referencia directamente al <em>i-node</em> del archivo original, sino que contiene la ruta del archivo objetivo. Esto implica que si el archivo original se elimina o se mueve, el enlace débil quedará roto y no podrá acceder al contenido. Los enlaces débiles pueden enlazar tanto a archivos como a directorios y pueden apuntar a archivos en distintos sistemas de archivos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0416e589">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="text-align: center;">
+<img alt="Enlace debil" height="577" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/softLink.png" width="858"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ILQWA6FLoa-X">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Para crear un enlace débil, se añade la opción <code>-s</code> al comando <code>ln</code>: <br/></p>
+<ul>
+<li><code>ln -s archivo_origen enlace_debil</code></li>
+</ul>
+<p>Para borrar los enlaces, existe el comando <code>unlink</code>, aunque también se pueden borrar con el comando <code>rm</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45426c17">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Se crea un archivo y dos enlaces: uno débil y otro fuerte. Con la orden <code>ls -li</code> mostramos los detalles de los archivos (<code>-l</code>) y sus <em><strong>i-nodes</strong></em> (<code>-i</code>):</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eab035fb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s2">"Archivo de prueba"</span> <span class="o">&gt;</span> <span class="n">archivoEnlace</span>
+<span class="n">ln</span> <span class="n">archivoEnlace</span> <span class="n">fuerte</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">archivoEnlace</span> <span class="n">debil</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">li</span> <span class="n">archivoEnlace</span> <span class="n">fuerte</span> <span class="n">debil</span>
+
+<span class="n">unlink</span> <span class="n">fuerte</span>
+<span class="n">unlink</span> <span class="n">debil</span>
+<span class="n">rm</span> <span class="n">archivoEnlace</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>5116833 -rw-r--r-- 2 root root 18 Apr  4 05:33 archivoEnlace
+5116834 lrwxrwxrwx 1 root root 13 Apr  4 05:33 debil -&gt; archivoEnlace
+5116833 -rw-r--r-- 2 root root 18 Apr  4 05:33 fuerte
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7676,7 +7830,7 @@ Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del a
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Se ve como el enlace simbólico tiene un <strong>inode</strong> diferente al archivo original y ocupa menos (solo contiene la dirección al archivo original), mientras que el enlace fuerte tiene el mismo <strong>inode</strong> y ocupa el mismo espacio (apunta a la misma información que el archivo original).</p>
+<p>Se ve como el enlace simbólico tiene un <em><strong>i-node</strong></em> diferente al archivo original y ocupa menos espacio (solo contiene la dirección al archivo original), mientras que el enlace fuerte tiene el mismo <em><strong>i-node</strong></em> y ocupa el mismo espacio (apunta a la misma información que el archivo original). Además, se muestra el número de referencias a cada archivo: para el archivo original y para el enlace fuerte hay un total de 2 referencias (referencian el mismo <em>i-node</em>), mientras que para el enlace simbólico solo hay una (referencia un <em>i-node</em> diferente).</p>
 </div>
 </div>
 </div>
@@ -7699,18 +7853,20 @@ Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del a
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="s2">"Archivo de prueba"</span> <span class="o">&gt;</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">ln</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span> <span class="n">fuerte</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span> <span class="n">debil</span>
-<span class="n">rm</span> <span class="n">archivoEnlace</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"Archivo de prueba"</span> <span class="o">&gt;</span> <span class="n">archivoEnlace</span>
+<span class="n">ln</span> <span class="n">archivoEnlace</span> <span class="n">fuerte</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">archivoEnlace</span> <span class="n">debil</span>
+<span class="n">rm</span> <span class="n">archivoEnlace</span>
+
 <span class="n">file</span> <span class="n">fuerte</span>
 <span class="n">file</span> <span class="n">debil</span>
-<span class="n">rm</span> <span class="n">fuerte</span>
-<span class="n">rm</span> <span class="n">debil</span>
+
+<span class="n">unlink</span> <span class="n">fuerte</span>
+<span class="n">unlink</span> <span class="n">debil</span>
 </pre></div>
 </div>
 </div>
@@ -7724,14 +7880,86 @@ Para crear ambos tipos de enlaces, se usa la orden <code>ln</code> seguida del a
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>fuerte: ASCII text
-debil: broken symbolic link to archivoEnlace.txt
+debil: broken symbolic link to archivoEnlace
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=966996c1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Ejercicio</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff1fb824">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Crea un enlace al directorio <code>/etc</code> y, a través de ese enlace, muestra el contenido del archivo <code>passwd</code>. Asegúrate de que puedas leer el contenido del archivo correctamente usando el enlace.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9936eb28">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54520464">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Crea un enlace <code>enlace</code> a <code>/root/config.txt</code> para que, tras borrarse, se pueda seguir accediendo a la información:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9cb1c7c5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s2">"Archivo de configuracion"</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">rm</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="n">enlace</span>
+
+<span class="n">unlink</span> <span class="n">enlace</span>
+</pre></div>
 </div>
 </div>
 </div>

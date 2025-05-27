@@ -7529,7 +7529,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1>Señales</h1>
+<h1>Comunicación entre procesos</h1>
 </div>
 </div>
 </div>
@@ -7592,9 +7592,10 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <p>Para mandar estas señales, existen los siguientes comandos:</p>
 <ul>
 <li><strong><code>kill PID</code></strong>: Manda una señal al proceso identificado con el PID correspondiente.Aunque su nombre sugiere que solo se usa para terminar procesos, en realidad puede enviar varias señales. Si no se indica explícitamente mediante un guión y el número de la señal (<code>-9</code> manda un <code>SIGKILL</code>), manda por defecto un <code>SIGTERM</code>.</li>
-<li><strong><code>killall nombre</code></strong>: Envía señales a todos los procesos que coincidan con un nombre específico, en lugar de tener que buscar un PID concreto.</li></ul></div>
-
-
+<li><strong><code>killall nombre</code></strong>: Envía señales a todos los procesos que coincidan con un nombre específico, en lugar de tener que buscar un PID concreto.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se crea un proceso <code>sleep</code>, y se envía una señal a todos los procesos <code>sleep</code> para que acaben:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7635,6 +7636,7 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p>Para capturar estas señales, el comando <code>trap</code> nos permite ejecutar un comando concreto solo con la llegada de una señal:</p>
+<p><strong>Ejemplo</strong>: Se establece una acción con <code>trap</code> (<code>echo</code> muestra un mensaje) que solo se ejecuta al recibir la señal <code>EXIT</code>:</p>
 </div>
 </div>
 </div>
@@ -7685,7 +7687,7 @@ Script is exiting!
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Pese a que la orden <code>trap</code> esté la primera, el comando <code>echo</code> no se ejecuta hasta que detecte la señal de EXIT, es decir, acabe el programa.</p>
+<p>Pese a que la orden <code>trap</code> esté la primera, el comando <code>echo</code> no se ejecuta hasta que detecte la señal de <code>EXIT</code>, es decir, acabe el programa.</p>
 </div>
 </div>
 </div>
@@ -7709,7 +7711,7 @@ Script is exiting!
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>El siguiente shell script, denominado "scriptprueba.sh", que muestra por pantalla la frase "Soy solo un bucle" cada segundo 10 veces. Usando señales, añade en la línea 2 del script una orden para que cuando se mate el proceso muestre un mensaje:</p>
+<p>El siguiente <em>shell script</em>, denominado "scriptprueba.sh", que muestra por pantalla la frase "Soy solo un bucle" cada segundo 10 veces. Usando señales, añade en la línea 2 del <em>script</em> una orden para que cuando se mate el proceso muestre un mensaje:</p>
 <pre><code>1. #!/bin/bash
 2.
 3. for i in {1..10}

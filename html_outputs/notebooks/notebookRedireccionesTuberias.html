@@ -7534,13 +7534,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd2efa14">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Redirecciones</h2>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ZurIahLNeLG9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Entrada y salida estándar</h2>
+<h3>Entrada y salida estándar</h3>
 </div>
 </div>
 </div>
@@ -7552,8 +7563,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Cada proceso tiene definido por defecto varios descriptores de archivos, que indican a qué archivo o dispositivo accederán para leer o mostrar los datos. Los descriptores por defecto son los siguientes:
-
+<p>Cada proceso tiene definido por defecto varios <strong>descriptores de archivos</strong>, que indican a qué archivo o dispositivo accederán para leer o escribir los datos. Los descriptores <strong>por defecto</strong> son los siguientes:</p>
 <table>
 <thead>
 <tr>
@@ -7584,8 +7594,13 @@ Cada proceso tiene definido por defecto varios descriptores de archivos, que ind
 </tr>
 </tbody>
 </table>
-<p>Para cambiar estos descriptores, se usan las <strong>redirecciones</strong>. Las redirecciones ayudan a cambiar estos descriptores por defecto por otros que nos interesen, como tomar datos de un archivo concreto en vez de el teclado, o guardar el resultado de un comando en un archivo para poder visualizarlo o registrarlo.</p>
-</div>
+<p>Para cambiar estos descriptores, se usan las <strong>redirecciones</strong>. Una redirección permite cambiar los dispositivos por defecto antes mencionados. Por ejemplo, se puede realizar lo siguiente:</p>
+<ul>
+<li>Leer datos desde un archivo en lugar del teclado.</li>
+<li>Guardar la salida de un comando en un archivo.</li>
+<li>Registrar errores en un archivo específico para analizarlos más tarde.</li></ul></div>
+
+
 </div>
 </div>
 </div>
@@ -7596,7 +7611,20 @@ Cada proceso tiene definido por defecto varios descriptores de archivos, que ind
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Sin Redirecciones" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/sinRedir.png"/></p>
+<div style="text-align: center;">
+<img alt="Sin Redirecciones" height="337" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/sinRedir.png" width="648"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=358c1ad0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Tipos de Redirecciones</h3>
 </div>
 </div>
 </div>
@@ -7610,9 +7638,10 @@ Cada proceso tiene definido por defecto varios descriptores de archivos, que ind
 <div style="font-size: 17px">
 <p>Existen tres tipos de redirecciones:</p>
 <ul>
-<li><strong>Entrada estándar (<code>stdin</code>)</strong>: Se usa con <code>&lt;</code>, y sustituye al teclado como entrada estándar. Por ejemplo, al usar la orden <code>sort</code> junto con <code>&lt;</code>, toma como entrada el archivo y muestra su contenido ordenado alfabéticamente:</li></ul></div>
-
-
+<li><strong>Entrada estándar (<code>stdin</code>)</strong>: Se usa con <code>&lt;</code>, y sustituye al teclado como entrada estándar.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Al usar la orden <code>sort</code> junto con <code>&lt;</code>, toma como entrada el archivo y muestra su contenido ordenado alfabéticamente:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7678,7 +7707,9 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Redirección de entrada" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/inputRedir.png"/></p>
+<div style="text-align: center;">
+<img alt="Redirección de entrada" height="202" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/inputRedir.png" width="636"/>
+</div>
 </div>
 </div>
 </div>
@@ -7691,9 +7722,10 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong>Salida estándar (<code>stdout</code>)</strong>: Se usa con <code>&gt;</code> o <code>&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en un archivo. La diferencia entre usar <code>&gt;</code> y <code>&gt;&gt;</code> es que al usar solo un carácter sustituye el contenido del archivo por el nuevo, mientras que si se usan dos añade el nuevo contenido al archivo.</li></ul></div>
-
-
+<li><strong>Salida estándar (<code>stdout</code>)</strong>: Se usa con <code>&gt;</code> o <code>&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en un archivo. La diferencia entre usar <code>&gt;</code> y <code>&gt;&gt;</code> es que al usar solo un carácter sustituye el contenido del archivo por el nuevo (<strong>sobreescribe</strong> el archivo), mientras que si se usan dos añade el nuevo contenido al archivo.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se guarda la salida de dos comandos <code>echo</code> distintos, sin sobreescribir el contenido anterior y se muestra:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7741,7 +7773,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Redirección de salida" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/outputRedir.png"/></p>
+<div style="text-align: center;">
+<img alt="Redirección de salida" height="202" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/outputRedir.png" width="636"/>
+</div>
 </div>
 </div>
 </div>
@@ -7754,9 +7788,10 @@ Si uso dos, no borra el contenido
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong>Salida de errores estándar (<code>stderr</code>)</strong>: Se usa con <code>2&gt;</code> o <code>2&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en caso de encontrar un error en un archivo. La diferencia entre <code>2&gt;</code> y <code>2&gt;&gt;</code> es la misma que en el caso de la salida estándar. Por ejemplo, si intentamos mover un archivo que no existe, saltará un error, que se guarda en un archivo. Como se usa <code>2&gt;</code>, aunque se haga dos veces, el archivo sólo contiene el texto de la segunda ejecución porque sustituye el contenido anterior:</li></ul></div>
-
-
+<li><strong>Salida de errores estándar (<code>stderr</code>)</strong>: Se usa con <code>2&gt;</code> o <code>2&gt;&gt;</code>, y permite guardar el resultado que se mostraría en la terminal en caso de encontrar un error en un archivo. La diferencia entre <code>2&gt;</code> y <code>2&gt;&gt;</code> es la misma que en el caso de la salida estándar.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Al mover un archivo que no existe, saltará un error, que se guarda en un archivo. Como se usa <code>2&gt;</code>, aunque se haga dos veces, el archivo sólo contiene el texto de la segunda ejecución porque sustituye el contenido anterior:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7803,7 +7838,9 @@ Si uso dos, no borra el contenido
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Redirección de errores" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/errRedir.png"/></p>
+<div style="text-align: center;">
+<img alt="Redirección de errores" height="202" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/errRedir.png" width="636"/>
+</div>
 </div>
 </div>
 </div>
@@ -7826,7 +7863,7 @@ Si uso dos, no borra el contenido
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Guarda en un archivo usando redirecciones el contenido detallado de los archivos y directorios del directorio raíz y muestra el contenido ordenado:</p>
+<p>Usando redirecciones, guarda en un archivo el contenido detallado de los archivos y directorios del directorio raíz y muestra el contenido ordenado:</p>
 </div>
 </div>
 </div>
@@ -7889,6 +7926,80 @@ Si uso dos, no borra el contenido
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=596f2118">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Ejemplos de uso</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3711414">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<table>
+<thead>
+<tr>
+<th>Uso</th>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redirigir <code>stdin</code> a un archivo</td>
+<td><code>comando &lt; input.txt</code></td>
+<td>Toma la entrada desde el archivo "input.txt" en lugar de la entrada estándar (<code>stdin</code>).</td>
+</tr>
+<tr>
+<td>Redirigir <code>stdout</code> a un archivo</td>
+<td><code>comando &gt; output.txt</code></td>
+<td>Guarda la salida estándar (<code>stdout</code>) en "output.txt", reemplazando el archivo si existe.</td>
+</tr>
+<tr>
+<td>Añadir <code>stdout</code> a un archivo</td>
+<td><code>comando &gt;&gt; output.txt</code></td>
+<td>Añade la salida estándar al final de "output.txt" sin sobrescribirlo.</td>
+</tr>
+<tr>
+<td>Redirigir <code>stderr</code> a un archivo</td>
+<td><code>comando 2&gt; error.log</code></td>
+<td>Redirige la salida de errores estándar (<code>stderr</code>) a "error.log".</td>
+</tr>
+<tr>
+<td>Redirigir <code>stdout</code> y <code>stderr</code> al mismo archivo</td>
+<td><code>comando &gt; all.log 2&gt;&amp;1</code></td>
+<td>Combina la salida estándar y la salida de errores estándar en "all.log".</td>
+</tr>
+<tr>
+<td>Separar <code>stdout</code> y <code>stderr</code> en archivos distintos</td>
+<td><code>comando &gt; out.log 2&gt; err.log</code></td>
+<td>Guarda la salida estándar en "out.log" y la salida de errores estándar en "err.log".</td>
+</tr>
+<tr>
+<td>Suprimir toda la salida (<code>stdout</code> + <code>stderr</code>)</td>
+<td><code>comando &gt; /dev/null 2&gt;&amp;1</code></td>
+<td>Silencia todas las salidas.</td>
+</tr>
+<tr>
+<td>Redirigir <code>stdout</code> a archivo, ignorar <code>stderr</code></td>
+<td><code>comando &gt; out.log 2&gt; /dev/null</code></td>
+<td>Captura la salida estándar en "out.log", pero ignora la salida de errores estándar.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94TUsZ0BhzaC">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7907,7 +8018,8 @@ Si uso dos, no borra el contenido
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para poder mostrar el número total de archivos de un directorio, se pueden usar las redirecciones vistas anteriormente para poder comunicar los procesos entre sí, usando un archivo temporal entre medias. Primero obtenemos todos los archivos del directorio raíz por la orden <code>ls</code> y redireccionamos su salida al archivo tmp, redireccionamos la entrada de la orden <code>wc -w</code> (cuenta todas las palabras) al archivo tmp y finalmente borramos el archivo temporal:</p>
+<p>Las <strong>tuberías</strong> o <strong>pipelines</strong> (<code>|</code>) permiten conectar la <strong>salida estándar</strong> de un comando con la <strong>entrada estándar</strong> de otro. Esto hace posible encadenar varios comandos para realizar tareas complejas sin necesidad de crear archivos temporales.</p>
+<p>Como ejemplo de su potencialidad, supón que queremos mostrar el número total de archivos de un directorio. Inicialmente, se puede pensar en usar las redirecciones vistas anteriormente. Este mecanismo permite comunicar los procesos entre sí, usando un archivo temporal entre medias. De este modo, primero obtenemos todos los archivos del directorio raíz con la orden <code>ls</code> y luego, redireccionamos su salida al archivo <em>tmp</em>. A continuación, podemos redireccionar la entrada de la orden <code>wc -w</code> (comando de tipo filtro que se verá más adelante, y que cuenta todas las palabras) al archivo <em>tmp</em> y, finalmente borramos el archivo temporal cuando ya no nos es útil.</p>
 </div>
 </div>
 </div>
@@ -7956,7 +8068,7 @@ Si uso dos, no borra el contenido
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Esta misma acción se puede completar en una sola línea usando tuberías y sin usar archivos temporales:
+<p>Esta misma acción se puede completar en una sola línea usando tuberías y <strong>sin usar archivos temporales</strong>:</p>
 </div>
 </div>
 </div>
@@ -8003,7 +8115,7 @@ Esta misma acción se puede completar en una sola línea usando tuberías y sin 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Las tuberías (<code>|</code>) conectan la salida estándar de un proceso con la entrada estándar de otro, permitiendo hacer cadenas de comandos que, en una sola línea, pueden realizar múltiples operaciones de manera eficiente. Esto nos permite combinar diferentes comandos con funciones específicas de forma sencilla para obtener un resultado que se ajuste a nuestras necesidades.
+<p>Como se puede observar, las tuberías permiten realizar <strong>cadenas de comandos</strong> que, en una sola línea, pueden llevar a cabo múltiples operaciones de manera eficiente. Se pueden combinar diferentes comandos con funciones específicas de forma sencilla para obtener un resultado concreto.</p>
 </div>
 </div>
 </div>
@@ -8015,7 +8127,9 @@ Las tuberías (<code>|</code>) conectan la salida estándar de un proceso con la
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Uso de tuberías" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/tuberia.png"/></p>
+<div style="text-align: center;">
+<img alt="Uso de tuberías" height="196" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/tuberia.png" width="988"/>
+</div>
 </div>
 </div>
 </div>

@@ -7541,13 +7541,13 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Un paquete es un archivo que contiene todo lo necesario para instalar un programa en un sistema operativo, en este caso, Linux. Un paquete no solo incluye los archivos binarios del programa (es decir, el ejecutable que se instala), sino también metadatos que describen el software, sus dependencias (otros paquetes que el software necesita para funcionar), scripts de instalación, archivos de configuración y documentación. <br/>
-La instalación y gestión de paquetes se realiza a través de un gestor de paquetes: una herramienta que automatiza el proceso de instalación, actualización, y eliminación de software. El gestor de paquetes no solo se encarga de descargar el paquete solicitado desde un repositorio (una colección centralizada de software), sino que también verifica y gestiona las dependencias necesarias para que el programa funcione correctamente. Si un paquete requiere otros componentes, el gestor de paquetes los instalará automáticamente. <br/>
-Esta estructura es diferente a cómo se instala el software en Windows, que distribuye sus programas como archivos ejecutables o instaladores, por lo que en caso de tener dependencias de otros programas, el usuario debe instalarlos manualmente.</p>
-<p>Sin embargo, al existir tantos tipos de distribuciones de Linux, cada distribución usa un tipo de paquetes distinto. Los principales son los siguientes:</p>
+<p>Un <strong>paquete</strong> es un archivo que contiene todo lo necesario para instalar un programa en un sistema operativo, en este caso, <em>Linux</em>. Un paquete no solo incluye los <strong>archivos binarios</strong> del programa (es decir, el ejecutable que se instala), sino también <strong>metadatos</strong> que describen el <em>software</em>, sus dependencias (otros paquetes que el <em>software</em> necesita para funcionar), <em>scripts</em> de instalación, archivos de configuración y documentación. <br/>
+La instalación y gestión de paquetes se realiza a través de un gestor de paquetes: una herramienta que automatiza el proceso de instalación, actualización, y eliminación de <em>software</em>. El gestor de paquetes no solo se encarga de descargar el paquete solicitado desde un repositorio (una colección centralizada de <em>software</em>), sino que también verifica y gestiona las dependencias necesarias para que el programa funcione correctamente. Si un paquete requiere otros componentes, el gestor de paquetes los instalará automáticamente. <br/>
+Esta estructura es diferente a cómo se instala el <em>software</em> en <em>Windows</em>, que distribuye sus programas como archivos ejecutables o instaladores, por lo que en caso de tener dependencias de otros programas, el usuario debe instalarlos manualmente.</p>
+<p>Sin embargo, al existir tantos tipos de distribuciones de <em>Linux</em>, cada distribución usa un tipo de paquetes distinto. Los principales son los siguientes:</p>
 <ul>
-<li><strong><code>.deb</code></strong>: Usados en distribuciones basadas en Debian como Ubuntu o Mint.</li>
-<li><strong><code>.rpm</code></strong>: Usados en distribuciones basadas en Red Hat como Fedora, CentOS, RHEL o openSUSE.</li>
+<li><strong><code>.deb</code></strong>: Usados en distribuciones basadas en <em>Debian</em> como <em>Ubuntu</em> o <em>Mint</em>.</li>
+<li><strong><code>.rpm</code></strong>: Usados en distribuciones basadas en <em>Red Hat</em> como <em>Fedora</em>, <em>CentOS</em>, <em>RHEL</em> o <em>openSUSE</em>.</li>
 </ul>
 <p>Para manejar paquetes <strong><code>.deb</code></strong>, existe la herramienta <strong><code>apt</code></strong>:</p>
 <ul>
@@ -7624,9 +7624,10 @@ Reading state information... Done
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>apt install</code></strong>: Instala el paquete con el nombre indicado como argumento.</li></ul></div>
-
-
+<li><strong><code>apt install</code></strong>: Instala el paquete con el nombre indicado como argumento.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Instala la aplicación <em>firefox</em>:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7785,9 +7786,10 @@ Processing triggers for hicolor-icon-theme (0.17-2) ...
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>apt upgrade</code></strong>: Actualiza el paquete con el nombre indicado como argumento. En caso de no recibir ningún argumento, actualiza todos los paquetes.</li></ul></div>
-
-
+<li><strong><code>apt upgrade</code></strong>: Actualiza el paquete con el nombre indicado como argumento. En caso de no recibir ningún argumento, actualiza todos los paquetes.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Actualiza la aplicación <em>firefox</em>:</p>
+</div>
 </div>
 </div>
 </div>
@@ -8127,9 +8129,10 @@ Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>apt remove</code></strong>: Desinstala el paquete con el nombre indicado como argumento.</li></ul></div>
-
-
+<li><strong><code>apt remove</code></strong>: Desinstala el paquete con el nombre indicado como argumento.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Desinstala la aplicación <em>firefox</em>:</p>
+</div>
 </div>
 </div>
 </div>

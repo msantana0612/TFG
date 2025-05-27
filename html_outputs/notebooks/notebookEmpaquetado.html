@@ -7545,13 +7545,14 @@ Dos de las herramientas más populares en Linux para la compresión y empaquetad
 
 <ul>
 <li><code>tar</code>: Empaqueta varios archivos y directorios en un único archivo sin comprimir, manteniendo su estructura de directorios. Con la opción <code>-f</code> indicamos el nombre del archivo. Se puede ejecutar con varios modos:<ul>
-<li><strong><code>--create</code> (<code>-c</code>)</strong>: Crea un .tar nuevo.</li>
-<li><strong><code>--extract</code> (<code>-x</code>)</strong>: Extrae los archivos de un .tar existente.</li>
-<li><strong><code>--list</code> (<code>-t</code>)</strong>: Muestra una lista de los archivos del .tar especificado. Si se añade la opción <code>-v</code> al crear o extraer archivos se obtiene la misma salida.</li></ul></li></ul></div>
-
-
-
-
+<li><strong><code>--create</code> (<code>-c</code>)</strong>: Crea un ".tar" nuevo.</li>
+<li><strong><code>--extract</code> (<code>-x</code>)</strong>: Extrae los archivos de un ".tar" existente.</li>
+<li><strong><code>--list</code> (<code>-t</code>)</strong>: Muestra una lista de los archivos del ".tar" especificado. Si se añade la opción <code>-v</code> al crear o extraer archivos se obtiene la misma salida.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se crea una estructura de archivos, se empaqueta en el archivo "prueba.tar" y se comprueba su contenido con la opción <code>-t</code>:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7614,10 +7615,11 @@ directorio/prueba1.txt
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>gzip</code></strong>: Comprime archivos individuales, reduciendo el espacio que ocupan en el sistema. Puede comprimir archivos .tar.</li>
-<li><strong><code>gunzip</code></strong>: Descomprime archivos de extensión .gz.</li></ul></div>
-
-
+<li><strong><code>gzip</code></strong>: Comprime archivos individuales, reduciendo el espacio que ocupan en el sistema. Puede comprimir archivos ".tar".</li>
+<li><strong><code>gunzip</code></strong>: Descomprime archivos de extensión ".gz".</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se crea un archivo "prueba.tar" a partir de un directorio, se comprime con <code>gzip</code>, y descomprime de vuelta y se comprueba su contenido:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7687,7 +7689,7 @@ Descomprimido:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Existe una opción en la orden <code>tar</code> (<code>-z</code>) que comprime los archivos directamente (genera el archivo .tar y lo comprime, sin borrar el .tar):
+<p><strong>Ejemplo</strong>: Existe una opción en la orden <code>tar</code> (<code>-z</code>) que comprime los archivos directamente (genera el archivo ".tar" y lo comprime, sin borrar el ".tar"):</p>
 </div>
 </div>
 </div>

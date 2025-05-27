@@ -7541,12 +7541,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Los filtros son todos los comandos que reciben datos a través de la entrada estándar y luego transforman esos datos antes de enviarlos a la salida estándar. Tienen funcionalidades muy específicas y modulares, pero gracias a las herramientas vistas anteriormente se pueden combinar para obtener resultados más potentes. Los filtros más utilizados son:
-
+<p>Los <strong>filtros</strong> son comandos que procesan datos: reciben información desde la entrada estándar (normalmente el teclado o la salida de otro comando), aplican alguna transformación o análisis, y envían el resultado a la salida estándar (normalmente la pantalla o la entrada de otro comando).</p>
+<p>Son herramientas que realizan funcionalidades sencillas y específicas, diseñadas por lo tanto para hacer bien una sola tarea, pero su verdadero potencial consiste en que se pueden combinar usando redirecciones (<code>&gt;</code>, <code>&lt;</code>) y tuberías (<code>|</code>), construyendo flujos de procesamiento complejos a partir de operaciones simples.  Los filtros más utilizados son:</p>
 <ul>
-<li><strong><code>cat</code></strong>: Muestra por la salida estándar el contenido de un archivo. Si no se indica ningún archivo, se comporta como un comando interactivo, esperando una cadena de caracteres por la entrada estándar como entrada.</li></ul></div>
-
-
+<li><strong><code>cat</code></strong>: Muestra por la salida estándar el contenido de uno o varios archivos.  Si no se especifica ningún archivo, lee desde la entrada estándar, lo que permite usarlo de forma interactiva o entre tuberías. Se pueden usar las siguientes opciones:<ul>
+<li><code>-n</code>: Numera las líneas.</li>
+<li><code>-b</code>: Numera las líneas, <strong>sin contar las líneas vacías</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra las líneas del archivo "cat.txt" numeradas, ignorando las líneas vacías:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7555,12 +7560,12 @@ Los filtros son todos los comandos que reciben datos a través de la entrada est
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="s2">"Prueba para comando cat"</span> <span class="o">&gt;</span> <span class="n">cat</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">cat</span> <span class="n">cat</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Prueba para comando cat</span><span class="se">\n\n</span><span class="s2">Ultima línea"</span> <span class="o">&gt;</span> <span class="n">cat</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="o">-</span><span class="n">b</span> <span class="n">cat</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">rm</span> <span class="n">cat</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -7574,12 +7579,14 @@ Los filtros son todos los comandos que reciben datos a través de la entrada est
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Prueba para comando cat
+<pre>     1	Prueba para comando cat
+
+     2	Ultima línea
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7595,9 +7602,10 @@ Los filtros son todos los comandos que reciben datos a través de la entrada est
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>tee</code></strong>: Transcribe su entrada estándar a su salida estándar además copiar su contenido en uno o varios archivos. Con la opción <code>-a</code>, añade la información al archivo en vez de sobrescribirlo</li></ul></div>
-
-
+<li><strong><code>tee</code></strong>: Transcribe su entrada estándar tanto a la salida estándar como a uno o varios archivos. Por defecto, sobrescribe el archivo de destino. Si se usa la opción <code>-a</code>, añade la información al final del archivo en lugar de sobrescribirlo.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra el usuario actual y lo añade al archivo "tee.txt" sin sobreescribirlo, y se muestra su contenido:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7606,13 +7614,13 @@ Los filtros son todos los comandos que reciben datos a través de la entrada est
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
 <span class="n">echo</span> <span class="s2">"Prueba para comando tee:"</span> <span class="o">&gt;</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">whoami</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span> <span class="c1">#Muestra por pantalla el usuario actual y lo escribe en el archivo tee.txt</span>
-<span class="n">cat</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span> <span class="c1">#Muestra el contenido del archivo, que como se ha usado la opción "-a", no ha sobrescrito el contenido anterior</span>
+<span class="n">whoami</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">rm</span> <span class="n">tee</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -7633,7 +7641,7 @@ root
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7649,10 +7657,15 @@ root
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>wc</code></strong>: Cuenta el número de caracteres, palabras y líneas de un archivo
-pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modificadores <code>-c</code> (caracteres), <code>-l</code> (líneas) o <code>-w</code> (palabras) para que cuente sólo uno de ellos.</li></ul></div>
-
-
+<li><strong><code>wc</code></strong>: Cuenta líneas, palabras y caracteres de uno o varios archivos, mostrando los resultados por pantalla. Se pueden usar opciones para mostrar sólo un tipo de conteo:<ul>
+<li><code>-l</code>: cuenta solo líneas.</li>
+<li><code>-w</code>: cuenta solo palabras.</li>
+<li><code>-c</code>: cuenta solo caracteres.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra la cantidad de líneas, palabras y caracteres del archivo "NGC-DL-CONTAINER-LICENSE":</p>
+</div>
 </div>
 </div>
 </div>
@@ -7661,7 +7674,7 @@ pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modif
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7683,7 +7696,7 @@ pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modif
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7699,9 +7712,15 @@ pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modif
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>sort</code></strong>: Ordena (por defecto alfabéticamente) las líneas de un archivo. Se pueden introducir los modificadores <code>-n</code> (ordenación numérica), <code>-r</code> (invierte la ordenación) o <code>-o</code> (escribe el resultado en un archivo) para cambiar su comportamiento.</li></ul></div>
-
-
+<li><strong><code>sort</code></strong>: Ordena las líneas de texto de un archivo. Por defecto, realiza una ordenación alfabética ascendente. Se puede modificar su comportamiento con las siguientes opciones:<ul>
+<li><code>-n</code>: Ordena numéricamente.</li>
+<li><code>-r</code>: invierte el orden (orden descendente).</li>
+<li><code>-o archivo</code>: guarda el resultado en un archivo.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Ordena el archivo "passwd", guarda el resultado en el archivo "ordenado.txt" y se muestra:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7710,7 +7729,7 @@ pasado como parámetro y lo muestra por pantalla. Se pueden introducir los modif
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7754,7 +7773,7 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7771,12 +7790,18 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 <div style="font-size: 17px">
 <ul>
 <li><strong><code>cut</code></strong>: Extrae una cantidad variable de caracteres de cada línea de un archivo. Se puede indicar de dos formas:<ul>
-<li><strong><code>cut -f lista [-d carácter] [-s] [archivo1 ...]</code></strong>: La separación se hará mediante delimitadores (<code>-d</code> y/o <code>-s</code>).</li>
-<li><strong><code>cut -c lista [archivo1 ...]</code></strong>: Extrae los caracteres de las posiciones indicadas en lista de cada línea.</li></ul></li></ul></div>
-
-
-
-
+<li><p><strong>Por delimitador y campos</strong>:<br/>
+Usar la opción <code>-f</code> para seleccionar campos y <code>-d</code> para indicar el carácter delimitador (por ejemplo, espacios, comas, etc.).<br/>
+La opción <code>-s</code> evita mostrar líneas que no contengan el delimitador.</p>
+</li>
+<li><p><strong>Por posición de caracteres</strong>:<br/>
+Usa la opción <code>-c</code> para indicar un rango o conjunto de posiciones de caracteres a extraer.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Tomando como separadores los espacios, coge la segunda y tercera columna.</p>
+</div>
 </div>
 </div>
 </div>
@@ -7785,12 +7810,11 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Esta es una prueba</span><span class="se">\n</span><span class="s2">con dos lineas diferentes"</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span> <span class="s1">' '</span> <span class="o">-</span><span class="n">f</span> <span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="c1">#Tomando como separadores los espacios, coge la segunda y tercera columna</span>
-<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Esta es una prueba</span><span class="se">\n</span><span class="s2">con dos lineas diferentes"</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">c</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">-</span><span class="mi">10</span>
+<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Esta es una prueba</span><span class="se">\n</span><span class="s2">con dos lineas diferentes"</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span> <span class="s1">' '</span> <span class="o">-</span><span class="n">f</span> <span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -7805,13 +7829,117 @@ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>es una
 dos lineas
-Esta s un
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73f86c33">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Extrae los caracteres en las posiciones 1 a 5, luego el 7, y del 8 al 10 de cada línea</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2adece69">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Esta es una prueba</span><span class="se">\n</span><span class="s2">con dos lineas diferentes"</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">c</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">-</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Esta s un
 con ds li
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=277412d2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<ul>
+<li><p><strong><code>uniq</code></strong>: Elimina líneas duplicadas consecutivas en un archivo o entrada de texto. Se usa generalmente junto con <code>sort</code>, ya que <code>uniq</code> solo elimina duplicados si están <strong>uno detrás de otro</strong>. Algunas de sus principales opciones son las siguientes:</p>
+<ul>
+<li><code>-c</code>: muestra el número de repeticiones de cada línea.</li>
+<li><code>-d</code>: muestra solo las líneas que están duplicadas.</li>
+<li><code>-u</code>: muestra solo las líneas únicas (no repetidas).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Ordena las líneas y luego elimina los duplicados consecutivos con <code>uniq</code>:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=116ff036">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"Tarea1 Pendiente</span><span class="se">\n</span><span class="s2">Tarea2 En Progreso</span><span class="se">\n</span><span class="s2">Tarea1 Pendiente</span><span class="se">\n</span><span class="s2">Tarea3 Completada</span><span class="se">\n</span><span class="s2">Tarea2 En Progreso"</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">|</span> <span class="n">uniq</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Tarea1 Pendiente
+Tarea2 En Progreso
+Tarea3 Completada
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7827,12 +7955,20 @@ con ds li
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>tr</code></strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar: <br/><ul>
+<li><p><strong><code>tr</code></strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar: <br/></p>
+<ul>
 <li><code>tr [opciones] CONJUNTO1 CONJUNTO2</code></li>
+</ul>
+<p>Algunas de las principales opciones son las siguientes:</p>
+<ul>
+<li><p><code>-d</code>: Elimina los caracteres que se encuentren en el primer conjunto (<code>CONJUNTO1</code>). No es necesario especificar un segundo conjunto.</p>
+</li>
+<li><p><code>-s</code>: Comprime las repeticiones consecutivas de un carácter, reemplazándolas por una sola instancia de ese carácter.</p>
+</li>
 </ul>
 </li>
 </ul>
-<p>Usando la opción <code>-d</code>, borra los caracteres del primer conjunto, sin indicar un segundo conjunto:</p>
+<p><strong>Ejemplo</strong>: Convierte todas las letras minúsculas (a-z) a mayúsculas (A-Z), y luego elimina todas las "E":</p>
 </div>
 </div>
 </div>
@@ -7842,12 +7978,12 @@ con ds li
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="s2">"Prueba para el comando tr"</span> <span class="o">|</span> <span class="n">tr</span> <span class="s1">'a-z'</span> <span class="s1">'A-Z'</span> <span class="o">&gt;</span> <span class="n">tr</span><span class="o">.</span><span class="n">txt</span> <span class="c1">#Convierte en mayúsculas todas las letras</span>
-<span class="n">cat</span> <span class="n">tr</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">tr</span> <span class="o">-</span><span class="n">d</span> <span class="s2">"E"</span> <span class="c1">#Elimina las "E"</span>
+<span class="n">echo</span> <span class="s2">"Prueba para el comando tr"</span> <span class="o">|</span> <span class="n">tr</span> <span class="s1">'a-z'</span> <span class="s1">'A-Z'</span> <span class="o">&gt;</span> <span class="n">tr</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="n">tr</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">tr</span> <span class="o">-</span><span class="n">d</span> <span class="s2">"E"</span>
 <span class="n">rm</span> <span class="n">tr</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -7866,7 +8002,7 @@ con ds li
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7882,7 +8018,7 @@ con ds li
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>grep</code></strong>: Busca en un texto un patrón especificado y muestra las líneas que contengan ese patrón. Entre otros, se le pueden introducir los siguientes modificadores:<ul>
+<li><strong><code>grep</code></strong>: Busca líneas que coincidan con un patrón dentro de un archivo o la entrada estándar. Entre otros, se le pueden introducir los siguientes modificadores:<ul>
 <li><code>-i</code>: Ignora la diferencia entre mayúsculas y minúsculas</li>
 <li><code>-n</code>: Muestra el número de línea junto con la línea con el patrón</li>
 <li><code>-v</code>: Muestra las líneas que <strong>NO</strong> coinciden con el patrón</li>
@@ -7914,7 +8050,7 @@ con ds li
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7938,7 +8074,7 @@ con ds li
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7964,7 +8100,7 @@ con ds li
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Dado el archivo ejercicio.txt, muestra por pantalla el número de líneas en las que sus dos primeros caracteres sean "la" o "La" usando varios filtros:
+Dado el archivo "ejercicio.txt", muestra por pantalla el número de líneas en las que sus dos primeros caracteres sean "la" o "La" usando varios filtros:
 </div>
 </div>
 </div>
@@ -7993,7 +8129,7 @@ Dado el archivo ejercicio.txt, muestra por pantalla el número de líneas en las
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Dado el archivo empleados.txt, que muestra los datos de los empleados de una empresa, muestra el nombre y el departamento de los empleados cuyo departamento es IT usando filtros:
+Dado el archivo "empleados.txt", que muestra los datos de los empleados de una empresa, muestra el nombre y el departamento de los empleados cuyo departamento es IT usando filtros:
 </div>
 </div>
 </div>

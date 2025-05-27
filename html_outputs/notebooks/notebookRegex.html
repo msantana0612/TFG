@@ -7541,13 +7541,12 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Las expresiones regulares, también conocidas como "regex", son patrones utilizados para hacer coincidir combinaciones de caracteres en texto. El uso de este tipo de expresiones permite buscar, filtrar, y manipular texto de forma eficiente. En Linux, algunos comandos admiten expresiones regulares como argumentos, como podrían ser <code>grep</code> (añadiendo el modificador <code>-E</code>), <code>find</code> o <code>sed</code>.
-
-<p>Las expresiones regulares contienen dos tipos de caracteres: ordinarios y especiales (metacaracteres):</p>
+<p>Las expresiones regulares, también conocidas como <em><strong>regex</strong></em>, son patrones utilizados para hacer coincidir combinaciones de caracteres en texto. El uso de este tipo de expresiones permite buscar, filtrar, y manipular texto de forma eficiente. En <em>Linux</em>, algunos comandos admiten expresiones regulares como argumentos, como podrían ser <code>grep</code> (añadiendo el modificador <code>-E</code>), <code>find</code> o <code>sed</code>.</p>
+<p>Las expresiones regulares contienen dos tipos de caracteres: ordinarios y especiales (<strong>metacaracteres</strong>):</p>
 <ul>
 <li><strong>Caracteres ordinarios</strong>: Son todos aquellos caracteres que coinciden con ellos mismos. Esto son letras, números u otros símbolos que no sean metacaracteres.</li>
 </ul>
-<p><strong>Ejemplo</strong>: Usando el comando <code>grep</code>, busca en el archivo "caracterOrdinario.txt" las líneas que contengan los literales "u", "n" y "a" seguidos (la segunda línea no coincide porque las expresiones regulares son "case sensitive", es decir, diferencian mayúsculas y minúsculas).</p>
+<p><strong>Ejemplo</strong>: Usando el comando <code>grep</code>, busca en el archivo "caracterOrdinario.txt" las líneas que contengan los literales "u", "n" y "a" seguidos (la segunda línea no coincide porque las expresiones regulares son <em><strong>case sensitive</strong></em>, es decir, diferencian mayúsculas y minúsculas).</p>
 </div>
 </div>
 </div>
@@ -7653,7 +7652,7 @@ Las expresiones regulares, también conocidas como "regex", son patrones utiliza
 </tr>
 </tbody>
 </table>
-<p><strong>Ejemplo</strong>: Usando el comando grep, busca en el archivo "caracterEspecial.txt" las líneas que contenga cualquier carácter, "n" y "a" seguidos. De esta forma, también coinciden la segunda línea (carácter "U" en "Una") y la tercera línea (carácter "e" en "Sena").</p>
+<p><strong>Ejemplo</strong>: Usando el comando <code>grep</code>, busca en el archivo "caracterEspecial.txt" las líneas que contenga cualquier carácter, "n" y "a" seguidos. De esta forma, también coinciden la segunda línea (carácter "U" en "Una") y la tercera línea (carácter "e" en "Sena").</p>
 </div>
 </div>
 </div>
@@ -8109,54 +8108,6 @@ Para conjuntos comúnmente utilizados, existen abreviaciones para indicar estos 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=unn8sY3Lx5Gy">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Ejercicio</h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0mGeMdAyx5MG">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<p>Dado el archivo empleados.txt, que muestra los datos de los empleados de una empresa, muestra los datos de los empleados cuyo salario es mayor o igual que 60000:</p>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=JoHUvhIZx5VU">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">echo</span> <span class="s2">"ID,Nombre,Departamento,Salario"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">echo</span> <span class="s2">"1,Juan Pérez,Administración,50000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">echo</span> <span class="s2">"2,Ana López,Recursos Humanos,60000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">echo</span> <span class="s2">"3,Fernando Fernandez,IT,70000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">echo</span> <span class="s2">"4,Paula Garcia,Administración,55000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">echo</span> <span class="s2">"5,Rodrigo Rodriguez,IT,72000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
-
-<span class="n">rm</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eBa3bsbqA0KD">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8230,7 +8181,44 @@ usuario_externo4@correo.es
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Ejercicio</h3>
+<h3>Ejercicios</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=528f5076">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Dado el archivo "empleados.txt", que muestra los datos de los empleados de una empresa, muestra los datos de los empleados cuyo salario es mayor o igual que 60000:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0c00eb1b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s2">"ID,Nombre,Departamento,Salario"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"1,Juan Pérez,Administración,50000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"2,Ana López,Recursos Humanos,60000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"3,Fernando Fernandez,IT,70000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"4,Paula Garcia,Administración,55000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">echo</span> <span class="s2">"5,Rodrigo Rodriguez,IT,72000"</span> <span class="o">&gt;&gt;</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+
+<span class="n">rm</span> <span class="n">empleados</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -8242,7 +8230,7 @@ usuario_externo4@correo.es
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Dado el archivo logs.txt, que guarda la información de un sistema, muestra los errores que hayan ocurrido entre las 10:00 y las 16:00:</p>
+<p>Dado el archivo "logs.txt", que guarda la información de un sistema, muestra los errores que hayan ocurrido entre las 10:00 y las 16:00:</p>
 </div>
 </div>
 </div>

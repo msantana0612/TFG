@@ -7541,7 +7541,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Al usar el comando <code>ls -l</code>, se muestran más detalles sobre los archivos y directorios. Entre ellos, al principio se muestra una cadena de letras:
+Al usar el comando <code>ls -l</code>, se muestran más detalles sobre los archivos y directorios. Entre ellos destaca la primera columna, compuesta por 10 caracteres:
 </div>
 </div>
 </div>
@@ -7615,14 +7615,14 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Estas letras son los <strong>permisos</strong> de cada archivo o directorio. Estos permisos indican qué usuarios pueden leer (r), escribir (w) o ejecutar (x) cada archivo. Además, la primera letra sirve para indicar el tipo de archivo.</p>
-<p>Cada uno de estos tres permisos (rwx) se indican para tres tipos de usuarios:</p>
+<p>Esta primera columna indica los <strong>permisos</strong> de cada archivo o directorio. Estos permisos indican qué usuarios pueden leer (<code>r</code>), escribir (<code>w</code>) o ejecutar (<code>x</code>) cada archivo. Además, el primer carácter sirve para indicar si se trata de un directorio (<code>d</code>), un enlace (<code>l</code> -&gt; se explicarán en otra unidad) o un archivo (<code>-</code>).</p>
+<p>Cada uno de estos tres permisos (<code>rwx</code>) se indican para tres tipos de usuarios:</p>
 <ul>
 <li>Permisos del propietario del archivo</li>
 <li>Permisos de los usuarios pertenecientes al mismo grupo del propietario del archivo</li>
-<li>Permisos del resto de usuarios distintos del sistema</li>
+<li>Permisos del resto de usuarios del sistema</li>
 </ul>
-<p>Para indicar que un usuario no tiene un permiso concreto, se indica con <code>-</code> en vez de la letra correspondiente</p>
+<p>Para indicar que un usuario no tiene un permiso concreto, se indica con <code>-</code> en vez de la letra correspondiente. Se puede ver explicado en la siguiente imagen:</p>
 </div>
 </div>
 </div>
@@ -7634,7 +7634,9 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Permisos" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/permisos.jpg"/></p>
+<div style="text-align: center;">
+<img alt="Permisos" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/permisos.jpg"/>
+</div>
 </div>
 </div>
 </div>
@@ -7649,14 +7651,14 @@ drwxr-xr-x   1 root root  4096 Aug 23 13:40 var
 Para poder manejar estos permisos, existen los siguientes comandos:
 
 <ul>
-<li><p><strong><code>chmod</code></strong>: Cambia los permisos de un archivo o directorio. Sólo puede ser utilizado por el propietario de ese archivo o por el superusuario. Se puede indicar de dos formas:</p>
+<li><p><strong><code>chmod</code></strong>: Cambia los permisos de un archivo o directorio. Sólo puede ser utilizado por el propietario de ese archivo o por el superusuario (<em>root</em>). Se puede indicar de dos formas:</p>
 <ul>
-<li><p><strong>Notación Simbólica</strong>: Se indica primero a qué usuarios vamos a cambiarle los permisos (user, group, others o all), seguido de qué acción se hará (añadir, quitar o establecer) y finalmente los permisos a modificar (rwx):</p>
+<li><p><strong>Notación Simbólica</strong>: Se indica primero a qué usuarios se le van a cambiar los permisos (<em>user</em> con <code>u</code>, <em>group</em> con <code>g</code>, <em>others</em> con <code>o</code> o <em>all</em> con <code>a</code>), seguido de qué acción se hará (añadir con <code>+</code>, quitar con <code>-</code>  o establecer con <code>=</code>) y finalmente los permisos a modificar (<code>rwx</code>):</p>
 <ul>
 <li><code>chmod [ugoa][+-=][rwx] archivo</code></li>
 </ul>
 </li>
-<li><p><strong>Notación Octal</strong>: Mediante tres números (uno para cada tipo de usuarios) se indica qué permisos tendrá el archivo. Estos números son de 3 bits (de 0 a 7). Esta representación binaria indica qué permisos se pondrán a verdadero (a un 1) y cuáles a falso (a un 0). Por ejemplo, el 7 (111) indica que los tres permisos estarán a verdadero, mientras que el 3 (011) indica que la lectura está deshabilitada pero la escritura y la ejecución estarán a verdadero.</p>
+<li><p><strong>Notación Octal</strong>: Mediante tres valores (uno para cada tipo de usuarios) se indica qué permisos tendrá el archivo. Estos números se representan con 3 bits (de 0 a 7). Esta representación binaria indica qué permisos se establecerán (indicado con un <code>1</code>) y cuáles no (indicado con un <code>0</code>). Por ejemplo, el 7 (<code>111</code>) indica que se establecerán todos los permisos (<code>rwx</code>), mientras que el 3 (<code>011</code>) indica que se establecerán la escritura y la ejecución, pero la lectura está deshabilitada.</p>
 </li></ul></li></ul></div>
 
 
@@ -7672,7 +7674,22 @@ Para poder manejar estos permisos, existen los siguientes comandos:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Notacion Octal" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/notacionoctal.png"/></p>
+<div style="text-align: center;">
+<img alt="Notación Octal" src="https://raw.githubusercontent.com/msantana0612/TFG/gh-pages/images/notacionoctal.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea0b5c6a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Crea dos archivos: "archivoSimbolico.txt" y "archivoOctal.txt", y cambia los permisos de cada archivos usando notación simbólica y octal respectivamente ("archivoSimbolico.txt" tiene permisos de lectura y ejecución para todos los usuarios y "archivoOctal" tiene permisos de lectura y ejecución para todos los usuarios, añadiendo permiso de escritura al propietario):</p>
+</div>
 </div>
 </div>
 </div>
@@ -7728,9 +7745,10 @@ drwxr-xr-x 1 alumno root 4096 Aug 23 13:20 sample_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>chown</code></strong>: Indicando un usuario y un archivo, cambia el dueño de ese archivo o directorio al usuario indicado. También puede cambiar su grupo si en vez de indicar sólo el usuario se indica el grupo (usuario:grupo).</li></ul></div>
-
-
+<li><strong><code>chown</code></strong>: Indicando un usuario y un archivo, cambia el dueño de ese archivo o directorio al usuario indicado. También puede cambiar su grupo si en vez de indicar sólo el usuario se indica el grupo (usuario:grupo).</li>
+</ul>
+<p><strong>Ejemplo</strong>: Crea un nuevo usuario y cambia el dueño del directorio <code>sample_data</code> a este nuevo usuario:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7787,9 +7805,10 @@ drwxr-xr-x 1 alumno root 4096 Aug 23 13:20 sample_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>chgrp</code></strong>: Cambia el grupo de un archivo o directorio.  </li></ul></div>
-
-
+<li><strong><code>chgrp</code></strong>: Cambia el grupo de un archivo o directorio.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Crea un nuevo grupo y cambia el grupo del directorio <code>sample_data</code>:</p>
+</div>
 </div>
 </div>
 </div>
@@ -7846,9 +7865,12 @@ drwxr-xr-x 1 alumno grupo 4096 Aug 23 13:20 sample_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>umask</code></strong>: Cambia la máscara por defecto al crear archivos y directorios. Si no se le introduce ningún argumento, muestra la máscara actual. Esta máscara indica con notación octal qué permisos no se darán por defecto cuando se cree un archivo. Por defecto, para los archivos los permisos máximos son 666 (sólo escritura y lectura, pero no ejecución) mientras que para los directorios es 777 (todos los permisos). Al aplicar la máscara, se determinan qué permisos tendrá al crearse: 666 - 026 = 640 (rw-r-----)</li></ul></div>
-
-
+<li><strong><code>umask</code></strong>: La <strong>máscara de usuario</strong> establece los permisos predeterminados contrarios que se aplicarán a los nuevos archivos y directorios creados en el sistema, es decir,  indica qué permisos <strong>NO</strong> se establecerán cuando se creen nuevos archivos. <br/>
+Por defecto, los archivos tienen permisos máximos de <strong>666</strong> (lectura y escritura, pero sin ejecución), mientras que los directorios tienen permisos de <strong>777</strong> (todos los permisos). Por ejemplo, si se quiere que los archivos tengan permisos <strong>640</strong> (<code>rw-r-----</code>), la máscara de usuario debe ser <strong>026</strong>, ya que se obtiene restando <strong>640</strong> de <strong>666</strong>. <br/>
+Como argumento, se indican cuatro dígitos: el primer dígito siempre corresponde a los permisos especiales, pero el valor de éste siempre será 0; el segundo dígito corresponde a la máscara de la clase otros; el tercer dígito corresponde a la máscara para la clase de grupo; y el cuarto dígito corresponde a la máscara para la clase de usuario.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se establece la máscara como <strong>0026</strong>, para que el archivo "mascara.txt" se cree con los permisos <strong>640</strong> (<code>rw-r-----</code>):</p>
+</div>
 </div>
 </div>
 </div>
@@ -7900,7 +7922,7 @@ drwxr-xr-x 1 alumno grupo 4096 Aug 23 13:20 sample_data
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Ejercicio</h3>
+<h3>Ejercicios</h3>
 </div>
 </div>
 </div>
@@ -7912,12 +7934,47 @@ drwxr-xr-x 1 alumno grupo 4096 Aug 23 13:20 sample_data
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Modifica los permisos del siguiente archivo para que pueda ser leído por todos los usuarios, pero solo modificado y ejecutado por el creador. Además modifica su propietario y su grupo por tu nombre y apellido:
+<p>Modifica los permisos del siguiente archivo usando <strong>notación simbólica</strong> para que pueda ser leído por todos los usuarios, pero solo modificado y ejecutado por el creador. Además, modifica su propietario y su grupo por tu nombre y apellido:</p>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=19wkTXlplRWU">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">mkdir</span> <span class="n">ejercicio</span>
+<span class="n">cd</span> <span class="n">ejercicio</span>
+<span class="n">touch</span> <span class="n">ejercicio</span><span class="o">.</span><span class="n">txt</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">rm</span> <span class="n">ejercicio</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">rmdir</span> <span class="n">ejercicio</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b9398d2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Modifica los permisos del siguiente archivo usando <strong>notación octal</strong> para que pueda ser leído y modificado tanto por el propietario como los usuarios de su grupo, pero que nadie pueda ejecutarlo:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=46194553">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7947,12 +8004,47 @@ Modifica los permisos del siguiente archivo para que pueda ser leído por todos 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Crea el archivo "ejercicio.txt" con los siguientes permisos: -rw-rw-r--
+<p>Aplica una máscara para que al crear el archivo "ejercicio.txt" pueda ser leído por todos los usuarios, pero solo modificado y ejecutado por el creador. Además, modifica su propietario y su grupo por tu nombre y apellido:</p>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0ebaa795">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">mkdir</span> <span class="n">ejercicio</span>
+<span class="n">cd</span> <span class="n">ejercicio</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">touch</span> <span class="n">ejercicio</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">rm</span> <span class="n">ejercicio</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">rmdir</span> <span class="n">ejercicio</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05d61d03">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Aplica una máscara para que al crear el archivo "ejercicio.txt" pueda ser leído y modificado tanto por el propietario como los usuarios de su grupo, pero que nadie pueda ejecutarlo:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c0bb08d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

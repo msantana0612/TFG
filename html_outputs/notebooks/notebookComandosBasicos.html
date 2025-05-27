@@ -7698,7 +7698,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Para ver la fecha actual, existe el comando <code>date</code>, con el que se puede indicar un formato concreto:
+<p>Para ver la fecha actual, existe el comando <code>date</code>, con el que se puede indicar un formato concreto:</p>
 </div>
 </div>
 </div>
@@ -7733,6 +7733,19 @@ Para ver la fecha actual, existe el comando <code>date</code>, con el que se pue
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b400c692">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Da un formato a la fecha a mostrar:</p>
 </div>
 </div>
 </div>
@@ -7941,7 +7954,10 @@ Linux cuenta con manuales que permiten acceder a información detallada sobre ca
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<code>apropos</code> busca en las páginas del manual las entradas que coincidan con el argumento dado, pero muestra sólo el nombre y una breve descripción, que nos ayuda a tener una pequeña idea de cómo funciona:
+<ul>
+<li><strong><code>apropos</code></strong>: Busca en las páginas del manual las entradas que coincidan con el argumento dado, pero muestra sólo el nombre y una breve descripción, que nos ayuda a tener una pequeña idea de cómo funciona.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra una breve descripción del comando <code>apt-get</code>:</p>
 </div>
 </div>
 </div>
@@ -7988,15 +8004,19 @@ Linux cuenta con manuales que permiten acceder a información detallada sobre ca
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Una opción con más información es <code>man</code>, que accede al manual de usuario de los comandos y programas disponibles en el sistema. Al ejecutar <code>man</code> seguido de un comando, se muestra una página del manual con información detallada sobre su uso, opciones y sintaxis. El manual de <em>Linux</em> está organizado en secciones numeradas, donde cada número representa un tipo de contenido distinto, como comandos de usuario (sección 1), llamadas al sistema (sección 2) o funciones de biblioteca (sección 3). Por ejemplo, <code>man 1 ls</code> muestra la documentación del comando <code>ls</code>, mientras que <code>man 3 printf</code> accede a la función de biblioteca <code>printf</code>.</p>
+<ul>
+<li><p><strong><code>man</code></strong>: Accede al manual de usuario de los comandos y programas disponibles en el sistema. Al ejecutar <code>man</code> seguido de un comando, se muestra una página del manual con información detallada sobre su uso, opciones y sintaxis. El manual de <em>Linux</em> está organizado en secciones numeradas, donde cada número representa un tipo de contenido distinto, como comandos de usuario (sección 1), llamadas al sistema (sección 2) o funciones de biblioteca (sección 3). Por ejemplo, <code>man 1 ls</code> muestra la documentación del comando <code>ls</code>, mientras que <code>man 3 printf</code> accede a la función de biblioteca <code>printf</code>.</p>
 <p>En <em>Google Colab</em> no es posible ejecutar este comando, pero se pueden ver las entradas del manual en una <a href="http://man.he.net/" target="_blank">página web</a> introduciendo las opciones y el comando del que se quiere ver la información (escribiendo la orden completa omitiendo <code>man</code>).</p>
 <p>Otra opción útil del comando es <code>-k</code>, que obtiene el mismo resultado que al ejecutar <code>apropos</code>.</p>
 <ul>
 <li><strong><code>man apt-get</code></strong>: Entrada completa del comando apt-get (<code>apt-get</code> en la web).</li>
 <li><strong><code>man -k apt-get</code></strong>: Nombre y breve descripción del comando <code>apt-get</code> (<code>-k apt-get</code> en la web).</li>
 </ul>
-<p>La orden <code>info</code> en <em>Linux</em> muestra documentación detallada sobre comandos y programas del sistema. Es una alternativa aún completa al comando <code>man</code>, ya que ofrece documentación en formato hipertextual, permitiendo navegar entre secciones y seguir enlaces dentro de la misma documentación.</p>
-</div>
+</li>
+<li><p><strong><code>info</code></strong>: Muestra documentación detallada sobre comandos y programas del sistema. Es una alternativa aún completa al comando <code>man</code>, ya que ofrece documentación en formato hipertextual, permitiendo navegar entre secciones y seguir enlaces dentro de la misma documentación.</p>
+</li></ul></div>
+
+
 </div>
 </div>
 </div>

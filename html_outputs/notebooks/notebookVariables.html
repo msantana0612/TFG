@@ -7529,7 +7529,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1>Variables y archivos de configuración</h1>
+<h1>Variables de shell y archivos de configuración</h1>
 </div>
 </div>
 </div>
@@ -7540,7 +7540,121 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Variables shell y variables de entorno</h2>
+<h2>Variables locales y variables de entorno</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d7136a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>En <em>Linux</em>, las variables de <em>shell</em> son elementos que almacenan información utilizada por la <em>shell</em> y los procesos que se ejecutan en ella. Estas variables permiten configurar el comportamiento del sistema, almacenar rutas, parámetros y otros datos importantes para la ejecución de comandos y programas. <br/>
+Existen dos tipos principales de variables de <em>shell</em>: las variables locales y las variables de entorno. La terminología utilizada para describirlas a menudo genera confusión, ya que, aunque ambas son variables dentro de la <em>shell</em>, se les conoce comúnmente como "variables de entorno" y "variables <em>shell</em>". Esta distinción puede resultar engañosa, ya que en realidad ambas son variables que forman parte del entorno de la <em>shell</em>. Para evitar malentendidos, nos referiremos a ellas como variables de entorno y variables locales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ScCvdj4IAoRv">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<ul>
+<li>Las variables locales en el <em>shell</em> de <em>Linux</em> son pares de clave-valor que se definen y se utilizan solo dentro del contexto de la sesión o del proceso en el que se crean. A diferencia de las variables de entorno, las variables locales no se heredan por los procesos hijos, lo que significa que solo afectan a la terminal o script en el que se definen.
+Para crear una variable <em>shell</em>, se indica el nombre de la variable seguida del símbolo <code>=</code> y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo <code>$</code> antes de la variable:</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se crea la variable <code>VAR</code> y se intenta mostrar su contenido (no se muestra porque falta añadir <code>$</code>):</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=shK8eps_kmIp">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
+<span class="n">echo</span> <span class="n">VAR</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>VAR
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=631be8e9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p><strong>Ejemplo</strong>: Se crea la variable <code>VAR</code> y se muestra su contenido:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=rmp5g-oy-Paa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
+<span class="n">echo</span> <span class="err">$</span><span class="n">VAR</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hola Mundo
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
 </div>
 </div>
 </div>
@@ -7552,16 +7666,15 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>En Linux, cuando trabajamos con la terminal, nos encontramos con dos tipos de variables clave: variables de entorno y variables de shell. Aunque ambas son fundamentales para la gestión de la configuración y el funcionamiento del sistema, tienen características y usos diferentes.</p>
 <ul>
-<li><p>Las variables de entorno son pares de clave-valor que contienen información accesible por todos los procesos en el sistema, como el usuario, los scripts y las aplicaciones. Estas variables son "globales" en el sentido de que cualquier proceso hijo que se ejecute desde la terminal puede acceder a ellas. Ejemplos de variables de entorno definidas por el sistema son:</p>
+<li><p>Las variables de entorno son pares de clave-valor que se almacenan en el entorno del proceso y se heredan por los procesos hijos, lo que permite compartir configuraciones sin necesidad de codificarlas directamente. Se pueden definir de forma temporal (válidas solo en la terminal actual) usando el comando <code>export</code> sobre una variable local, o de forma permanente editando archivos como <code>.bashrc</code>, <code>.profile</code> o <code>/etc/environment</code>. Ejemplos de variables de entorno definidas por el sistema son:</p>
 <ul>
 <li><strong><code>HOSTNAME</code></strong>:  Nombre de la máquina en la que se está trabajando.</li>
 <li><strong><code>USER</code></strong>:  Nombre del usuario actual.</li>
 <li><strong><code>UID</code></strong>:  Número identificador del usuario actual.</li>
 <li><strong><code>HOME</code></strong>:  Ruta absoluta del directorio personal de <code>USER</code>.</li>
 <li><strong><code>PWD</code></strong>:  Ruta absoluta del directorio de trabajo (muestra lo mismo que la orden <code>pwd</code>).</li>
-<li><strong><code>SHELL</code></strong>:  Ruta absoluta de la shell.</li>
+<li><strong><code>SHELL</code></strong>:  Ruta absoluta de la <em>shell</em>.</li>
 <li><strong><code>PATH</code></strong>:  Lista de rutas donde se encuentran los ejecutables de los comandos.</li>
 <li><strong><code>PS1</code></strong>: El valor de esta variable se utiliza como inductor de órdenes primario (<code>prompt</code>) del intérprete de órdenes.</li>
 <li><strong><code>PS2</code></strong>: El valor de esta variable se utiliza como inductor de órdenes secundario (por ejemplo, cuando se introducen bucles) del intérprete de órdenes.</li>
@@ -7707,92 +7820,6 @@ _=/usr/bin/env
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ScCvdj4IAoRv">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<ul>
-<li>Las variables shell son aquellas que solo existen en la sesión de shell actual. Pueden ser tanto variables locales como variables de entorno, pero las locales solo están disponibles dentro de la sesión de terminal donde se crean, y no se transmiten automáticamente a los procesos hijos. <br/>
-Para crear una variable shell, se indica el nombre de la variable seguida del símbolo <code>=</code> y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo <code>$</code> antes de la variable:</li></ul></div>
-
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=shK8eps_kmIp">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
-<span class="n">echo</span> <span class="n">VAR</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>VAR
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre></pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=rmp5g-oy-Paa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
-<span class="n">echo</span> <span class="err">$</span><span class="n">VAR</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hola Mundo
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=UH3JplGjm4xf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7800,7 +7827,7 @@ Para crear una variable shell, se indica el nombre de la variable seguida del s�
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Si queremos que una variable shell se importe a procesos hijos, podemos usar la orden <code>export</code> para realizar este cambio:
+<p>Si queremos que una variable <em>shell</em> sea accesible por procesos hijos, podemos usar la orden <code>export</code> para realizar este cambio:</p>
 </div>
 </div>
 </div>
@@ -7814,8 +7841,7 @@ Si queremos que una variable shell se importe a procesos hijos, podemos usar la 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
-<span class="n">export</span> <span class="n">VAR</span>
+<span class="n">export</span> <span class="n">VAR</span><span class="o">=</span><span class="s2">"Hola Mundo"</span>
 </pre></div>
 </div>
 </div>
@@ -7830,6 +7856,78 @@ Si queremos que una variable shell se importe a procesos hijos, podemos usar la 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=08361c40">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Diferencias entre Variables Locales y Variables de Entorno</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fdf28fb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th>**Variables Locales del *Shell***</th>
+<th><strong>Variables de Entorno</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definición</strong></td>
+<td>Son variables creadas dentro de una sesión de <em>shell</em> y solo accesibles en ella.</td>
+<td>Son variables del <em>shell</em> que han sido exportadas y pueden ser accedidas por procesos hijos.</td>
+</tr>
+<tr>
+<td><strong>Alcance</strong></td>
+<td>Solo dentro del <em>shell</em> donde se definen. No se heredan a procesos hijos.</td>
+<td>Global dentro de la sesión y heredadas a procesos hijos.</td>
+</tr>
+<tr>
+<td><strong>Persistencia</strong></td>
+<td>Existen solo en la sesión actual y desaparecen al cerrarla.</td>
+<td>También desaparecen al cerrar la sesión, a menos que se definan en archivos de configuración permanente.</td>
+</tr>
+<tr>
+<td><strong>Dónde se almacenan</strong></td>
+<td>En la memoria del proceso del <em>shell</em> actual.</td>
+<td>En la memoria del sistema y heredadas por procesos hijos.</td>
+</tr>
+<tr>
+<td><strong>Cómo se definen</strong></td>
+<td>Con una simple asignación: <br/> <code>MI_VAR="Hola"</code></td>
+<td>Con <code>export</code> para que sean accesibles a procesos hijos: <br/> <code>export MI_VAR="Hola"</code></td>
+</tr>
+<tr>
+<td><strong>Cómo se modifican</strong></td>
+<td>Se reasignan con una simple asignación.</td>
+<td>Se reasignan con <code>export</code> o en un archivo de configuración.</td>
+</tr>
+<tr>
+<td><strong>Cómo se eliminan</strong></td>
+<td>Con <code>unset NOMBRE_VAR</code>.</td>
+<td>Con <code>unset NOMBRE_VAR</code>.</td>
+</tr>
+<tr>
+<td><strong>Ejemplo de alcance</strong></td>
+<td><code>MI_VAR="Hola"</code> en un terminal y ejecutar un script con <code>echo $MI_VAR</code> → No imprimirá nada.</td>
+<td><code>export MI_VAR="Hola"</code> en un terminal y ejecutar un script con <code>echo $MI_VAR</code> → Imprimirá "Hola".</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7930,6 +8028,44 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fa14db7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>El siguiente shell script denominado "scriptprueba.sh" muestra un breve mensaje almacenado en la variable de shell <code>TEXT</code>. Define el texto a mostrar y permite al script usar la variable solo la segunda vez que se ejecute:</p>
+<pre><code>1. #!/bin/bash
+3. echo $TEXT
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=408e464a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s1">'#!/bin/bash'</span> <span class="o">&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'echo $TEXT'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">bash</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">bash</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">rm</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a59ca05c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7949,26 +8085,26 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p><em>Linux</em> cuenta con gran variedad de funcionalidades y servicios, cada uno con distintos parámetros que determinan su comportamiento y modo de operación. Desde la gestión de usuarios y permisos hasta la configuración de servicios y aplicaciones, es esencial contar con un mecanismo que permita definirlos de manera precisa y estructurada para que el sistema funcione de manera adecuada y pueda adaptarse a diferentes necesidades. Para ello, el sistema utiliza un conjunto de archivos específicos donde se registran estas configuraciones, conocidos como <strong>archivos de configuración</strong>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3fc8d295">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<p>Los archivos de configuración suelen encontrarse en varias ubicaciones dependiendo de su propósito. Algunas de las rutas más comunes incluyen:</p>
+<p>Los archivos de configuración en <em>Linux</em> se encuentran en diversas ubicaciones, dependiendo de su propósito. Algunas de las rutas más utilizadas incluyen las siguientes:</p>
 <ul>
-<li><strong><code>/etc/</code></strong>: Contiene la mayoría de los archivos de configuración del sistema y sus servicios.</li>
-<li><strong><code>/home/usuario/.config/</code></strong>: Configuración específica del usuario para ciertas aplicaciones.</li>
-<li><strong><code>/usr/local/etc/</code></strong>: Configuración de programas instalados manualmente.</li>
-<li><strong><code>/var/lib/</code></strong>: Algunos programas almacenan configuraciones dinámicas aquí.</li>
+<li><p><strong><code>/etc/</code></strong><br>
+Contiene la mayoría de los archivos de configuración del sistema y de los servicios globales.<br>
+<em>Ejemplo:</em> <code>/etc/passwd</code> (gestión de usuarios), <code>/etc/ssh/sshd_config</code> (configuración del servidor SSH).</br></br></p>
+</li>
+<li><p><strong><code>~/.config/</code></strong><br>
+Almacena configuraciones específicas del usuario para aplicaciones modernas que siguen el estándar <em>XDG Base Directory</em>.<br/>
+<em>Ejemplo:</em> <code>~/.config/gtk-3.0/settings.ini</code> (configuración de GTK).</br></p>
+</li>
+<li><p><strong><code>/usr/local/etc/</code></strong><br/>
+Se usa para la configuración de programas instalados manualmente en <code>/usr/local/</code>, en lugar de los gestionados por el sistema.<br/>
+<em>Ejemplo:</em> <code>/usr/local/etc/nginx/nginx.conf</code> (configuración de Nginx instalado manualmente).</p>
+</li>
+<li><p><strong><code>/var/lib/</code></strong><br/>
+Algunos programas almacenan configuraciones dinámicas o datos de estado aquí, aunque no es un directorio estándar para archivos de configuración.<br/>
+<em>Ejemplo:</em> <code>/var/lib/mysql/</code> (datos de bases de datos MySQL).</p>
+</li>
 </ul>
-<p>Estos son los archivos de configuración más importantes en <code>/etc</code>:</p>
+<p>A continuación, se describen los archivos de configuración más importantes en <code>/etc</code>:</p>
 <table>
 <thead>
 <tr>
@@ -7988,6 +8124,10 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 <tr>
 <td><code>/etc/passwd</code></td>
 <td>Contiene información sobre las cuentas de usuario.</td>
+</tr>
+<tr>
+<td><code>/etc/shadow</code></td>
+<td>Almacena las contraseñas encriptadas de los usuarios.</td>
 </tr>
 <tr>
 <td><code>/etc/group</code></td>
@@ -8013,9 +8153,17 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 <td><code>/etc/sudoers</code></td>
 <td>Controla los permisos de sudo (administrador).</td>
 </tr>
+<tr>
+<td><code>/etc/profile</code></td>
+<td>Configuraciones globales del <em>shell</em> para todos los usuarios.</td>
+</tr>
+<tr>
+<td><code>/etc/bash.bashrc</code></td>
+<td>Archivo global de configuración de <code>bashrc</code> para todos los usuarios.</td>
+</tr>
 </tbody>
 </table>
-<div style="font-size: 17px">
+</div>
 </div>
 </div>
 </div>
@@ -8059,6 +8207,6 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 </div>
 </div>
 </div>
-</div></div></main>
+</main>
 </body>
 </html>
