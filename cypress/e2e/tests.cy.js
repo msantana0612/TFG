@@ -128,6 +128,19 @@ describe('Pruebas de la página Aprendiendo la CLI de Linux', () => {
           .and('include', 'html_outputs/notebooks/notebookProcesos.html'); // Comprobar que la URL es la esperada
       });
 
+            it('Verificar que el botón "Comunicación entre procesos" carga correctamente el contenido en el iframe', () => {
+        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
+        cy.get('a') // Seleccionar todos los enlaces
+          .contains('Comunicación entre procesos') // Filtrar el enlace con el texto "Comunicación entre procesos"
+          .should('exist') 
+          .click(); 
+    
+        // Verificar que el iframe tiene el contenido esperado
+        cy.get('iframe#notebookViewer') 
+          .should('have.attr', 'src') 
+          .and('include', 'html_outputs/notebooks/notebookSeñales.html'); // Comprobar que la URL es la esperada
+      });
+      
       it('Verificar que el botón "Redirecciones y tuberías" carga correctamente el contenido en el iframe', () => {
         // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
         cy.get('a') // Seleccionar todos los enlaces
@@ -152,19 +165,6 @@ describe('Pruebas de la página Aprendiendo la CLI de Linux', () => {
         cy.get('iframe#notebookViewer') 
           .should('have.attr', 'src') 
           .and('include', 'html_outputs/notebooks/notebookFiltros.html'); // Comprobar que la URL es la esperada
-      });
-
-      it('Verificar que el botón "Señales" carga correctamente el contenido en el iframe', () => {
-        // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
-        cy.get('a') // Seleccionar todos los enlaces
-          .contains('Señales') // Filtrar el enlace con el texto "Señales"
-          .should('exist') 
-          .click(); 
-    
-        // Verificar que el iframe tiene el contenido esperado
-        cy.get('iframe#notebookViewer') 
-          .should('have.attr', 'src') 
-          .and('include', 'html_outputs/notebooks/notebookSeñales.html'); // Comprobar que la URL es la esperada
       });
 
       it('Verificar que el botón "Expresiones Regulares" carga correctamente el contenido en el iframe', () => {
