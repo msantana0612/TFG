@@ -7543,7 +7543,7 @@ a.anchor-link {
 <div style="font-size: 17px">
 <p>Un <strong>proceso</strong> en un sistema <em>Linux</em> es una instancia en ejecución de un programa. Cada vez que se ejecuta un programa, el <em>kernel</em> del sistema operativo crea un proceso que gestiona su ejecución, asignándole los recursos necesarios, como <em>CPU</em> y memoria.</p>
 <p>Dado que en un sistema pueden ejecutarse múltiples procesos simultáneamente, el sistema operativo emplea un <strong>planificador</strong> (<em>scheduler</em>) para determinar cuánto tiempo asignar a cada proceso y cómo distribuir los recursos de manera eficiente.</p>
-<p>Para gestionar estos procesos, cada uno recibe un identificador único llamado <strong>PID</strong> (<em>Process ID</em>), que permite al sistema y a los usuarios <strong>referenciar</strong>, <strong>controlar</strong> y <strong>administrar</strong> cada proceso de manera individual.</p>
+<p>Para gestionar estos procesos, cada uno recibe un identificador único llamado <em><strong>PID</strong></em> (<em>Process ID</em>), que permite al sistema y a los usuarios <strong>referenciar</strong>, <strong>controlar</strong> y <strong>administrar</strong> cada proceso de manera individual.</p>
 <p>En <em>Linux</em>, un proceso puede ejecutarse en primer plano o en segundo plano. Un proceso en primer plano es aquel que ocupa la terminal hasta que finaliza, impidiendo al usuario ejecutar otros comandos en esa sesión mientras esté activo. Por ejemplo, cuando se ejecuta un comando simple como <code>cat archivo.txt</code>, este se ejecuta en primer plano. En cambio, un proceso en segundo plano se ejecuta sin bloquear la terminal, permitiendo al usuario seguir trabajando.</p>
 <p>Los procesos forman una jerarquía, donde cada uno es creado por otro proceso, que es llamado su <strong>padre</strong>. El <em>PID</em> identifica al proceso, y el <em><strong>PPID</strong></em> (<em>Parent Process ID</em>) identifica a su proceso padre. Esta relación permite organizar los procesos y rastrear su origen. Un proceso <strong>huérfano</strong> es aquel cuyo proceso padre ha terminado antes que él. En ese caso, el sistema lo asigna automáticamente como nuevo padre al proceso <code>init</code> o <code>systemd</code>.</p>
 <p>Un proceso <em><strong>zombie</strong></em> es un proceso que ya ha finalizado, pero su entrada sigue en la tabla de procesos porque su padre aún no ha recogido su estado. Aunque no consumen recursos como <em>CPU</em> o memoria, muchos <em>zombies</em> pueden afectar al sistema si no se gestionan correctamente.</p>
@@ -7653,8 +7653,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-La monitorización de procesos es una tarea fundamental para mantener el sistema en buen estado y asegurarse de que todo funcione correctamente. Al monitorizar los procesos, podemos obtener información esencial de los procesos como su PID, su estado, los recursos utilizados y, en general, tener un mayor control sobre lo que sucede en el sistema. Existen diferentes órdenes que cumplen esta función:
-
+<p>La monitorización de procesos es una tarea fundamental para mantener el sistema en buen estado y asegurarse de que todo funcione correctamente. Al monitorizar los procesos, podemos obtener información esencial de los procesos como su <em>PID</em>, su estado, los recursos utilizados y, en general, tener un mayor control sobre lo que sucede en el sistema. Existen diferentes órdenes que cumplen esta función:</p>
 <ul>
 <li><p><strong><code>ps</code></strong>: Muestra información de los procesos en ejecución en un momento determinado. Tiene muchas opciones que permiten adaptar la información obtenida. Entre las más habituales destacan las siguientes:</p>
 <ul>
@@ -7783,7 +7782,7 @@ root        3073     315  0 12:28 ?        00:00:00 ps -ef
 <li><p><strong><code>top</code></strong>: Es un comando interactivo que muestra la información de los procesos en tiempo real. Esta información se actualiza cada pocos segundos (en general, 3 segundos). Permite gestionar procesos, por ejemplo, matar procesos desde la propia interfaz pulsando la tecla "k". Para salir de la interfaz de <code>top</code>, hay que pulsar la tecla "q". Existe una versión actualizada de este comando (<code>htop</code>) con una interfaz más atractiva y mayor interactividad. También cuenta con diferentes opciones:</p>
 <ul>
 <li><strong><code>-n</code></strong>: Permite indicar un número de actualizaciones concreto hasta pararse. Si no se indica, se actualizará hasta que se indique la salida del proceso.</li>
-<li><strong><code>-p PID</code></strong>: Con esta opción y un PID, se muestra solo la información de un proceso concreto.</li>
+<li><strong><code>-p PID</code></strong>: Con esta opción y un <em>PID</em>, se muestra solo la información de un proceso concreto.</li>
 <li><strong><code>-b</code></strong>: Indica al proceso que se debe ejecutar en segundo plano (<em>background</em>). Esto permite, por ejemplo, redirigir la salida a un archivo.</li>
 </ul>
 </li>
@@ -7884,7 +7883,7 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 <ul>
 <li><p><code>strace</code>: Permite rastrear las llamadas al sistema y señales realizadas por un proceso. Es una herramienta muy útil para depurar, analizar el comportamiento de programas y entender cómo interactúan con el sistema operativo. Entre sus opciones más comunes se encuentran:</p>
 <ul>
-<li><p><code>-p</code>: Permite adjuntar strace a un proceso ya en ejecución especificando su PID. Muy útil para observar el comportamiento de un proceso en tiempo real sin tener que reiniciarlo.</p>
+<li><p><code>-p</code>: Permite adjuntar strace a un proceso ya en ejecución especificando su <em>PID</em>. Muy útil para observar el comportamiento de un proceso en tiempo real sin tener que reiniciarlo.</p>
 </li>
 <li><p><code>-e trace=</code>: Restringe la salida a un tipo específico de llamadas al sistema, como file, process, network, etc. Por ejemplo, <code>-e trace=network</code> muestra solo las llamadas relacionadas con la red.</p>
 </li>
@@ -8232,8 +8231,8 @@ Paso 5
 <p><strong>Ejemplo</strong>: Para mostrar un proceso en estado <em>zombie</em>:</p>
 <ul>
 <li>Ejecutamos un <code>sleep</code> (duerme el proceso durante unos segundos) junto con el operador <code>&amp;</code> para que se ejecute en segundo plano</li>
-<li>Obtenemos su PID mediante la variable <code>$!</code> (almacena el PID del último programa que se ejecutó en segundo plano) y lo guardamos en una variable shell</li>
-<li>Mostramos el PID, el estado y la orden del proceso anterior mediante la orden <code>ps</code> (muestra información sore los procesos en eejcución) con el modificador <code>-p</code> junto con la variable SHELL, y el modificador <code>-o</code> para indicar qué campos mostrar</li>
+<li>Obtenemos su <em>PID</em> mediante la variable <code>$!</code> (almacena el <em>PID</em> del último programa que se ejecutó en segundo plano) y lo guardamos en una variable shell</li>
+<li>Mostramos el <em>PID</em>, el estado y la orden del proceso anterior mediante la orden <code>ps</code> (muestra información sore los procesos en eejcución) con el modificador <code>-p</code> junto con la variable SHELL, y el modificador <code>-o</code> para indicar qué campos mostrar</li>
 <li>Esperamos unos segundos</li>
 <li>Con la orden <code>kill</code> (envía una señal a un proceso) finalizamos el proceso inicial</li>
 <li>Volvemos a mostrar los datos del proceso</li></ul></div>
@@ -8335,6 +8334,36 @@ Process 8316 killed
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
 <span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2785208">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>El comando <code>yes "Hola!"</code> muestra infinitamente el mensaje "Hola!", pero con <code>&gt; /dev/null</code> (se explicará más adelante) suprimimos su salida y con <code>kill -9 $PID</code> lo terminamos (se explicará más adelante). Obtén el <em>PID</em> del proceso y muestra su información durante 4 veces:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=13d310d4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">yes</span> <span class="s2">"Hola!"</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+<span class="n">kill</span> <span class="o">-</span><span class="mi">9</span> <span class="err">$</span><span class="n">PID</span>
 </pre></div>
 </div>
 </div>

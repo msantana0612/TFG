@@ -7753,6 +7753,46 @@ Script is exiting!
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Teniendo el <em>script</em> anterior, manda la señal necesaria para pararlo a mitad de su ejecución y continuarlo pasados 3 segundos:</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s1">'#!/bin/bash'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'for i in {1..10}'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'do'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'    echo "Soy solo un bucle"'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'    sleep 1'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">'done'</span> <span class="o">&gt;&gt;</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">bash</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;</span> <span class="c1">#Ejecuta el script en segundo plano</span>
+<span class="n">PID</span><span class="o">=</span><span class="err">$!</span>
+<span class="n">sleep</span> <span class="mi">5</span>
+<span class="c1">#Borra este comentario e introduce aquí el/los comando/s necesario/s</span>
+
+<span class="n">rm</span> <span class="n">scriptprueba</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </main>
 </body>
 </html>
