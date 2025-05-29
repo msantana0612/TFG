@@ -63,10 +63,10 @@ describe('Pruebas de la página Aprendiendo la CLI de Linux', () => {
           .and('include', 'html_outputs/notebooks/notebookComandosBasicos.html'); // Comprobar que la URL es la esperada
       });
 
-      it('Verificar que el botón "El Sistema de archivos" carga correctamente el contenido en el iframe', () => {
+      it('Verificar que el botón "Sistema de archivos de Linux" carga correctamente el contenido en el iframe', () => {
         // Interceptar el clic en el botón para asegurarnos de que ejecuta la acción esperada
         cy.get('a') // Seleccionar todos los enlaces
-          .contains('El sistema de archivos') // Filtrar el enlace con el texto "El Sistema de archivos"
+          .contains('Sistema de archivos de Linux') // Filtrar el enlace con el texto "Sistema de archivos de Linux"
           .should('exist') 
           .click(); 
     
