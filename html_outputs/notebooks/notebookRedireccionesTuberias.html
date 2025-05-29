@@ -7937,7 +7937,7 @@ Si uso dos, no borra el contenido
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Las <strong>tuberías</strong> o <strong>pipelines</strong> (<code>|</code>) permiten conectar la <strong>salida estándar</strong> de un comando con la <strong>entrada estándar</strong> de otro. Esto hace posible encadenar varios comandos para realizar tareas complejas sin necesidad de crear archivos temporales.</p>
+<p>Las <strong>tuberías</strong> o <em><strong>pipelines</strong></em> (<code>|</code>) son un mecanismo de comunicación de procesos que permite conectar la <strong>salida estándar</strong> de un comando con la <strong>entrada estándar</strong> de otro. Esto hace posible encadenar varios comandos para realizar tareas complejas sin necesidad de crear archivos temporales.</p>
 <p>Como ejemplo de su potencialidad, supón que queremos mostrar el número total de archivos de un directorio. Inicialmente, se puede pensar en usar las redirecciones vistas anteriormente. Este mecanismo permite comunicar los procesos entre sí, usando un archivo temporal entre medias. De este modo, primero obtenemos todos los archivos del directorio raíz con la orden <code>ls</code> y luego, redireccionamos su salida al archivo <em>tmp</em>. A continuación, podemos redireccionar la entrada de la orden <code>wc -w</code> (comando de tipo filtro que se verá más adelante, y que cuenta todas las palabras) al archivo <em>tmp</em> y, finalmente borramos el archivo temporal cuando ya no nos es útil.</p>
 </div>
 </div>

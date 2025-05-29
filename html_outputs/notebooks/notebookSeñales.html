@@ -7541,8 +7541,76 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Las señales son una forma de comunicación entre procesos que permite enviar órdenes simples como finalizar, pausar, o reiniciar un proceso. Estas señales están identificadas mediante un número, que indica al proceso que la recibe qué debe hacer. Las señales más comunes son:
-
+<p>La <strong>comunicación entre procesos</strong> (<em>IPC</em> por sus siglas en inglés <em><strong>Inter-Process Communication</strong></em>) en <em>Linux</em> es un conjunto de mecanismos que permiten que dos o más procesos se intercambien datos, se coordinen o se sincronicen mientras se ejecutan. Dado que cada proceso en <em>Linux</em> tiene su propio espacio de memoria, no pueden compartir información directamente, por lo que necesitan mecanismos específicos para comunicarse.</p>
+<p>Existen diferentes métodos de comunicación entre procesos, cada uno adecuado para distintos tipos de interacción. Entre los mecanismos más comunes se encuentran las <strong>tuberías</strong>, utilizadas para enviar información entre procesos (se explicarán más adelante en otra sección), y las <strong>señales</strong>, empleadas para notificar eventos o cambios de estado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Señales</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<p>Las <strong>señales</strong> son una forma de comunicación entre procesos que permite enviar órdenes simples, como finalizar, pausar o reanudar un proceso. Cada señal está identificada por un nombre simbólico (como <code>SIGKILL</code>) y un número asociado. Cuando un proceso recibe una señal, puede reaccionar según su programación, o en algunos casos, no puede evitar la acción.</p>
+<p>Se puede pensar en una <strong>señal</strong> en <em>Linux</em> como una forma de "interrupción de <em>software</em>". Tiene en común con las interrupciones hardware las siguientes características:</p>
+<ul>
+<li>Son <strong>asíncronos</strong>: pueden ocurrir en cualquier momento.</li>
+<li>Interrumpen el flujo normal de ejecución para que se realice una acción inmediata.</li>
+<li>Requieren que el sistema (o el proceso) <strong>reaccione</strong> de alguna forma.</li>
+</ul>
+<h3>Comparación: Interrupción de hardware VS Señal</h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Interrupción de hardware</th>
+<th>Señal (software)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Origen</strong></td>
+<td>Dispositivo físico (teclado, red, reloj, etc.)</td>
+<td>Proceso, usuario o <em>kernel</em></td>
+</tr>
+<tr>
+<td><strong>Destino</strong></td>
+<td><em>CPU</em> o sistema operativo</td>
+<td>Un proceso específico</td>
+</tr>
+<tr>
+<td><strong>Ejemplo</strong></td>
+<td>Pulsar una tecla</td>
+<td><code>SIGINT</code> (cuando presionas <code>Ctrl + C</code>)</td>
+</tr>
+<tr>
+<td><strong>Manejador (handler)</strong></td>
+<td>Rutina de atención a interrupciones (<em>ISR</em>)</td>
+<td>Rutina de manejo de señales (<code>trap</code>, en <em>Bash</em>)</td>
+</tr>
+<tr>
+<td><strong>Puede ser ignorada</strong></td>
+<td>No</td>
+<td>Algunas sí (<code>SIGTERM</code>), otras no (<code>SIGKILL</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Las señales más comunes son:</p>
 <table>
 <thead>
 <tr>
@@ -7555,7 +7623,7 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <tr>
 <td>0</td>
 <td><code>EXIT</code></td>
-<td>Señal que se envía cuando un script finaliza.</td>
+<td>Señal que se envía cuando un <em>script</em> finaliza.</td>
 </tr>
 <tr>
 <td>1</td>
@@ -7570,7 +7638,7 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <tr>
 <td>9</td>
 <td><code>SIGKILL</code></td>
-<td>Termina el proceso de inmediato, sin permitir limpieza o guardado de estado.</td>
+<td>Termina el proceso de inmediato. No puede ser ignorada ni manejada.</td>
 </tr>
 <tr>
 <td>15</td>
@@ -7591,10 +7659,13 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 </table>
 <p>Para mandar estas señales, existen los siguientes comandos:</p>
 <ul>
-<li><strong><code>kill PID</code></strong>: Manda una señal al proceso identificado con el PID correspondiente.Aunque su nombre sugiere que solo se usa para terminar procesos, en realidad puede enviar varias señales. Si no se indica explícitamente mediante un guión y el número de la señal (<code>-9</code> manda un <code>SIGKILL</code>), manda por defecto un <code>SIGTERM</code>.</li>
-<li><strong><code>killall nombre</code></strong>: Envía señales a todos los procesos que coincidan con un nombre específico, en lugar de tener que buscar un PID concreto.</li>
+<li><strong><code>kill PID</code></strong>: Envía una señal al proceso identificado con el <em>PID</em> correspondiente. Aunque su nombre sugiere que solo se usa para terminar procesos, en realidad puede enviar distintas señales.<ul>
+<li><code>-NUM</code> o <code>-NOMBRE</code>: Manda una señal concreta (por ejemplo, <code>-9</code> o <code>-SIGKILL</code> para mandar <code>SIGKILL</code>). Si no se indica, se envía por defecto <code>SIGTERM</code>.</li>
+<li><code>-l</code>: Esta opción lista todas las señales disponibles, mostrando tanto su número como su nombre. En caso de pasar como argumento un número, mostrará el nombre correspondiente a este número y viceversa</li>
 </ul>
-<p><strong>Ejemplo</strong>: Se crea un proceso <code>sleep</code>, y se envía una señal a todos los procesos <code>sleep</code> para que acaben:</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Primero se muestra el nombre de la señal asociada al número 18, y luego se listan todas las señales:</p>
 </div>
 </div>
 </div>
@@ -7604,7 +7675,74 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">echo</span> <span class="s2">"El nombre de la señal con el número 18 es:"</span>
+<span class="n">kill</span> <span class="o">-</span><span class="n">l</span> <span class="mi">18</span>
+<span class="n">echo</span> <span class="s2">"Estas son todas las señales:"</span>
+<span class="n">kill</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>El nombre de la señal con el número 18 es:
+CONT
+Estas son todas las señales:
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="font-size: 17px">
+<ul>
+<li><strong><code>killall nombre</code></strong>: Envía señales a todos los procesos que coincidan con un nombre específico, sin necesidad de conocer su PID.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Se crea un proceso <code>sleep</code>, y se envía una señal a todos los procesos <code>sleep</code> para que acaben:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7620,7 +7758,7 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7635,7 +7773,10 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para capturar estas señales, el comando <code>trap</code> nos permite ejecutar un comando concreto solo con la llegada de una señal:</p>
+<p>Para capturar señales:</p>
+<ul>
+<li><strong><code>trap</code></strong>: Permite ejecutar un comando específico cuando llega una señal determinada.</li>
+</ul>
 <p><strong>Ejemplo</strong>: Se establece una acción con <code>trap</code> (<code>echo</code> muestra un mensaje) que solo se ejecuta al recibir la señal <code>EXIT</code>:</p>
 </div>
 </div>
@@ -7646,7 +7787,7 @@ Las señales son una forma de comunicación entre procesos que permite enviar ó
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
@@ -7672,7 +7813,7 @@ Script is exiting!
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre></pre>
 </div>
@@ -7793,6 +7934,6 @@ Script is exiting!
 </div>
 </div>
 </div>
-</main>
+</div></main>
 </body>
 </html>
