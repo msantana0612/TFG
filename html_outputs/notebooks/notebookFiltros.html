@@ -7545,8 +7545,8 @@ a.anchor-link {
 <p>Son herramientas que realizan funcionalidades sencillas y específicas, diseñadas por lo tanto para hacer bien una sola tarea, pero su verdadero potencial consiste en que se pueden combinar usando redirecciones (<code>&gt;</code>, <code>&lt;</code>) y tuberías (<code>|</code>), construyendo flujos de procesamiento complejos a partir de operaciones simples.  Los filtros más utilizados son:</p>
 <ul>
 <li><strong><code>cat</code></strong>: Muestra por la salida estándar el contenido de uno o varios archivos.  Si no se especifica ningún archivo, lee desde la entrada estándar, lo que permite usarlo de forma interactiva o entre tuberías. Se pueden usar las siguientes opciones:<ul>
-<li><code>-n</code>: Numera las líneas.</li>
-<li><code>-b</code>: Numera las líneas, <strong>sin contar las líneas vacías</strong>.</li>
+<li><strong><code>-n</code></strong>: Numera las líneas.</li>
+<li><strong><code>-b</code></strong>: Numera las líneas, <strong>sin contar las líneas vacías</strong>.</li>
 </ul>
 </li>
 </ul>
@@ -7602,7 +7602,10 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>tee</code></strong>: Transcribe su entrada estándar tanto a la salida estándar como a uno o varios archivos. Por defecto, sobrescribe el archivo de destino. Si se usa la opción <code>-a</code>, añade la información al final del archivo en lugar de sobrescribirlo.</li>
+<li><strong><code>tee</code></strong>: Transcribe su entrada estándar tanto a la salida estándar como a uno o varios archivos. Por defecto, sobrescribe el archivo de destino.<ul>
+<li><strong><code>-a</code></strong>: Añade la información al final del archivo en lugar de sobrescribirlo.</li>
+</ul>
+</li>
 </ul>
 <p><strong>Ejemplo</strong>: Muestra el usuario actual y lo añade al archivo "tee.txt" sin sobreescribirlo, y se muestra su contenido:</p>
 </div>
@@ -7658,9 +7661,9 @@ root
 <div style="font-size: 17px">
 <ul>
 <li><strong><code>wc</code></strong>: Cuenta líneas, palabras y caracteres de uno o varios archivos, mostrando los resultados por pantalla. Se pueden usar opciones para mostrar sólo un tipo de conteo:<ul>
-<li><code>-l</code>: cuenta solo líneas.</li>
-<li><code>-w</code>: cuenta solo palabras.</li>
-<li><code>-c</code>: cuenta solo caracteres.</li>
+<li><strong><code>-l</code></strong>: Cuenta solo líneas.</li>
+<li><strong><code>-w</code></strong>: Cuenta solo palabras.</li>
+<li><strong><code>-c</code></strong>: Cuenta solo caracteres.</li>
 </ul>
 </li>
 </ul>
@@ -7713,9 +7716,9 @@ root
 <div style="font-size: 17px">
 <ul>
 <li><strong><code>sort</code></strong>: Ordena las líneas de texto de un archivo. Por defecto, realiza una ordenación alfabética ascendente. Se puede modificar su comportamiento con las siguientes opciones:<ul>
-<li><code>-n</code>: Ordena numéricamente.</li>
-<li><code>-r</code>: invierte el orden (orden descendente).</li>
-<li><code>-o archivo</code>: guarda el resultado en un archivo.</li>
+<li><strong><code>-n</code></strong>: Ordena numéricamente.</li>
+<li><strong><code>-r</code></strong>: Invierte el orden (orden descendente).</li>
+<li><strong><code>-o archivo</code></strong>: Guarda el resultado en un archivo.</li>
 </ul>
 </li>
 </ul>
@@ -7899,9 +7902,9 @@ con ds li
 <ul>
 <li><p><strong><code>uniq</code></strong>: Elimina líneas duplicadas consecutivas en un archivo o entrada de texto. Se usa generalmente junto con <code>sort</code>, ya que <code>uniq</code> solo elimina duplicados si están <strong>uno detrás de otro</strong>. Algunas de sus principales opciones son las siguientes:</p>
 <ul>
-<li><code>-c</code>: muestra el número de repeticiones de cada línea.</li>
-<li><code>-d</code>: muestra solo las líneas que están duplicadas.</li>
-<li><code>-u</code>: muestra solo las líneas únicas (no repetidas).</li>
+<li><strong><code>-c</code></strong>: Muestra el número de repeticiones de cada línea.</li>
+<li><strong><code>-d</code></strong>: Muestra solo las líneas que están duplicadas.</li>
+<li><strong><code>-u</code></strong>: Muestra solo las líneas únicas (no repetidas).</li>
 </ul>
 </li>
 </ul>
@@ -7955,15 +7958,11 @@ Tarea3 Completada
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><p><strong><code>tr</code></strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar: <br/></p>
+<li><p><strong><code>tr</code></strong>: Reemplaza los caracteres de la entrada estándar indicados en el primer conjunto por los caracteres indicados en el segundo conjunto, e imprime el resultado por la salida estándar. Algunas de las principales opciones son las siguientes:</p>
 <ul>
-<li><code>tr [opciones] CONJUNTO1 CONJUNTO2</code></li>
-</ul>
-<p>Algunas de las principales opciones son las siguientes:</p>
-<ul>
-<li><p><code>-d</code>: Elimina los caracteres que se encuentren en el primer conjunto (<code>CONJUNTO1</code>). No es necesario especificar un segundo conjunto.</p>
+<li><p><strong><code>-d</code></strong>: Elimina los caracteres que se encuentren en el primer conjunto (<code>CONJUNTO1</code>). No es necesario especificar un segundo conjunto.</p>
 </li>
-<li><p><code>-s</code>: Comprime las repeticiones consecutivas de un carácter, reemplazándolas por una sola instancia de ese carácter.</p>
+<li><p><strong><code>-s</code></strong>: Comprime las repeticiones consecutivas de un carácter, reemplazándolas por una sola instancia de ese carácter.</p>
 </li>
 </ul>
 </li>
@@ -8019,12 +8018,12 @@ Tarea3 Completada
 <div style="font-size: 17px">
 <ul>
 <li><strong><code>grep</code></strong>: Busca líneas que coincidan con un patrón dentro de un archivo o la entrada estándar. Entre otros, se le pueden introducir los siguientes modificadores:<ul>
-<li><code>-i</code>: Ignora la diferencia entre mayúsculas y minúsculas</li>
-<li><code>-n</code>: Muestra el número de línea junto con la línea con el patrón</li>
-<li><code>-v</code>: Muestra las líneas que <strong>NO</strong> coinciden con el patrón</li>
-<li><code>-c</code>: Cuenta el número de líneas que coinciden con el patrón y muestra el número</li>
-<li><code>-e</code>: Permite especificar varios patrones a la vez</li>
-<li><code>-f</code>: Indica en qué archivo se encuentran los patrones a buscar</li></ul></li></ul></div>
+<li><strong><code>-i</code></strong>: Ignora la diferencia entre mayúsculas y minúsculas</li>
+<li><strong><code>-n</code></strong>: Muestra el número de línea junto con la línea con el patrón</li>
+<li><strong><code>-v</code></strong>: Muestra las líneas que <strong>NO</strong> coinciden con el patrón</li>
+<li><strong><code>-c</code></strong>: Cuenta el número de líneas que coinciden con el patrón y muestra el número</li>
+<li><strong><code>-e</code></strong>: Permite especificar varios patrones a la vez</li>
+<li><strong><code>-f</code></strong>: Indica en qué archivo se encuentran los patrones a buscar</li></ul></li></ul></div>
 
 
 
@@ -8040,7 +8039,7 @@ Tarea3 Completada
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p><strong>Ejemplo</strong>: Se crea un archivo con el patrón a buscar y con la opción -f se indica que el patrón se encuentra en ese archivo:</p>
+<p><strong>Ejemplo</strong>: Se crea un archivo con el patrón a buscar y con la opción <code>-f</code> se indica que el patrón se encuentra en ese archivo:</p>
 </div>
 </div>
 </div>

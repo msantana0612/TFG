@@ -7662,7 +7662,7 @@ Contiene información clave como los permisos de acceso, el propietario, el grup
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p><strong>Ejemplo</strong>: Si se tiene un archivo <code>archivo</code> y se crea un enlace duro <code>enlace_duro</code> que lo referencie, cualquier modificación realizada en <code>enlace_duro</code> afectará directamente al archivo original (ambos apuntan al mismo espacio de almacenamiento en disco):</p>
+<p><strong>Ejemplo</strong>: Si se tiene un archivo "archivo" y se crea un enlace duro "enlace_duro" que lo referencie, cualquier modificación realizada en "enlace_duro" afectará directamente al archivo original (ambos apuntan al mismo espacio de almacenamiento en disco):</p>
 </div>
 </div>
 </div>
@@ -7830,7 +7830,7 @@ segunda parte al enlace.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Se ve como el enlace simbólico tiene un <em><strong>i-node</strong></em> diferente al archivo original y ocupa menos espacio (solo contiene la dirección al archivo original), mientras que el enlace fuerte tiene el mismo <em><strong>i-node</strong></em> y ocupa el mismo espacio (apunta a la misma información que el archivo original). Además, se muestra el número de referencias a cada archivo: para el archivo original y para el enlace fuerte hay un total de 2 referencias (referencian el mismo <em>i-node</em>), mientras que para el enlace simbólico solo hay una (referencia un <em>i-node</em> diferente).</p>
+<p>Se ve como el enlace simbólico tiene un <em><strong>i-node</strong></em> diferente al archivo original y ocupa menos espacio (solo contiene la dirección al archivo original), mientras que el enlace fuerte tiene el mismo <em><strong>i-node</strong></em> y ocupa el mismo espacio (apunta a la misma información que el archivo original). Además, se muestra el número de referencias a cada archivo: para el archivo original y para el enlace fuerte hay un total de 2 referencias (referencian el mismo <em>i-node</em>), mientras que para el enlace simbólico solo hay 1 (referencia un <em>i-node</em> diferente).</p>
 </div>
 </div>
 </div>
@@ -7843,7 +7843,7 @@ segunda parte al enlace.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p><strong>Ejemplo</strong>: Se crea un archivo y dos enlaces: uno débil y otro fuerte. Si borramos el archivo original y comprobamos el estado de los enlaces con la instrucción <code>file</code>, observamos que el enlace simbólico (débil) está roto.</p>
+<p><strong>Ejemplo</strong>: Se crea un archivo y dos enlaces: uno débil y otro fuerte. Al borrar el archivo original y comprobar el estado de los enlaces con la instrucción <code>file</code>, se observa que el enlace simbólico (débil) está roto.</p>
 </div>
 </div>
 </div>
@@ -7911,7 +7911,7 @@ debil: broken symbolic link to archivoEnlace
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Crea un enlace al directorio <code>/etc</code> y, a través de ese enlace, muestra el contenido del archivo <code>passwd</code>. Asegúrate de que puedas leer el contenido del archivo correctamente usando el enlace.</p>
+<p>Crea un enlace al directorio <code>/etc</code> y, a través de ese enlace, muestra el contenido del archivo "passwd". Asegúrate de que puedas leer el contenido del archivo correctamente usando el enlace.</p>
 </div>
 </div>
 </div>
@@ -7939,7 +7939,7 @@ debil: broken symbolic link to archivoEnlace
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Crea un enlace <code>enlace</code> a <code>/root/config.txt</code> para que, tras borrarse, se pueda seguir accediendo a la información:</p>
+<p>Crea un enlace "enlace" a el archivo "/root/config.txt" para que, tras borrarse, se pueda seguir accediendo a la información:</p>
 </div>
 </div>
 </div>

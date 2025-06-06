@@ -7582,12 +7582,12 @@ a.anchor-link {
 <tbody>
 <tr>
 <td><strong>Ejecutando (<em>Running</em>)</strong></td>
-<td>En ejecución o esperando CPU.</td>
+<td>En ejecución o esperando <em>CPU</em>.</td>
 <td><code>TASK_RUNNING</code></td>
 </tr>
 <tr>
 <td><strong>Listo (<em>Ready</em>)</strong></td>
-<td>Preparado para ejecutarse cuando haya CPU disponible.</td>
+<td>Preparado para ejecutarse cuando haya <em>CPU</em> disponible.</td>
 <td><code>TASK_RUNNING</code></td>
 </tr>
 <tr>
@@ -7657,7 +7657,7 @@ a.anchor-link {
 <ul>
 <li><p><strong><code>ps</code></strong>: Muestra información de los procesos en ejecución en un momento determinado. Tiene muchas opciones que permiten adaptar la información obtenida. Entre las más habituales destacan las siguientes:</p>
 <ul>
-<li><p><strong><code>aux</code></strong>: Es una combinación de las opciones <code>-a</code> (muestra todos los procesos de todos los usuarios a excepción de aquellos que no están asociados a una terminal), <code>-u</code> (muestra información como el nombre de usuario, uso de CPU y memoria, etc) y <code>-x</code> (incluye procesos que no están asociados a una terminal)</p>
+<li><p><strong><code>aux</code></strong>: Es una combinación de las opciones <code>-a</code> (muestra todos los procesos de todos los usuarios a excepción de aquellos que no están asociados a una terminal), <code>-u</code> (muestra información como el nombre de usuario, uso de <em>CPU</em> y memoria, etc) y <code>-x</code> (incluye procesos que no están asociados a una terminal)</p>
 </li>
 <li><p><strong><code>-ef</code></strong>: Combina las opciones <code>-e</code> (todos los procesos en ejecución del sistema, similar a <code>-a</code>) y <code>-f</code> (información en forma de árbol, reflejando las relaciones entre procesos)</p>
 </li></ul></li></ul></div>
@@ -7779,7 +7779,7 @@ root        3073     315  0 12:28 ?        00:00:00 ps -ef
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><p><strong><code>top</code></strong>: Es un comando interactivo que muestra la información de los procesos en tiempo real. Esta información se actualiza cada pocos segundos (en general, 3 segundos). Permite gestionar procesos, por ejemplo, matar procesos desde la propia interfaz pulsando la tecla "k". Para salir de la interfaz de <code>top</code>, hay que pulsar la tecla "q". Existe una versión actualizada de este comando (<code>htop</code>) con una interfaz más atractiva y mayor interactividad. También cuenta con diferentes opciones:</p>
+<li><p><strong><code>top</code></strong>: Es un comando interactivo que muestra la información de los procesos en tiempo real. Esta información se actualiza cada pocos segundos (en general, 3 segundos). Permite gestionar procesos, por ejemplo, matar procesos desde la propia interfaz pulsando la tecla <code>k</code>. Para salir de la interfaz de <code>top</code>, hay que pulsar la tecla <code>q</code>. Existe una versión actualizada de este comando (<code>htop</code>) con una interfaz más atractiva y mayor interactividad. También cuenta con diferentes opciones:</p>
 <ul>
 <li><strong><code>-n</code></strong>: Permite indicar un número de actualizaciones concreto hasta pararse. Si no se indica, se actualizará hasta que se indique la salida del proceso.</li>
 <li><strong><code>-p PID</code></strong>: Con esta opción y un <em>PID</em>, se muestra solo la información de un proceso concreto.</li>
@@ -7885,7 +7885,7 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 <ul>
 <li><p><code>-p</code>: Permite adjuntar strace a un proceso ya en ejecución especificando su <em>PID</em>. Muy útil para observar el comportamiento de un proceso en tiempo real sin tener que reiniciarlo.</p>
 </li>
-<li><p><code>-e trace=</code>: Restringe la salida a un tipo específico de llamadas al sistema, como file, process, network, etc. Por ejemplo, <code>-e trace=network</code> muestra solo las llamadas relacionadas con la red.</p>
+<li><p><code>-e trace=</code>: Restringe la salida a un tipo específico de llamadas al sistema, como <em>file</em>, <em>process</em>, <em>network</em>, etc. Por ejemplo, <code>-e trace=network</code> muestra solo las llamadas relacionadas con la red.</p>
 </li>
 <li><p><code>-o</code>: Redirige la salida de strace a un archivo en lugar de mostrarla por pantalla. Ideal para analizar con calma o compartir con otros para depuración.</p>
 </li>
@@ -7979,7 +7979,7 @@ MiB Swap:<span class="ansi-bold">      0.0 </span>total,<span class="ansi-bold">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p>Los comandos de control de ejecución de procesos permiten gestionar cómo y cuándo se ejecutan los procesos en el sistema. Estos comandos son útiles para cambiar el comportamiento de los procesos, asignarles prioridades, ejecutarlos en segundo plano o introducir pausas entre las operaciones. Son muy importantes en la automatización de tareas y en la gestión eficiente de los recursos del sistema.</p>
-<p>A continuación se presentan algunos de los comandos más comunes utilizados para controlar la ejecución de procesos en Linux:</p>
+<p>A continuación se presentan algunos de los comandos más comunes utilizados para controlar la ejecución de procesos en <em>Linux</em>:</p>
 <ul>
 <li><code>sleep</code>: Se utiliza para suspender temporalmente la ejecución de un proceso durante un período de tiempo determinado. Es muy útil cuando se necesita espaciar acciones o cuando se quiere retrasar la ejecución de algún comando.</li>
 </ul>
@@ -8083,19 +8083,6 @@ Segundo comentario después de 2 segundos.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=628e4ae2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="font-size: 17px">
-<p>Pese a no ser un comando, es útil conocer el operador <code>&amp;</code>. Este operador se añade a los comandos para indicar que han de ser ejecutados en segundo plano</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45b07642">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8103,10 +8090,11 @@ Segundo comentario después de 2 segundos.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
+<p>Pese a no ser un comando, es útil conocer el operador <code>&amp;</code>. Este operador se añade a los comandos para indicar que han de ser ejecutados en segundo plano.</p>
 <ul>
 <li><code>nohup</code>: Ejecuta un comando de forma que no se detenga incluso si se cierra la sesión o se cierra la terminal (<code>SIGHUP</code>). Es especialmente útil para ejecutar procesos largos o persistentes en segundo plano.</li>
 </ul>
-<p><strong>Ejemplo</strong>: Simular cerrar una terminal (mandando la señal <code>SIGHUP</code>) mientras se ejecuta un comando con <code>nohup</code>:</p>
+<p><strong>Ejemplo</strong>: Simula cerrar una terminal (mandando la señal <code>SIGHUP</code>) mientras se ejecuta un comando con <code>nohup</code>:</p>
 </div>
 </div>
 </div>
@@ -8168,7 +8156,7 @@ Paso 7
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p><strong>Ejemplo</strong>: Simular cerrar una terminal (mandando la señal <code>SIGHUP</code>) mientras se ejecuta un comando sin <code>nohup</code>:</p>
+<p><strong>Ejemplo</strong>: Simula cerrar una terminal (mandando la señal <code>SIGHUP</code>) mientras se ejecuta un comando sin <code>nohup</code>:</p>
 </div>
 </div>
 </div>
@@ -8230,12 +8218,12 @@ Paso 5
 <div style="font-size: 17px">
 <p><strong>Ejemplo</strong>: Para mostrar un proceso en estado <em>zombie</em>:</p>
 <ul>
-<li>Ejecutamos un <code>sleep</code> (duerme el proceso durante unos segundos) junto con el operador <code>&amp;</code> para que se ejecute en segundo plano</li>
-<li>Obtenemos su <em>PID</em> mediante la variable <code>$!</code> (almacena el <em>PID</em> del último programa que se ejecutó en segundo plano) y lo guardamos en una variable shell</li>
-<li>Mostramos el <em>PID</em>, el estado y la orden del proceso anterior mediante la orden <code>ps</code> (muestra información sore los procesos en eejcución) con el modificador <code>-p</code> junto con la variable SHELL, y el modificador <code>-o</code> para indicar qué campos mostrar</li>
-<li>Esperamos unos segundos</li>
-<li>Con la orden <code>kill</code> (envía una señal a un proceso) finalizamos el proceso inicial</li>
-<li>Volvemos a mostrar los datos del proceso</li></ul></div>
+<li>Se ejecuta un <code>sleep</code> (duerme el proceso durante unos segundos) junto con el operador <code>&amp;</code> para que se ejecute en segundo plano</li>
+<li>Se obtiene su <em>PID</em> mediante la variable <code>$!</code> (almacena el <em>PID</em> del último programa que se ejecutó en segundo plano) y se guarda en una variable shell</li>
+<li>Se muestra el <em>PID</em>, el estado y la orden del proceso anterior mediante la orden <code>ps</code> (muestra información sore los procesos en ejecución) con el modificador <code>-p</code> junto con la variable SHELL, y el modificador <code>-o</code> para indicar qué campos mostrar</li>
+<li>Espera de unos segundos</li>
+<li>Con la orden <code>kill</code> (envía una señal a un proceso) se finaliza el proceso inicial</li>
+<li>Se vuelven a mostrar los datos del proceso</li></ul></div>
 
 
 </div>
@@ -8295,7 +8283,7 @@ Process 8316 killed
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>En el campo <em>STAT</em>, se muestra como mientras se está ejecutando está en el estado "S" (<em>Sleep</em>), pero al matar el proceso queda en el estado "Z" (<em>Zombie</em>).</p>
+<p>En el campo <em>STAT</em>, se muestra como mientras se está ejecutando está en el estado <code>S</code> (<em>Sleep</em>), pero al matar el proceso queda en el estado <code>Z</code> (<em>Zombie</em>).</p>
 </div>
 </div>
 </div>
@@ -8319,7 +8307,7 @@ Process 8316 killed
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Usa un comando que muestre por pantalla el uso de CPU de todos los procesos del sistema:</p>
+<p>Usa un comando que muestre por pantalla el uso de <em>CPU</em> de todos los procesos del sistema:</p>
 </div>
 </div>
 </div>
@@ -8347,7 +8335,7 @@ Process 8316 killed
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>El comando <code>yes "Hola!"</code> muestra infinitamente el mensaje "Hola!", pero con <code>&gt; /dev/null</code> (se explicará más adelante) suprimimos su salida y con <code>kill -9 $PID</code> lo terminamos (se explicará más adelante). Obtén el <em>PID</em> del proceso y muestra su información durante 4 veces:</p>
+<p>El comando <code>yes "Hola!"</code> muestra infinitamente el mensaje "Hola!", pero con <code>&gt; /dev/null</code> (se explicará más adelante) se suprime su salida y con <code>kill -9 $PID</code> se termina el proceso (se explicará más adelante). Obtén el <em>PID</em> del proceso y muestra su información durante 4 veces:</p>
 </div>
 </div>
 </div>

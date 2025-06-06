@@ -7553,7 +7553,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p>En <em>Linux</em>, las variables de <em>shell</em> son elementos que almacenan información utilizada por la <em>shell</em> y los procesos que se ejecutan en ella. Estas variables permiten configurar el comportamiento del sistema, almacenar rutas, parámetros y otros datos importantes para la ejecución de comandos y programas. <br/>
-Existen dos tipos principales de variables de <em>shell</em>: las variables locales y las variables de entorno. La terminología utilizada para describirlas a menudo genera confusión, ya que, aunque ambas son variables dentro de la <em>shell</em>, se les conoce comúnmente como "variables de entorno" y "variables <em>shell</em>". Esta distinción puede resultar engañosa, ya que en realidad ambas son variables que forman parte del entorno de la <em>shell</em>. Para evitar malentendidos, nos referiremos a ellas como variables de entorno y variables locales.</p>
+Existen dos tipos principales de variables de <em>shell</em>: las variables locales y las variables de entorno. La terminología utilizada para describirlas a menudo genera confusión, ya que, aunque ambas son variables dentro de la <em>shell</em>, se les conoce comúnmente como "variables de entorno" y "variables <em>shell</em>". Esta distinción puede resultar engañosa, ya que en realidad ambas son variables que forman parte del entorno de la <em>shell</em>. Para evitar malentendidos, se hará referencia a ellas como variables de entorno y variables locales.</p>
 </div>
 </div>
 </div>
@@ -7567,8 +7567,7 @@ Existen dos tipos principales de variables de <em>shell</em>: las variables loca
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li>Las variables locales en el <em>shell</em> de <em>Linux</em> son pares de clave-valor que se definen y se utilizan solo dentro del contexto de la sesión o del proceso en el que se crean. A diferencia de las variables de entorno, las variables locales no se heredan por los procesos hijos, lo que significa que solo afectan a la terminal o script en el que se definen.
-Para crear una variable <em>shell</em>, se indica el nombre de la variable seguida del símbolo <code>=</code> y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo <code>$</code> antes de la variable:</li>
+<li>Las <strong>variables locales</strong> en el <em>shell</em> de <em>Linux</em> son pares de clave-valor que se definen y se utilizan solo dentro del contexto de la sesión o del proceso en el que se crean. A diferencia de las variables de entorno, las variables locales no se heredan por los procesos hijos, lo que significa que solo afectan a la terminal o <em>script</em> en el que se definen. Para crear una variable <em>shell</em>, se indica el nombre de la variable seguida del símbolo <code>=</code> y el valor que se le quiere dar, sin espacios. Para acceder al valor de cualquier variable, basta con usar el símbolo <code>$</code> antes de la variable.</li>
 </ul>
 <p><strong>Ejemplo</strong>: Se crea la variable <code>VAR</code> y se intenta mostrar su contenido (no se muestra porque falta añadir <code>$</code>):</p>
 </div>
@@ -7667,7 +7666,7 @@ Para crear una variable <em>shell</em>, se indica el nombre de la variable segui
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><p>Las variables de entorno son pares de clave-valor que se almacenan en el entorno del proceso y se heredan por los procesos hijos, lo que permite compartir configuraciones sin necesidad de codificarlas directamente. Se pueden definir de forma temporal (válidas solo en la terminal actual) usando el comando <code>export</code> sobre una variable local, o de forma permanente editando archivos como <code>.bashrc</code>, <code>.profile</code> o <code>/etc/environment</code>. Ejemplos de variables de entorno definidas por el sistema son:</p>
+<li><p>Las <strong>variables de entorno</strong>   son pares de clave-valor que se almacenan en el entorno del proceso y se heredan por los procesos hijos, lo que permite compartir configuraciones sin necesidad de codificarlas directamente. Se pueden definir de forma temporal (válidas solo en la terminal actual) usando el comando <code>export</code> sobre una variable local, o de forma permanente editando archivos como ".bashrc", ".profile" o "/etc/environment". Ejemplos de variables de entorno definidas por el sistema son:</p>
 <ul>
 <li><strong><code>HOSTNAME</code></strong>:  Nombre de la máquina en la que se está trabajando.</li>
 <li><strong><code>USER</code></strong>:  Nombre del usuario actual.</li>
@@ -7679,11 +7678,12 @@ Para crear una variable <em>shell</em>, se indica el nombre de la variable segui
 <li><strong><code>PS1</code></strong>: El valor de esta variable se utiliza como inductor de órdenes primario (<code>prompt</code>) del intérprete de órdenes.</li>
 <li><strong><code>PS2</code></strong>: El valor de esta variable se utiliza como inductor de órdenes secundario (por ejemplo, cuando se introducen bucles) del intérprete de órdenes.</li>
 <li><strong><code>?</code></strong>: Valor decimal retornado por la última orden ejecutada; si es 0 indica que la orden se ejecutó correctamente, mientras que si es 1 indica que hubo algún tipo de error. Si es mayor que 1 significa que el proceso terminó como consecuencia de haber recibido una <strong>señal</strong>.</li>
-<li><strong>Conjunto de variables <code>$</code></strong>: Existe un conjunto de variables de entorno muy usadas en scripts que recogen información sobre el entorno y la ejecución actual, caracterizadas por empezar por el carácter "$". Existen muchas variables de este tipo, entre las que destacan <code>$0</code> (muestra el nombre del script que se está ejecutando), <code>$#</code> (muestra el número de argumentos que se ha pasado a un script) o <code>$!</code> (contiene el PID del último proceso ejecutado en segundo plano).</li>
+<li><strong>Conjunto de variables <code>$</code></strong>: Existe un conjunto de variables de entorno muy usadas en <em>scripts</em> que recogen información sobre el entorno y la ejecución actual, caracterizadas por empezar por el carácter "$". Existen muchas variables de este tipo, entre las que destacan <code>$0</code> (muestra el nombre del <em>script</em> que se está ejecutando), <code>$#</code> (muestra el número de argumentos que se ha pasado a un <em>script</em>) o <code>$!</code> (contiene el <em>PID</em> del último proceso ejecutado en segundo plano).</li>
 </ul>
 </li>
 </ul>
-<p>Con el comando <code>printenv</code> o <code>env</code>, podemos ver todas las variables de entorno del sistema:</p>
+<p>Con el comando <code>printenv</code> o <code>env</code>, se pueden ver todas las variables de entorno del sistema.</p>
+<p><strong>Ejemplo</strong>: Se muestran todas las variables del entorno:</p>
 </div>
 </div>
 </div>
@@ -7827,7 +7827,7 @@ _=/usr/bin/env
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Si queremos que una variable <em>shell</em> sea accesible por procesos hijos, podemos usar la orden <code>export</code> para realizar este cambio:</p>
+<p>Para que una variable <em>shell</em> sea accesible por procesos hijos, se usa la orden <code>export</code> para realizar este cambio:</p>
 </div>
 </div>
 </div>
@@ -7953,21 +7953,17 @@ _=/usr/bin/env
 <p><em>Linux</em> cuenta con gran variedad de funcionalidades y servicios, cada uno con distintos parámetros que determinan su comportamiento y modo de operación. Desde la gestión de usuarios y permisos hasta la configuración de servicios y aplicaciones, es esencial contar con un mecanismo que permita definirlos de manera precisa y estructurada para que el sistema funcione de manera adecuada y pueda adaptarse a diferentes necesidades. Para ello, el sistema utiliza un conjunto de archivos específicos donde se registran estas configuraciones, conocidos como <strong>archivos de configuración</strong>.</p>
 <p>Los archivos de configuración en <em>Linux</em> se encuentran en diversas ubicaciones, dependiendo de su propósito. Algunas de las rutas más utilizadas incluyen las siguientes:</p>
 <ul>
-<li><p><strong><code>/etc/</code></strong><br>
-Contiene la mayoría de los archivos de configuración del sistema y de los servicios globales.<br>
-<em>Ejemplo:</em> <code>/etc/passwd</code> (gestión de usuarios), <code>/etc/ssh/sshd_config</code> (configuración del servidor SSH).</br></br></p>
+<li><p><strong><code>/etc/</code></strong>: Contiene la mayoría de los archivos de configuración del sistema y de los servicios globales.<br>
+<strong>Ejemplo:</strong> "/etc/passwd" (gestión de usuarios), "/etc/ssh/sshd_config" (configuración del servidor <em>SSH</em>).</br></p>
 </li>
-<li><p><strong><code>~/.config/</code></strong><br>
-Almacena configuraciones específicas del usuario para aplicaciones modernas que siguen el estándar <em>XDG Base Directory</em>.<br/>
-<em>Ejemplo:</em> <code>~/.config/gtk-3.0/settings.ini</code> (configuración de GTK).</br></p>
+<li><p><strong><code>~/.config/</code></strong>: Almacena configuraciones específicas del usuario para aplicaciones modernas que siguen el estándar <em>XDG Base Directory</em>.<br>
+<strong>Ejemplo:</strong> "~/.config/gtk-3.0/settings.ini" (configuración de <em>GTK</em>).</br></p>
 </li>
-<li><p><strong><code>/usr/local/etc/</code></strong><br/>
-Se usa para la configuración de programas instalados manualmente en <code>/usr/local/</code>, en lugar de los gestionados por el sistema.<br/>
-<em>Ejemplo:</em> <code>/usr/local/etc/nginx/nginx.conf</code> (configuración de Nginx instalado manualmente).</p>
+<li><p><strong><code>/usr/local/etc/</code></strong>: Se usa para la configuración de programas instalados manualmente en <code>/usr/local/</code>, en lugar de los gestionados por el sistema.<br>
+<strong>Ejemplo:</strong> "/usr/local/etc/nginx/nginx.conf" (configuración de <em>Nginx</em> instalado manualmente).</br></p>
 </li>
-<li><p><strong><code>/var/lib/</code></strong><br/>
-Algunos programas almacenan configuraciones dinámicas o datos de estado aquí, aunque no es un directorio estándar para archivos de configuración.<br/>
-<em>Ejemplo:</em> <code>/var/lib/mysql/</code> (datos de bases de datos MySQL).</p>
+<li><p><strong><code>/var/lib/</code></strong>: Algunos programas almacenan configuraciones dinámicas o datos de estado aquí, aunque no es un directorio estándar para archivos de configuración.<br/>
+<strong>Ejemplo:</strong> <code>/var/lib/mysql/</code> (datos de bases de datos MySQL).</p>
 </li>
 </ul>
 <p>A continuación, se describen los archivos de configuración más importantes en <code>/etc</code>:</p>
@@ -8052,7 +8048,7 @@ Algunos programas almacenan configuraciones dinámicas o datos de estado aquí, 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Consulta las rutas donde se encuentran los archivos ejecutables usando una variable de entorno.
+Consulta las rutas donde se encuentran los archivos ejecutables usando una variable de entorno:
 </div>
 </div>
 </div>
@@ -8080,7 +8076,7 @@ Consulta las rutas donde se encuentran los archivos ejecutables usando una varia
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Crea una nueva variable de entorno y comprueba que se haya añadido correctamente
+Crea una nueva variable de entorno y comprueba que se haya añadido correctamente:
 </div>
 </div>
 </div>
@@ -8137,7 +8133,7 @@ Crea y rellena las variables pedidas para completar la siguiente frase:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>El siguiente shell script denominado "scriptprueba.sh" muestra un breve mensaje almacenado en la variable de shell <code>TEXT</code>. Define el texto a mostrar y permite al script usar la variable solo la segunda vez que se ejecute:</p>
+<p>El siguiente <em>shell script</em> denominado "scriptprueba.sh" muestra un breve mensaje almacenado en la variable <code>TEXT</code>. Define el texto a mostrar y permite al <em>script</em> usar la variable solo la segunda vez que se ejecute:</p>
 <pre><code>1. #!/bin/bash
 3. echo $TEXT
 </code></pre>

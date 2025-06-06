@@ -7540,11 +7540,11 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Un comando es una instrucción que se introduce a través de la línea de comandos o terminal. Cada comando tiene un nombre específico, que indica al sistema qué debe hacer, y puede ir acompañado de argumentos (que especifican sobre qué objetos o archivos operar) y opciones (también llamadas <em>flags</em> o <em>switches</em>, que modifican el comportamiento del comando).</p>
+<p>Un <strong>comando</strong> es una instrucción que se introduce a través de la línea de comandos o terminal. Cada comando tiene un nombre específico, que indica al sistema qué debe hacer, y puede ir acompañado de <strong>argumentos</strong> (que especifican sobre qué objetos o archivos operar) y <strong>opciones</strong> (también llamadas <em>flags</em> o <em>switches</em>, que modifican el comportamiento del comando).</p>
 <ul>
 <li><code>comando [opciones] [argumentos]</code></li>
 </ul>
-<p>Existe una gran variedad de comandos, con diferentes funciones que ayudan a administrar el sistema y realizar tareas de todo tipo. Algunos comandos permiten navegar por el sistema de archivos, manipulan archivos y directorios, y otros facilitan la gestión de usuarios, permisos y procesos. La flexibilidad y potencia de los comandos hacen de la terminal una herramienta esencial para los usuarios de Linux.</p>
+<p>Existe una gran variedad de comandos, con diferentes funciones que ayudan a administrar el sistema y realizar tareas de todo tipo. Algunos comandos permiten navegar por el sistema de archivos, manipular archivos y directorios, y otros facilitan la gestión de usuarios, permisos y procesos. La flexibilidad y potencia de los comandos hacen de la terminal una herramienta esencial para los usuarios de <em>Linux</em>. Varios comandos con diferentes utilidades son:</p>
 </div>
 </div>
 </div>
@@ -7557,7 +7557,13 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Cuando trabajas en <em>Linux</em>, a veces necesitas obtener información sobre el sistema operativo y la arquitectura del equipo en el que estás trabajando. El comando <code>uname</code> cumple esta necesidad, ya que proporciona detalles básicos sobre el sistema, como el nombre del <em>kernel</em> y su versión. Este comando es útil para verificar la configuración general del entorno de trabajo, lo que es especialmente relevante al solucionar problemas o instalar <em>software</em>.</p>
+<ul>
+<li><strong><code>uname</code></strong>: Proporciona detalles básicos sobre el sistema, como el nombre del <em>kernel</em> y su versión. Este comando es útil para verificar la configuración general del entorno de trabajo, lo que es especialmente relevante al solucionar problemas o instalar <em>software</em>. Si no se introduce ninguna opción, muestra el nombre del sistema operativo<ul>
+<li><strong><code>-a</code></strong>: Muestra más detalles, como la versión del <em>kernel</em>, el nombre del <em>host</em>, la arquitectura del sistema y más.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra el sistema operativo instalado:</p>
 </div>
 </div>
 </div>
@@ -7604,7 +7610,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Si necesitas obtener más detalles, como la versión del <em>kernel</em>, el nombre del <em>host</em>, la arquitectura del sistema y más, puedes usar la opción <code>-a</code>:</p>
+<p><strong>Ejemplo</strong>: Muestra más detalles del sistema operativo instalado:</p>
 </div>
 </div>
 </div>
@@ -7651,7 +7657,10 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para iniciar sesión en <em>Linux</em>, igual que en <em>Windows</em>, cada usuario debe autenticarse con un nombre de usuario y una contraseña. Un comando para ver qué usuario está ejecutando la sesión es <code>whoami</code>, que muestra por pantalla el nombre del usuario actual:</p>
+<ul>
+<li><strong><code>whoami</code></strong>: Sirve para ver qué usuario está ejecutando la sesión actual.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra por pantalla el nombre del usuario actual:</p>
 </div>
 </div>
 </div>
@@ -7698,7 +7707,10 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para ver la fecha actual, existe el comando <code>date</code>, con el que se puede indicar un formato concreto:</p>
+<ul>
+<li><strong><code>date</code></strong>: Obtiene la fecha y hora del sistema actuales. Se puede especificar un formato concreto.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra la fecha actual con el formato por defecto:</p>
 </div>
 </div>
 </div>
@@ -7792,7 +7804,10 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para ver el calendario del mes actual, existe la orden <code>cal</code>:</p>
+<ul>
+<li><strong><code>cal</code></strong>: Enseña el calendario del mes actual.</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra el calendario del mes del sistema actual:</p>
 </div>
 </div>
 </div>
@@ -7846,7 +7861,13 @@ Su Mo Tu We Th Fr Sa
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Un comando muy útil y versátil es <code>echo</code>, que imprime en la terminal un texto:
+<ul>
+<li><strong><code>echo</code></strong>: Imprime en la terminal un texto.<ul>
+<li><strong><code>-e</code></strong>: Habilita el procesamiento de secuencias de escape. Esto permite, por ejemplo, interpretar saltos de línea(<code>\n</code>), tabulaciones(<code>\t</code>) u otros caracteres especiales.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Imprime el mensaje "Hola, mundo" por la terminal:</p>
 </div>
 </div>
 </div>
@@ -7893,7 +7914,7 @@ Un comando muy útil y versátil es <code>echo</code>, que imprime en la termina
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Una opción importante de <code>echo</code> es el parámetro <code>-e</code>, que habilita el procesamiento de secuencias de escape. Esto permite, por ejemplo, interpretar saltos de línea(<code>\n</code>), tabulaciones(<code>\t</code>) u otros caracteres especiales:
+<p><strong>Ejemplo</strong>: Imprime un mensaje con dos líneas, procesando la secuencia de salto de línea entre medias:</p>
 </div>
 </div>
 </div>
@@ -7941,7 +7962,7 @@ Segunda línea
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Linux cuenta con manuales que permiten acceder a información detallada sobre cada comando, ayudando a los usuarios a entender su funcionamiento y opciones. Para acceder a esta información existen diferentes comandos, entre los que destacan <code>apropos</code>, <code>man</code> e <code>info</code>.
+Linux cuenta con manuales que permiten acceder a información detallada sobre cada comando, ayudando a los usuarios a entender su funcionamiento y opciones. Para acceder a esta información existen diferentes comandos, entre los que destacan <code>apropos</code>, <code>man</code> e <code>info</code>:
 </div>
 </div>
 </div>
@@ -7955,7 +7976,7 @@ Linux cuenta con manuales que permiten acceder a información detallada sobre ca
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><strong><code>apropos</code></strong>: Busca en las páginas del manual las entradas que coincidan con el argumento dado, pero muestra sólo el nombre y una breve descripción, que nos ayuda a tener una pequeña idea de cómo funciona.</li>
+<li><strong><code>apropos</code></strong>: Busca en las páginas del manual las entradas que coincidan con el argumento dado, mostrando el nombre y una breve descripción, que ayuda a tener una pequeña idea de cómo funciona.</li>
 </ul>
 <p><strong>Ejemplo</strong>: Muestra una breve descripción del comando <code>apt-get</code>:</p>
 </div>
@@ -8005,13 +8026,16 @@ Linux cuenta con manuales que permiten acceder a información detallada sobre ca
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <ul>
-<li><p><strong><code>man</code></strong>: Accede al manual de usuario de los comandos y programas disponibles en el sistema. Al ejecutar <code>man</code> seguido de un comando, se muestra una página del manual con información detallada sobre su uso, opciones y sintaxis. El manual de <em>Linux</em> está organizado en secciones numeradas, donde cada número representa un tipo de contenido distinto, como comandos de usuario (sección 1), llamadas al sistema (sección 2) o funciones de biblioteca (sección 3). Por ejemplo, <code>man 1 ls</code> muestra la documentación del comando <code>ls</code>, mientras que <code>man 3 printf</code> accede a la función de biblioteca <code>printf</code>.</p>
-<p>En <em>Google Colab</em> no es posible ejecutar este comando, pero se pueden ver las entradas del manual en una <a href="http://man.he.net/" target="_blank">página web</a> introduciendo las opciones y el comando del que se quiere ver la información (escribiendo la orden completa omitiendo <code>man</code>).</p>
-<p>Otra opción útil del comando es <code>-k</code>, que obtiene el mismo resultado que al ejecutar <code>apropos</code>.</p>
+<li><p><strong><code>man</code></strong>: Accede al manual de usuario de los comandos y programas disponibles en el sistema. Al ejecutar <code>man</code> seguido de un comando, se muestra una página del manual con información detallada sobre su uso, opciones y sintaxis. El manual de <em>Linux</em> está organizado en secciones numeradas, donde cada número representa un tipo de contenido distinto, como comandos de usuario (<strong>sección <code>1</code></strong>), llamadas al sistema (<strong>sección <code>2</code></strong>) o funciones de biblioteca (<strong>sección <code>3</code></strong>). Por ejemplo, <code>man 1 ls</code> muestra la documentación del comando <code>ls</code>, mientras que <code>man 3 printf</code> accede a la función de biblioteca <code>printf</code>.</p>
+<ul>
+<li><strong><code>-k</code></strong>: Obtiene el mismo resultado que al ejecutar <code>apropos</code>.</li>
+</ul>
+<p><strong>Ejemplos</strong>:</p>
 <ul>
 <li><strong><code>man apt-get</code></strong>: Entrada completa del comando apt-get (<code>apt-get</code> en la web).</li>
 <li><strong><code>man -k apt-get</code></strong>: Nombre y breve descripción del comando <code>apt-get</code> (<code>-k apt-get</code> en la web).</li>
 </ul>
+<p>En <em>Google Colab</em> no es posible ejecutar este comando, pero se pueden ver las entradas del manual en una <a href="http://man.he.net/" target="_blank">página web</a> introduciendo las opciones y el comando del que se quiere ver la información (escribiendo la orden completa omitiendo <code>man</code>).</p>
 </li>
 <li><p><strong><code>info</code></strong>: Muestra documentación detallada sobre comandos y programas del sistema. Es una alternativa aún completa al comando <code>man</code>, ya que ofrece documentación en formato hipertextual, permitiendo navegar entre secciones y seguir enlaces dentro de la misma documentación.</p>
 </li></ul></div>

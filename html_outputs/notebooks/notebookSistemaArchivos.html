@@ -7529,7 +7529,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1>Sistema de archivos de Linux</h1>
+<h1>Sistema de archivos de <i>Linux</i></h1>
 </div>
 </div>
 </div>
@@ -7540,7 +7540,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Estructura Linux</h2>
+<h2>Estructura <i>Linux</i></h2>
 </div>
 </div>
 </div>
@@ -7589,7 +7589,7 @@ a.anchor-link {
 si se quiere acceder a una memoria <em>USB</em>, se debe montar este dispositivo sobre el
 directorio <code>/mnt</code>, de manera que todo lo que cuelgue de <code>/mnt</code> sería el contenido de la
 memoria, aunque en muchas distribuciones modernas este tipo de dispositivos extraíbles se montan automáticamente en <code>/media</code>.</p>
-<p><strong><code>/root</code></strong>: Directorio <code>home</code> del administrador del sistema, conocido como usuario root o superusuario</p>
+<p><strong><code>/root</code></strong>: Directorio <code>home</code> del administrador del sistema, conocido como usuario <em>root</em> o superusuario.</p>
 <p><strong><code>/tmp</code></strong>: Directorio temporal donde los programas almacenan archivos que suelen ser eliminados al reiniciar.</p>
 <p><strong><code>/usr</code></strong>: Incluye aplicaciones y archivos del sistema no esenciales para el arranque, como programas instalados.</p>
 <p><strong><code>/sbin</code></strong>: Contiene binarios para la administración del sistema, generalmente usados por el superusuario.</p>
@@ -7605,8 +7605,14 @@ memoria, aunque en muchas distribuciones modernas este tipo de dispositivos extr
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Para cambiar el directorio en el que ejecutamos los comandos existe el comando <code>cd</code>, que nos llevará al directorio que indiquemos. Si se introduce el comando sin ningún argumento, éste nos llevará al conocido como <strong>directorio de conexión</strong>, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
-<p>Otro comando útil es <code>pwd</code>, que nos muestra el directorio en el que nos encontramos actualmente.</p>
+<p>Para moverse por el sistema de archivos, existen los siguientes comandos:</p>
+<ul>
+<li><p><strong><code>cd</code></strong>: Cambia el directorio actual al directorio que se indique. Si se introduce el comando sin ningún argumento, el directorio se cambia al conocido como <strong>directorio de conexión</strong>, que es el lugar privado del usuario en el que puede crear archivos y directorios, y salvo el administrador, nadie podrá acceder a ellos a menos que tenga los permisos requeridos. En este caso, como el usuario es el administrador, este directorio de conexión (indicado con <code>~</code>) es el ya nombrado <code>/root</code>.</p>
+</li>
+<li><p><strong><code>pwd</code></strong>: Muestra el directorio en el que nos encontramos actualmente.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Mueve el directorio actual al directorio de conexión, y se muestra el directorio actual:</p>
 </div>
 </div>
 </div>
@@ -7655,7 +7661,7 @@ memoria, aunque en muchas distribuciones modernas este tipo de dispositivos extr
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
 <p>Además del directorio de conexión, otros directorios indicados con caracteres especiales son <code>.</code> y <code>..</code>. Un único punto es equivalente al <strong>directorio actual</strong> (el que mostrará <code>pwd</code>), mientras que dos puntos indican el <strong>directorio padre</strong> del directorio actual (si usamos los dos puntos junto con el comando <code>cd</code> nos "salimos" del directorio).</p>
-<p><strong>Ejemplo</strong>: Si vamos al directorio de conexión e introducimos el comando <code>cd ..</code>, cambiaremos el directorio actual (<code>.</code>) por el directorio padre del directorio de conexión (<code>/root</code>), que en nuestro caso es el directorio raíz:</p>
+<p><strong>Ejemplo</strong>: Desde el directorio de conexión se introduce el comando <code>cd ..</code>, se cambia el directorio actual (<code>.</code>) por el directorio padre del directorio de conexión (<code>/root</code>), que es el directorio raíz:</p>
 </div>
 </div>
 </div>
@@ -7669,7 +7675,8 @@ memoria, aunque en muchas distribuciones modernas este tipo de dispositivos extr
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">cd</span> <span class="o">~/..</span>
+<span class="n">cd</span>
+<span class="n">cd</span> <span class="o">..</span>
 <span class="n">pwd</span>
 </pre></div>
 </div>
@@ -7843,7 +7850,16 @@ Para hacer referencia a un directorio o un archivo, hay dos formas principales d
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-Es importante ser capaz de visualizar los contenidos tanto de directorios como de archivos. En el caso de un directorio, el comando más usado es <code>ls</code>. Con este comando, podemos visualizar todos los directorios y los archivos de una ruta concreta, aunque en caso de no pasar ninguna ruta usará el directorio actual:
+<p>Para poder ver el contenido de los directorios, existe el comando <code>ls</code>:</p>
+<ul>
+<li><strong><code>ls</code></strong>: Permite visualizar todos los directorios y los archivos de una ruta concreta. En caso de no pasar ninguna ruta , se usará el directorio actual.<ul>
+<li><strong><code>-l</code></strong>: Muestra más detalles.</li>
+<li><strong><code>-a</code></strong>: Muestra los archivos ocultos.</li>
+<li><strong><code>-d</code></strong>: Muestra sólo directorios.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong>: Muestra los archivos y directorios del directorio actual:</p>
 </div>
 </div>
 </div>
@@ -7890,7 +7906,6 @@ Es importante ser capaz de visualizar los contenidos tanto de directorios como d
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="font-size: 17px">
-<p>Se pueden introducir los modificadores <code>-l</code> (muestra más detalles), <code>-a</code> (muestra los archivos ocultos) o <code>-d</code> (muestra sólo directorios).</p>
 <p><strong>Ejemplo</strong>: Muestra más detalles de todos los archivos, añadiendo los archivos ocultos:</p>
 </div>
 </div>
@@ -7946,8 +7961,14 @@ Para poder visualizar un archivo, existen diversas opciones, aunque las más uti
 
 <ul>
 <li><strong><code>cat</code></strong>: Para utilizar este comando, basta con introducir la ruta del archivo que se quiere visualizar a continuación del comando.</li>
-<li><strong><code>head</code></strong>: Orden que muestra las primeras líneas de un archivo, por defecto 10. Para modificar este número, hay que añadir el modificador <code>-n</code> seguido del número de líneas a mostrar.</li>
-<li><strong><code>tail</code></strong>: Esta orden funciona de forma similar a <code>head</code>, pero muestra las últimas líneas en vez de las primeras.</li>
+<li><strong><code>head</code></strong>: Orden que muestra las primeras líneas de un archivo, por defecto 10.<ul>
+<li><strong><code>-n</code></strong>: Indica el número de líneas a mostrar.</li>
+</ul>
+</li>
+<li><strong><code>tail</code></strong>: Funciona de forma similar a <code>head</code>, pero muestra las últimas líneas en vez de las primeras.<ul>
+<li><strong><code>-n</code></strong>: Indica el número de líneas a mostrar.</li>
+</ul>
+</li>
 </ul>
 <p><strong>Ejemplo</strong>: Muestra las 4 primeras líneas del archivo "NGC-DL-CONTAINER-LICENSE":</p>
 </div>
@@ -8109,9 +8130,15 @@ Para crear archivos y directorios, existen las siguientes órdenes:
 Para copiar y borrar archivos, existen las siguientes órdenes:
 
 <ul>
-<li><strong><code>rm</code></strong>: Sirve para eliminar archivos, indicando el nombre del archivo a borrar. Con la opción <code>-r</code> se borra de forma recursiva el contenido del directorio indicado.</li>
+<li><strong><code>rm</code></strong>: Sirve para eliminar archivos, indicando el nombre del archivo a borrar.<ul>
+<li><strong><code>-r</code></strong>: Borra de forma recursiva el contenido del directorio indicado.</li>
+</ul>
+</li>
 <li><strong><code>rmdir</code></strong>: Borra el directorio indicado, aunque debe de estar vacío.</li>
-<li><strong><code>cp</code></strong>: Copia un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino (funciona como un <strong>"Copiar y pegar"</strong>). En caso de ser un directorio completo lo que se desea copiar, se ha de indicar con la opción <code>-r</code>.</li>
+<li><strong><code>cp</code></strong>: Copia un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino (funciona como un <strong>"Copiar y pegar"</strong>).<ul>
+<li><strong><code>-r</code></strong>: Indica que se va a copiar un directorio completo.</li>
+</ul>
+</li>
 <li><strong><code>mv</code></strong>: Mueve un archivo o un directorio a otra ubicación, indicando primero el origen, y finalmente el destino (funciona como un <strong>"Cortar y pegar"</strong>). También sirve para renombrar archivos.</li></ul></div>
 
 
